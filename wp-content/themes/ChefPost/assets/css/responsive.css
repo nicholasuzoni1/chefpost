@@ -1,0 +1,191 @@
+/*
+Project Name: Chefville
+CSS Author: Navneet
+Author Designation: Web Designer
+Framework Used: Bootstrap
+Organization: Code Brew Labs
+*/
+@media (max-width: 576px) {
+    .services-card-btm img {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .terms_page ul {
+        padding-left:15px;
+    }
+    .facebook-btn {
+    margin-bottom: 30px;
+}
+.bannar {
+    padding: 0vh 0!important;
+}
+.select-address.brdrr-1 {
+    border: none;
+}
+.main-pos {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+.main-pos .col-md-12.mt-5 {
+    margin: 160px 0 150px 0!important;
+}
+.bannar h2 {
+    color: #FFFFFF;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 0;
+}
+.select-address img {
+    bottom: 8px!important;
+}
+.bannar .col-md-2.pl-0 {
+    padding-left: 15px!important;
+}
+.image-and-text-block {
+    padding: 0px 0 10px 0;
+    background-size: 100%;
+}
+.testimonial-wrap {
+    margin:0px;
+    padding: 30px;
+}
+.bannar .input-btn input {
+    width: 67%;
+}
+.sec-height {
+    height: auto;
+}
+.right {
+    position: relative;
+}
+.image-and-text-block h3 {
+    margin-top: 28px;
+    text-align: center;
+}
+.image-and-text-block p {
+    text-align: center;
+    font-size: 14px;
+}
+.bannar .theme-button.with-background {
+    padding: 5px 18px!important;
+}
+.theme-button.with-background.apply_btn{
+    padding: 9px 16px!important;
+}
+.small-text-center{
+    text-align:center;
+}
+/* .bannar .col-md-4, .bannar .col-md-2 {
+    border-bottom: 1px solid #ddd;
+    border-right: none;
+} */
+.bannar .input-btn {
+    margin-top: 5px;
+}
+.testimonial-wrap .line strong {
+    left: 31%;
+}
+.mg-mb{
+    margin:40px 0 20px 0;
+}
+.time-select {
+    background: transparent;
+    width: 120px;
+    padding: 5px 0px 10px 0;
+}
+header .navbar-brand img {
+    height: 30px;
+    transition: all .3s ease-in-out 0s;
+}
+header .shrink .navbar-brand img {
+    height: 26px;
+}
+.img-pos {
+    position: relative;
+    right: 0px;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    top: 0px;
+}
+.input-btn.d-flex .theme-button.with-background {
+    background-color: #AA182C;
+    color: #FFFFFF;
+    position: absolute;
+    right: 0px;
+    top: 2px;
+}
+.input-btn.d-flex {
+    position: relative;
+    width: 100%;
+    display: inline-block!important;
+}
+.header-setting {
+    margin-top: 60px;
+}
+/* .header-image {
+    height: 300px;
+    object-fit: cover;
+} */
+.story-about-brand {
+    padding: 40px 0;
+}
+.story-about-brand h4 {
+    color: #2D2A26;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.story-about-brand p {
+    font-size: 14px;
+    width: 100%;
+}
+.story-about-brand .pt-4.pl-4.pr-4 {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+iframe {
+    width: 100%;
+    max-width: 100%;
+}
+.messagesent-box input {
+    border: none;
+    width: 80%;
+    padding: 8px;
+    outline: none;
+}
+.bannar-bottom .services-card span {
+    opacity: 0.7;
+    color: #2D2A26;
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 14px;
+    display: block;
+    font-family: 'Atlas Grotesk'!important;
+    margin-bottom: 20px;
+}
+.bannar-bottom h5 {
+    color: #2D2A26;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 0;
+    margin-top: 4px;
+    margin-bottom: 5px;
+}
+.services-card img {
+    max-width: 100%!important;
+}
+.acc-settings {
+    margin-bottom: 40px;
+}
+}
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+ }
+
+}

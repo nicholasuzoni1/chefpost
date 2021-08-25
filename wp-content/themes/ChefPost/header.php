@@ -1,0 +1,111 @@
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Chef post
+ */
+
+?>
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description
+        "
+          content="Book a personal chef for weekday meals, meals preps or events anytime. Available in South Florida. Book, Relax and Enjoy the Chefpost Experience">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="<?php echo get_template_directory_uri() . '/assets/images/ic_cart.png' ?>">
+    <title><?php bloginfo('title'); ?></title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" media="screen"/>
+    <?php wp_head(); ?>
+</head>
+<body>
+<!-- Header section -->
+<header class="fixed-top header">
+    <nav class="navbar navbar-expand-lg navbar-light container">
+
+        <a class="navbar-brand mr-5 pr-5" href="<?php echo esc_url(home_url('/')); ?>">
+            <?php
+            $custom_logo_id = get_theme_mod( 'logo_setup' );
+            $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+            if ( has_custom_logo() ) {
+                echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
+            } else {
+                echo '<h1>' . get_bloginfo('name') . '</h1>';
+            }
+            ?>
+<!--            <img src="--><?php //echo get_template_directory_uri() . '/assets/images/ic_logo_header.png' ?><!--"></a>-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'primary_menu',
+                'menu_class' => 'navbar-nav d-flex align-items-center',
+                'container_class' => 'collapse navbar-collapse',
+                'container_id' => 'navbarSupportedContent',
+                'container' => 'ul',
+
+            ));
+            ?>
+
+            <!--            <ul class="navbar-nav d-flex align-items-center">-->
+            <!--                <li class="nav-item">-->
+            <!--                    <a class="nav-link" href="{{route('about_us')}}">Our Story</a>-->
+            <!--                </li>-->
+            <!--                <li class="nav-item">-->
+            <!--                    <a class="nav-link" href="{{route('services')}}">Services</a>-->
+            <!--                </li>-->
+            <!--                <li class="nav-item">-->
+            <!--                    <a class="nav-link" href="{{route('how_it_works')}}">How It Works</a>-->
+            <!--                </li>-->
+            <!--            </ul>-->
+            <ul class="navbar-nav ml-auto d-flex align-items-center">
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link" href="{{route('get-cart')}}">-->
+                <!--                        <img src="{{asset('frontend/images/ic_cart.png')}}">-->
+                <!--                        @if($cart_count)-->
+                <!--                        <span style="background: white; border-radius: 100%; padding: 3px;" id="total_cart_count">{{$cart_count}}</span>-->
+                <!--                        @endif-->
+                <!--                    </a>-->
+                <!--                </li>-->
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link" href="{{route('edit-profile')}}">-->
+                <!--                        <img src="{{asset('frontend/images/ic_profile.png')}}">-->
+                <!--                    </a>-->
+                <!--                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <button class="hover-ripple theme-button with-background open_login_popup">LOGIN</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <button class="hover-ripple theme-button bordered open_signup_popup">SIGN UP</button>
+                    </a>
+                </li>
+                <div class="media nav-link align-items-center contact-link">
+                    <div class="d-flex mr-2">
+                        <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
+                    </div>
+                    <div class="media-body" style="line-height: 14px;">
+                        <div><a href={{route('customer_inquiry')}}>Contact Us</a>
+                        </div>
+                        <div><span class="text">or call</span> <a href=tel:+17542471998>754-247-1998</a></div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </nav>
+</header>
