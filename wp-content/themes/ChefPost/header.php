@@ -32,17 +32,7 @@
     <nav class="navbar navbar-expand-lg navbar-light container">
 
         <a class="navbar-brand mr-5 pr-5" href="<?php echo esc_url(home_url('/')); ?>">
-            <?php
-            $custom_logo_id = get_theme_mod( 'logo_setup' );
-            $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-
-            if ( has_custom_logo() ) {
-                echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
-            } else {
-                echo '<h1>' . get_bloginfo('name') . '</h1>';
-            }
-            ?>
-<!--            <img src="--><?php //echo get_template_directory_uri() . '/assets/images/ic_logo_header.png' ?><!--"></a>-->
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_logo_header.png' ?>"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -95,16 +85,8 @@
                         <button class="hover-ripple theme-button bordered open_signup_popup">SIGN UP</button>
                     </a>
                 </li>
-                <div class="media nav-link align-items-center contact-link">
-                    <div class="d-flex mr-2">
-                        <i class="fa fa-phone fa-lg" aria-hidden="true"></i>
-                    </div>
-                    <div class="media-body" style="line-height: 14px;">
-                        <div><a href={{route('customer_inquiry')}}>Contact Us</a>
-                        </div>
-                        <div><span class="text">or call</span> <a href=tel:+17542471998>754-247-1998</a></div>
-                    </div>
-                </div>
+                <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Header Contact Info')) :
+                endif; ?>
             </ul>
         </div>
     </nav>

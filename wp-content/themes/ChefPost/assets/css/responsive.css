@@ -183,7 +183,9 @@ iframe {
 }
 }
 @media (min-width: 992px){
-.navbar-expand-lg .navbar-nav .nav-link {
+.navbar-expand-lg .navbar-nav .nav-link,
+.navbar-expand-lg .navbar-nav .menu-item a
+{
     padding-right: 1rem;
     padding-left: 1rem;
  }

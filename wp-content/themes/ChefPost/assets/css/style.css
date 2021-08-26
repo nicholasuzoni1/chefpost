@@ -283,7 +283,9 @@ header .shrink .navbar-brand img{
     height:34px;
     transition: all .3s ease-in-out 0s;
 }
-.navbar-expand-lg .navbar-nav .nav-link {
+.navbar-expand-lg .navbar-nav .nav-link,
+.navbar-expand-lg .navbar-nav .menu-item a
+{
     color: #2D2A26;
     font-size: 16px;
     font-weight: 800;
@@ -565,6 +567,13 @@ header .btn-transparent {
   color: #2D2A26;
   font-size: 16px;
   letter-spacing: 0;
+}
+.how-it-works .image-and-text-block:nth-of-type(odd) .row{
+    flex-direction: row-reverse;
+}
+.how-it-works .image-and-text-block:nth-of-type(odd) .img-pos{
+    left: 0;
+    right: 0;
 }
 /*.image-and-text-block {
   background-image: url(../images/bg_2.png);
@@ -2421,4 +2430,7 @@ select::-ms-expand {  display: none; }
 select{
     -webkit-appearance: none;
     appearance: none;
+}
+.footer-menu .menu-item{
+    display: block;
 }

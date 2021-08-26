@@ -6,7 +6,7 @@
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'footer_menu',
-                    'menu_class' => 'list-inline mb-0',
+                    'menu_class' => 'list-inline mb-0 footer-menu',
                     'container' => 'ul',
                 ));
                 ?>
@@ -22,7 +22,7 @@
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'support_menu',
-                    'menu_class' => 'list-inline mb-0',
+                    'menu_class' => 'list-inline mb-0 footer-menu',
                     'container' => 'ul',
                 ));
                 ?>
@@ -40,21 +40,21 @@
                 <h5>Social Connect</h5>
                 <ul class="list-inline mb-4">
                     <li class="mr-4"><a href="https://www.instagram.com/chefpost/" target="_blank"><img
-                                    src="{{asset('frontend/images/ic_insta.png')}}"></a></li>
+                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_insta.png'?>"></a></li>
                     <li class="mr-4"><a href="https://www.facebook.com/chefpost-102917058142370" target="_blank"><img
-                                    src="{{asset('frontend/images/ic_fb.png')}}"></a></li>
+                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_fb.png'?>"></a></li>
                     <li class="mr-4"><a href="https://www.pinterest.com/Chefpostpins/" target="_blank"><img
-                                    src="{{asset('frontend/images/ic_pinterest.svg')}}"></a></li>
+                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_pinterest.svg'?>"></a></li>
                     <li class="mr-4"><a href="https://www.youtube.com/channel/UCT5OHOUo0ScfQO3F8ck9-Pg" target="_blank"><img
-                                    src="{{asset('frontend/images/ic_youtube.png')}}"></a></li>
+                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_youtube.png'?>"></a></li>
                 </ul>
                 <ul class="list-inline mb-0">
                     <li class="mr-2"><a href="https://apps.apple.com/us/app/chefpost/id1561131582" target="_blank"><img
                                     style="border-radius: 5px;" width="110"
-                                    src="{{asset('frontend/images/AppStore.png')}}"></a></li>
+                                    src="<?php echo get_template_directory_uri() . '/assets/images/AppStore.png'?>"></a></li>
                     <li class="mr-2"><a href="https://play.google.com/store/apps/details?id=com.chefpostuser"
                                         target="_blank"><img width="110" style="border-radius: 5px;"
-                                                             src="{{asset('frontend/images/GooglePlay.png')}}"></a></li>
+                                                             src="<?php echo get_template_directory_uri() . '/assets/images/GooglePlay.png'?>"></a></li>
                 </ul>
             </div>
             <div class="col-md-3 small-text-center">

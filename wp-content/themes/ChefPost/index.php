@@ -85,8 +85,9 @@ endwhile;
             <div class="row">
                 <div class="col-md-12">
                     <div class="services-block">
-                        <h3 class="text-center mt-2">Our Services</h3>
-                        <p class="text-center">Everything will be freshly prepared in your home</p>
+                        <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Our Services Heading Section')) :
+                        endif; ?>
+
                         <div class="row">
                             <?php
                             $args = array('post_type' => 'services', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => 4);
@@ -124,9 +125,8 @@ endwhile;
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
-                    <h3 class="text-center">Featured Chefs</h3>
-                    <p class="text-center mb-5">A pre-vetted, experienced and talented chef is ready to wow you with
-                        their culinary skills</p>
+                    <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Featured Chefs Heading Section')) :
+                    endif; ?>
                     <div class="col-12 p-0">
                         <div id="owl-example-second" class="owl-carousel">
                             <?php
@@ -162,8 +162,8 @@ endwhile;
         <div class="container p-0">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="text-center">How It Works</h3>
-                    <p class="text-center">“We’re here to help you live better, one home-cooked meal at a time”</p>
+                    <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('How It Works Heading Section')) :
+                    endif; ?>
                 </div>
             </div>
         </div>
