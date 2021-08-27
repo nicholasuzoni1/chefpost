@@ -345,7 +345,7 @@ function shortcode_how_it_works_post_type()
             $query->the_post();
             $image = get_field('image');
             $result .= '
-         <div class="image-and-text-block text-left mt-3">
+         <div class="image-and-text-block mt-3">
                 <div class="container">
                     <div class="row d-flex align-items-center sec-height">
                         <img src='. $image . ' class="img-pos">
@@ -368,6 +368,50 @@ function shortcode_how_it_works_post_type()
 }
 
 add_shortcode('how-it-works', 'shortcode_how_it_works_post_type');
+
+
+function services_shortcode( $atts = [], $content = null, $tag = '' ) {
+    // normalize attribute keys, lowercase
+    $atts = array_change_key_case( (array) $atts, CASE_LOWER );
+
+    // override default attributes with user attributes
+    $wporg_atts = shortcode_atts(
+        array(
+            'title' => 'WordPress.org',
+        ), $atts, $tag
+    );
+
+    // start box
+    $o = '<div class="wporg-box">';
+
+    // title
+    $o .= '<h2>' . esc_html__( $wporg_atts['title'], 'wporg' ) . '</h2>';
+
+    // enclosing tags
+    if ( ! is_null( $content ) ) {
+        // secure output by executing the_content filter hook on $content
+        $o .= apply_filters( 'the_content', $content );
+
+        // run shortcode parser recursively
+        $o .= do_shortcode( $content );
+    }
+
+    // end box
+    $o .= '</div>';
+
+    // return output
+    return $o;
+}
+
+/**
+ * Central location to create all shortcodes.
+ */
+function wporg_shortcodes_init() {
+    add_shortcode( 'wporg', 'services_shortcode' );
+}
+
+add_action( 'init', 'wporg_shortcodes_init' );
+
 
 
 function widgets_init()

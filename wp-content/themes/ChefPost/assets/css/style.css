@@ -568,10 +568,11 @@ header .btn-transparent {
   font-size: 16px;
   letter-spacing: 0;
 }
-.how-it-works .image-and-text-block:nth-of-type(odd) .row{
+.how-it-works .image-and-text-block:nth-of-type(even) .row{
     flex-direction: row-reverse;
+    text-align: left;
 }
-.how-it-works .image-and-text-block:nth-of-type(odd) .img-pos{
+.how-it-works .image-and-text-block:nth-of-type(even) .img-pos{
     left: 0;
     right: 0;
 }
