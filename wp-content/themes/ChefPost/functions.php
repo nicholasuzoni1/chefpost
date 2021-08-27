@@ -377,7 +377,10 @@ function services_shortcode( $atts = [], $content = null, $tag = '' ) {
     // override default attributes with user attributes
     $wporg_atts = shortcode_atts(
         array(
-            'title' => 'WordPress.org',
+            'post_type' => 'services',
+            'publish_status' => 'published',
+            'orderby' => 'date',
+            'order' => 'ASC',
         ), $atts, $tag
     );
 
