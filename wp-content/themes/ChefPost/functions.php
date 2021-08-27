@@ -385,7 +385,7 @@ function services_shortcode( $atts = [], $content = null, $tag = '' ) {
     $o = '<div class="wporg-box">';
 
     // title
-    $o .= '<h2>' . esc_html__( $wporg_atts['title'], 'wporg' ) . '</h2>';
+    $o .= '<h2>' . esc_html__( $wporg_atts['title'], 'ChefPost' ) . '</h2>';
 
     // enclosing tags
     if ( ! is_null( $content ) ) {
@@ -406,11 +406,11 @@ function services_shortcode( $atts = [], $content = null, $tag = '' ) {
 /**
  * Central location to create all shortcodes.
  */
-function wporg_shortcodes_init() {
-    add_shortcode( 'wporg', 'services_shortcode' );
+function services_shortcode_init() {
+    add_shortcode( 'services', 'services_shortcode' );
 }
 
-add_action( 'init', 'wporg_shortcodes_init' );
+add_action( 'init', 'services_shortcode_init');
 
 
 
