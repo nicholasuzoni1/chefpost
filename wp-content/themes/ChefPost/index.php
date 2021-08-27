@@ -161,41 +161,15 @@ endwhile;
     <section class="how-it-works">
         <div class="container p-0">
             <div class="row">
-                <div class="col-md-12 mb-3">
+                <div class="col-md-12">
                     <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('How It Works Heading Section')) :
                     endif; ?>
                 </div>
             </div>
         </div>
-
-
-        <?php echo do_shortcode("[how-it-works]"); ?>
-
-
-<!--        --><?php
-//        $args = array('post_type' => 'How It Works', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => 4);
-//        $loop = new WP_Query($args);
-//        while ($loop->have_posts()) : $loop->the_post();
-//            $image = get_field('image');
-//            ?>
-<!--            <div class="image-and-text-block mt-3">-->
-<!--                <div class="container">-->
-<!--                    <div class="row d-flex align-items-center sec-height">-->
-<!--                        <img src="--><?php //echo $image; ?><!--" class="img-pos">-->
-<!--                        <div class="col-md-5">-->
-<!--                            <h3>--><?php //echo get_the_title() ?><!--</h3>-->
-<!--                            <p>--><?php //echo get_the_content() ?><!--</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-md-7">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            --><?php
-//            wp_reset_query();
-//        endwhile;
-//        ?>
     </section>
+
+<?php echo do_shortcode("[full-page-list post_type='How It Works']"); ?>
 
     <!--Story Section-->
 
@@ -236,30 +210,10 @@ endwhile;
                     <h3>Menus, cuisines or diets…</h3>
                 </div>
                 <div class="col-4 text-right">
-                    <a class="theme-button bordered float-right hover-ripple view-all" href="#">View
-                        all</a>
+                    <a class="theme-button bordered float-right hover-ripple view-all" href="#">View all</a>
                 </div>
             </div>
-            <div class="row align-items-center">
-                <?php
-                $args = array('post_type' => 'Cuisines', 'orderby' => 'date', 'order' => 'ASC');
-                $loop = new WP_Query($args);
-                while ($loop->have_posts()) : $loop->the_post();
-                    $image = get_field('image');
-                    ?>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="services-card-btm">
-                            <img class="img-fluid" src="<?php echo $image; ?>"
-                                 style="height:227px; border-radius:3%; min-width: 290px"/>
-                            <h5><?php echo get_the_title() ?></h5>
-                            <p class="mb-1"><?php echo get_the_content() ?></p>
-                        </div>
-                    </div>
-                    <?php
-                    wp_reset_query();
-                endwhile;
-                ?>
-            </div>
+            <?php echo do_shortcode("[col3-list post_type='Cuisines' posts_per_page='3']"); ?>
         </div>
     </section>
 
@@ -338,7 +292,8 @@ while ($loop->have_posts()) : $loop->the_post();
                 <div class="col-md-10 col-lg-8 text-center">
                     <h3><?php echo get_the_title() ?></h3>
                     <p><?php echo get_the_content() ?></p>
-                    <a href="https://www.fountain.com/chefpost/apply/miami-florida-chef?preview=true" target="_blank">
+                    <a href="https://www.fountain.com/chefpost/apply/miami-florida-chef?preview=true"
+                       target="_blank">
                         <button class="theme-button hover-ripple">Apply now!</button>
                     </a>
                 </div>

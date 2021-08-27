@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Services Page
+ * Template Name: Container Page
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -20,11 +20,12 @@ get_header(); ?>
             <div class="section-heading">
                 <h3 class="text-center title"><?php the_title(); ?></h3>
             </div>
-            <?php the_content('Read More'); ?>
         </div>
     </section>
-    <section class="how-it-works pt-0">
-        <?php the_content('Read More'); ?>
+    <section>
+        <div class="container">
+            <?php the_content('Read More'); ?>
+        </div>
     </section>
 <?php endwhile; ?>
 <?php get_footer(); ?>

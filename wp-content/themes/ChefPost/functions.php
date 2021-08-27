@@ -335,6 +335,7 @@ function shortcode_how_it_works_post_type()
         'publish_status' => 'published',
         'orderby' => 'date',
         'order' => 'ASC',
+
     );
 
     $query = new WP_Query($args);
@@ -348,10 +349,10 @@ function shortcode_how_it_works_post_type()
          <div class="image-and-text-block mt-3">
                 <div class="container">
                     <div class="row d-flex align-items-center sec-height">
-                        <img src='. $image . ' class="img-pos">
+                        <img src=' . $image . ' class="img-pos">
                         <div class="col-md-5">
-                            <h3>'.get_the_title().'</h3>
-                            <p>'.get_the_content().'</p>
+                            <h3>' . get_the_title() . '</h3>
+                            <p>' . get_the_content() . '</p>
                         </div>
                         <div class="col-md-7">
                         </div>
@@ -370,51 +371,111 @@ function shortcode_how_it_works_post_type()
 add_shortcode('how-it-works', 'shortcode_how_it_works_post_type');
 
 
-function services_shortcode( $atts = [], $content = null, $tag = '' ) {
+function full_page_list_shortcode($atts = [], $content = null, $tag = '')
+{
     // normalize attribute keys, lowercase
-    $atts = array_change_key_case( (array) $atts, CASE_LOWER );
+    $atts = array_change_key_case((array)$atts, CASE_LOWER);
 
     // override default attributes with user attributes
-    $wporg_atts = shortcode_atts(
+    $args = shortcode_atts(
         array(
-            'post_type' => 'services',
             'publish_status' => 'published',
             'orderby' => 'date',
             'order' => 'ASC',
+            'post_type' => '',
+            'posts_per_page' => '',
+            'category_name' => '',
         ), $atts, $tag
     );
 
-    // start box
-    $o = '<div class="wporg-box">';
+    $query = new WP_Query($args);
 
-    // title
-    $o .= '<h2>' . esc_html__( $wporg_atts['title'], 'ChefPost' ) . '</h2>';
+    $result = '<section class="how-it-works pt-3">';
+    if ($query->have_posts()) :
+        while ($query->have_posts()) :
+            $query->the_post();
+            $image = get_field('image');
+            $result .= '
+         <div class="image-and-text-block mt-3">
+                <div class="container">
+                    <div class="row d-flex align-items-center sec-height">
+                        <img src=' . $image . ' class="img-pos">
+                        <div class="col-md-5">
+                            <h3>' . get_the_title() . '</h3>
+                            <p>' . get_the_content() . '</p>
+                        </div>
+                        <div class="col-md-7">
+                        </div>
+                    </div>
+                </div>
+            </div>
+         ';
+        endwhile;
+        wp_reset_postdata();
 
-    // enclosing tags
-    if ( ! is_null( $content ) ) {
-        // secure output by executing the_content filter hook on $content
-        $o .= apply_filters( 'the_content', $content );
-
-        // run shortcode parser recursively
-        $o .= do_shortcode( $content );
-    }
-
-    // end box
-    $o .= '</div>';
+    endif;
+    $result .= '</section>';
+    return $result;
 
     // return output
-    return $o;
+    return $result;
 }
-
-/**
- * Central location to create all shortcodes.
- */
-function services_shortcode_init() {
-    add_shortcode( 'services', 'services_shortcode' );
+function full_page_list_shortcode_init()
+{
+    add_shortcode('full-page-list', 'full_page_list_shortcode');
 }
+add_action('init', 'full_page_list_shortcode_init');
 
-add_action( 'init', 'services_shortcode_init');
 
+function col3_list_shortcode($atts = [], $content = null, $tag = '')
+{
+    // normalize attribute keys, lowercase
+    $atts = array_change_key_case((array)$atts, CASE_LOWER);
+
+    // override default attributes with user attributes
+    $args = shortcode_atts(
+        array(
+            'publish_status' => 'published',
+            'orderby' => 'date',
+            'order' => 'ASC',
+            'post_type' => '',
+            'posts_per_page' => '',
+            'category_name' => '',
+        ), $atts, $tag
+    );
+
+    $query = new WP_Query($args);
+
+    $result = '<div class="row align-items-center">';
+    if ($query->have_posts()) :
+        while ($query->have_posts()) :
+            $query->the_post();
+            $image = get_field('image');
+            $result .= '
+        <div class="col-md-6 col-lg-4">
+                        <div class="services-card-btm">
+                            <img class="img-fluid" src="' . $image . '"
+                                 style="height:227px; border-radius:3%; min-width: 290px"/>
+                            <h5>' . get_the_title() . '</h5>
+                            <p class="mb-1">' . get_the_content() . '</p>
+                        </div>
+                    </div>
+         ';
+        endwhile;
+        wp_reset_postdata();
+
+    endif;
+    $result .= '</div>';
+    return $result;
+
+    // return output
+    return $result;
+}
+function col3_list_shortcode_init()
+{
+    add_shortcode('col3-list', 'col3_list_shortcode');
+}
+add_action('init', 'col3_list_shortcode_init');
 
 
 function widgets_init()
