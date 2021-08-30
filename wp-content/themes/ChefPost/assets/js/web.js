@@ -1,4 +1,4 @@
-
+let base_url = 'http://localhost:8000/api/';
 $('#search_input').keyup(delay(function (e) {
     console.log('Time elapsed!', this.value);
     findRelatedService(this);
@@ -6,7 +6,6 @@ $('#search_input').keyup(delay(function (e) {
 
 function delay(callback, ms) {
     var timer = 0;
-    console.log(timer);
     return function () {
         var context = this, args = arguments;
         clearTimeout(timer);
@@ -343,18 +342,8 @@ function submitSubscribeForm() {
     });
 }
 
-
-
-// top banner script
-
-$('#search_input').keyup(delay(function (e) {
-    console.log('Time elapsed!', this.value);
-    findRelatedService(this);
-}, 1000));
-
 function delay(callback, ms) {
     var timer = 0;
-    console.log(timer);
     return function () {
         var context = this, args = arguments;
         clearTimeout(timer);
@@ -371,28 +360,24 @@ function findRelatedService(obj) {
         $('#relatedSearchProduct').css('display', 'none');
         return false;
     }
-    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-    $.ajax({
-        type: 'POST',
-        url: "{{route('get_related_search')}}",
-        data: {
-            _token: CSRF_TOKEN,
-            search: search,
-        },
-        async: false,
-        dataType: 'JSON',
-        success: function (results) {
-            if (results.success == true) {
-                var productList = '';
-                console.log(results.related_search);
-                var related = results.related_search;
-                for (var i = 0; i < related.length; i++) {
-                    productList += "<a onclick='fillSearchProductValue(this)' data-value='" + related[i] + "'><span class='product_search_name'>" + related[i] + "</span></a>";
-                }
-                $('#relatedSearchProduct').html(productList);
+    var formdata = new FormData();
+    formdata.append("search", search);
+
+    (async () => {
+        const rawResponse = await fetch(base_url+'wordpress/search', {
+            method: 'POST',
+            body: formdata
+        });
+        const content = await rawResponse.json();
+        if (content.success == true) {
+            var productList = '';
+            var related = content.related_search;
+            for (var i = 0; i < related.length; i++) {
+                productList += "<a onclick='fillSearchProductValue(this)' data-value='" + related[i] + "'><span class='product_search_name'>" + related[i] + "</span></a>";
             }
+            $('#relatedSearchProduct').html(productList);
         }
-    });
+    })();
 }
 
 function fillSearchProductValue(obj) {

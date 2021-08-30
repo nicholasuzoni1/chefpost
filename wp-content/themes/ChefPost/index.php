@@ -127,28 +127,7 @@ endwhile;
                     <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Featured Chefs Heading Section')) :
                     endif; ?>
                     <div class="col-12 p-0">
-                        <div id="owl-example-second" class="owl-carousel">
-                            <?php
-                            $args = array('post_type' => 'Featured Chefs', 'orderby' => 'date', 'order' => 'ASC');
-                            $loop = new WP_Query($args);
-                            while ($loop->have_posts()) : $loop->the_post();
-                                $image = get_field('image');
-                                ?>
-                                <a href="#">
-                                    <div class="col-md-12">
-                                        <div class="chef-image">
-                                            <img class="img-fluid"
-                                                 src="<?php echo $image; ?>"
-                                                 alt="<?php echo get_the_title() ?>">
-                                        </div>
-                                        <h4 class="text-center"><?php echo get_the_title() ?></h4>
-                                    </div>
-                                </a>
-                                <?php
-                                wp_reset_query();
-                            endwhile;
-                            ?>
-                        </div>
+                        <?php echo do_shortcode("[show-chefs]"); ?>
                     </div>
                 </div>
             </div>

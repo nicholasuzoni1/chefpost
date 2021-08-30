@@ -35,7 +35,7 @@
         display: block;
     }
 </style>
-<form action="{{route('filter')}}">
+<form action="http://localhost:8000/filter">
     <div class="bg-white  pt-2 pb-2 pl-3 pr-3 rounded">
         <div class="row align-items-center">
             <div class="col-lg-4">
@@ -73,15 +73,11 @@
             <div class="col-lg-4">
                 <div class="input-btn d-flex">
                     <div class="outer-main">
-                        <input type="" id="search_input" name="search" placeholder="Types of service, cuisines, chefs…"
-                               value="<?php $_GET['search'] != '' ? $_GET['search'] : '' ?>" style="font-size: 18px;" autocomplete="off">
+                        <input type="" id="search_input" name="search" placeholder="Types of service, cuisines, chefs…" value="<?php $_GET['search'] != '' ? $_GET['search'] : '' ?>" style="font-size: 18px;" autocomplete="off">
                         <div class="dropdown">
-
                             <div id="myDIV">
-
                                 <div id="relatedSearchProduct" class="dropdown-content" style="display: none"></div>
                             </div>
-
                         </div>
                     </div>
                     <button class="theme-button with-background float-right hover-ripple search-button">Search</button>
