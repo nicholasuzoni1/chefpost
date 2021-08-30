@@ -20,11 +20,11 @@ function chefPost_scripts()
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), 1, true);
     wp_enqueue_script('forwowcss', get_template_directory_uri() . '/assets/js/forwowcss.js', array(), 1, true);
     wp_enqueue_script('owl.carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), 1, true);
-    wp_enqueue_script('jquery.validate', get_template_directory_uri() . '/assets/js/jquery.validate.min.js', array(), 1, true);
+//    wp_enqueue_script('jquery.validate', get_template_directory_uri() . '/assets/js/jquery.validate.min.js', array(), 1, true);
     wp_enqueue_script('moment', get_template_directory_uri() . '/assets/js/moment.min.js', array(), 1, true);
     wp_enqueue_script('sweetalert', get_template_directory_uri() . '/assets/js/sweetalert2.min.js', array(), 1, true);
     wp_enqueue_script('bootstrap-datepicker', get_template_directory_uri() . '/assets/js/bootstrap-datepicker.js', array(), 1, true);
-    wp_enqueue_script('custom', get_template_directory_uri() . '/assets/js/web.js', array(), 1, true);
+    wp_enqueue_script('custom', get_template_directory_uri() . '/assets/js/web.js', array(), null, true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -166,6 +166,15 @@ add_action('init', 'create_how_it_work_post_type');
 //}
 //add_action( 'init', 'how_it_work_post_type_arg', 0 );
 
+function getChefs()
+{
+    $response = wp_remote_retrieve_body( wp_remote_get ( 'http://localhost:8000/api/wordpress/get-all-chefs' ));
+    // var_dump($response);
+    // exit();
+    return $response;
+    // exit;
+}
+add_action( 'init', 'getChefs' );
 
 function create_our_story_post_type()
 {
@@ -477,6 +486,23 @@ function col3_list_shortcode_init()
 }
 add_action('init', 'col3_list_shortcode_init');
 
+
+function shortcode_select_time()
+{
+    $response = wp_remote_retrieve_body( wp_remote_get ( 'http://localhost:8000/api/wordpress/get-timings' ));
+    $response = json_decode($response);
+    $options = $response->data;
+
+    $result = '<select style="appearance: none;" class="time-select border-0" name="time" id="inputTime" placeholder="Select Time">
+                    <option value="">Select Time</option>';
+                    foreach($options as $key=>$value) {
+                        $result .= '<option value="'.$key.'">'.$value.'</option>';
+                    }
+    $result .= '</select>';
+    return $result;
+}
+
+add_shortcode('show-time', 'shortcode_select_time');
 
 function widgets_init()
 {

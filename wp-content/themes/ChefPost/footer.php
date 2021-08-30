@@ -95,11 +95,11 @@
         timePicker.classList.add("time-picker");
         input.value = "08:30";
         document.getElementById("timePickerValue").value = "08:30";
-    @if
-        (isset($_GET['time']))
-        input.value = "{{$_GET['time']}}";
-        document.getElementById("timePickerValue").value = "{{$_GET['time']}}";
-    @endif
+
+        // (isset($_GET['time']))
+        // input.value = "{{$_GET['time']}}";
+        // document.getElementById("timePickerValue").value = "{{$_GET['time']}}";
+
         //open timepicker
         input.onclick = function () {
             timePicker.classList.toggle("open");

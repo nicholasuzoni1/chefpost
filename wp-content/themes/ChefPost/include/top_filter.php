@@ -41,16 +41,16 @@
             <div class="col-lg-4">
                 <div class="select-address brdrr-1">
                     <input id="autocomplete" type="text" onFocus="initializeAutocomplete()" class="form-control "
-                           name="address" placeholder="City or Zip Code" value="{{$_GET['address']??''}}"
+                           name="address" placeholder="City or Zip Code" value="<?php $_GET['address']!= '' ? $_GET['address'] : '' ?>"
                            style="width: 90%" required>
 
-                    <input type="hidden" name="city" id="city" placeholder="City" value="{{$_GET['city']??''}}">
+                    <input type="hidden" name="city" id="city" placeholder="City" value="<?php $_GET['city']!= '' ? $_GET['city'] : '' ?>">
                     <input type="hidden" name="latitude" id="latitude" placeholder="Latitude"
-                           value="{{$_GET['latitude']??''}}">
+                           value="<?php $_GET['latitude']!= '' ? $_GET['latitude'] : '' ?>">
                     <input type="hidden" name="longitude" id="longitude" placeholder="Longitude"
-                           value="{{$_GET['longitude']??''}}">
+                           value="<?php $_GET['longitude']!= '' ? $_GET['longitude'] : '' ?>">
                     <input type="hidden" name="place_id" id="location_id" placeholder="Location Ids"
-                           value="{{$_GET['place_id']??''}}">
+                           value="<?php $_GET['place_id']!= '' ? $_GET['place_id'] : '' ?>">
 
 
                     <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_location.png' ?>">
@@ -59,30 +59,22 @@
             <div class="col-lg-2 pl-lg-0 border-0 brdrr-1">
                 <div class="select-address">
                     <input type="input" autocomplete="off" id="inputDate" class="datepicker" name="date"
-                           placeholder="Select Date" value="{{$_GET['date']??''}}">
+                           placeholder="Select Date" value="<?php $_GET['date'] != '' ? $_GET['date'] : '' ?>">
                     <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_date.png' ?>">
                 </div>
             </div>
             <div class="col-lg-2  brdrr-1">
                 <div class="select-address" style="padding-left: 6px;">
-                    <select style="appearance: none;" class="time-select border-0" name="time" id="inputTime"
-                            placeholder="Select Time">
-                        <option value="">Select Time</option>
-                        @foreach(config('constants.all_timings') as $key=>$value)
-                        <option value="{{$key}}" {{isset($_GET[
-                        'time']) && $_GET['time']==$key ?'selected':''}}>{{$value}}</option>
-                        @endforeach
-                    </select>
+                    <?php echo do_shortcode("[show-time]"); ?>
                     <img class="select-time"
                          src="<?php echo get_template_directory_uri() . '/assets/images/ic_time.png' ?>">
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="input-btn d-flex">
-                    <!-- <input type="" id="search_input" name="search" placeholder="Type service, cuisines, chefs…" value="{{$_GET['search']??''}}"> -->
                     <div class="outer-main">
                         <input type="" id="search_input" name="search" placeholder="Types of service, cuisines, chefs…"
-                               value="{{$_GET['search']??''}}" style="font-size: 18px;" autocomplete="off">
+                               value="<?php $_GET['search'] != '' ? $_GET['search'] : '' ?>" style="font-size: 18px;" autocomplete="off">
                         <div class="dropdown">
 
                             <div id="myDIV">
