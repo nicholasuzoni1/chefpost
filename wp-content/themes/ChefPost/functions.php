@@ -9,21 +9,23 @@ function chefPost_scripts()
     wp_enqueue_style('sweetAlert', get_template_directory_uri() . '/assets/css/sweetalert2.min.css', array(), 1, 'all');
     wp_enqueue_style('owl.carousel', get_template_directory_uri() . '/assets/css/owl.carousel.min.css', array(), 1, 'all');
     wp_enqueue_style('owl.carousel-theme', get_template_directory_uri() . '/assets/css/owl.theme.default.min.css', array(), 1, 'all');
+    wp_enqueue_style('Bootstrap-datepicker', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css', array(), 1, 'all');
     wp_enqueue_style('theme', get_template_directory_uri() . '/assets/css/style.css', array(), 1, 'all');
     wp_enqueue_style('responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), 1, 'all');
     wp_enqueue_style('animate', get_template_directory_uri() . '/assets/css/animate.css', array(), 1, 'all');
 
 
-    wp_enqueue_script('jquery-slim', get_template_directory_uri() . '/assets/js/jquery-3.3.1.slim.min.js', array(), 1);
-    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.4.1.min.js', array(), 1);
+    wp_enqueue_script('jquery-slim', get_template_directory_uri() . '/assets/js/jquery-3.3.1.slim.min.js', array(), 1, true);
+    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.4.1.min.js', array(), 1, true);
     wp_enqueue_script('popper', get_template_directory_uri() . '/assets/js/popper.min.js', array(), 1, true);
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), 1, true);
     wp_enqueue_script('forwowcss', get_template_directory_uri() . '/assets/js/forwowcss.js', array(), 1, true);
     wp_enqueue_script('owl.carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), 1, true);
-//    wp_enqueue_script('jquery.validate', get_template_directory_uri() . '/assets/js/jquery.validate.min.js', array(), 1, true);
+    wp_enqueue_script('jquery.validate', get_template_directory_uri() . '/assets/js/jquery.validate.min.js', array(), 1, true);
     wp_enqueue_script('moment', get_template_directory_uri() . '/assets/js/moment.min.js', array(), 1, true);
     wp_enqueue_script('sweetalert', get_template_directory_uri() . '/assets/js/sweetalert2.min.js', array(), 1, true);
-    wp_enqueue_script('bootstrap-datepicker', get_template_directory_uri() . '/assets/js/bootstrap-datepicker.js', array(), 1, true);
+    wp_enqueue_script('bootstrap-datepicker', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js', array(), 1, true);
+//    wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/assets/js/jquery-ui.min.js', array(), 1, true);
     wp_enqueue_script('custom', get_template_directory_uri() . '/assets/js/web.js', array(), null, true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {

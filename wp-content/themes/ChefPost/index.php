@@ -323,52 +323,7 @@ endwhile;
         </div>
     </section>
     <script type="text/javascript">
-        $(document).ready(function () {
-            var success = "{!! $v_success !!}";
-            if (success == 1 || success == '1') {
-                swal("An email verification link has been sent to your email account", "Please click on the link that has been sent to your email account to verify your email", "success");
-            }
-        });
 
-        function submitSubscribeForm() {
-            var first_name = $('#first_name_field').val();
-            var last_name = $('#last_name_field').val();
-            var email_address = $('#email_address_field').val();
-            if (!first_name) {
-                swal('warning', 'Please enter your first name', 'warning');
-                return false;
-            }
-            if (!email_address) {
-                swal('warning', 'Please enter your email address', 'warning');
-                return false;
-            }
-            if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email_address)) {
-                swal('warning', 'Please enter your valid email address', 'warning');
-                return false;
-            }
-            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-            $.ajax({
-                type: 'POST',
-                url: "{{route('add_subscriber')}}",
-                data: {
-                    "_token": CSRF_TOKEN,
-                    "first_name": first_name,
-                    "last_name": last_name,
-                    "email_address": email_address
-                },
-                dataType: 'JSON',
-                success: function (results) {
-                    if (results.success === true) {
-                        swal("Done!", results.message, "success");
-                        setTimeout(function () {
-                            location.reload()
-                        }, 3000);
-                    } else {
-                        swal("Error!", results.message, "error");
-                    }
-                }
-            });
-        }
     </script>
 
 <?php get_footer(); ?>

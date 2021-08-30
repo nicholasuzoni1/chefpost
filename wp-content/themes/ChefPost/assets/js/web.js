@@ -1,7 +1,4 @@
-$('.datepicker').datepicker({
-    format: 'mm/dd/yyyy',
-    startDate: 'today'
-});
+
 $('#search_input').keyup(delay(function (e) {
     console.log('Time elapsed!', this.value);
     findRelatedService(this);
@@ -299,3 +296,108 @@ $("#reset-password-email-form").validate({
         }
     },
 });
+$(document).ready(function () {
+    var success = "{!! $v_success !!}";
+    if (success == 1 || success == '1') {
+        swal("An email verification link has been sent to your email account", "Please click on the link that has been sent to your email account to verify your email", "success");
+    }
+});
+
+function submitSubscribeForm() {
+    var first_name = $('#first_name_field').val();
+    var last_name = $('#last_name_field').val();
+    var email_address = $('#email_address_field').val();
+    if (!first_name) {
+        swal('warning', 'Please enter your first name', 'warning');
+        return false;
+    }
+    if (!email_address) {
+        swal('warning', 'Please enter your email address', 'warning');
+        return false;
+    }
+    if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email_address)) {
+        swal('warning', 'Please enter your valid email address', 'warning');
+        return false;
+    }
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+        type: 'POST',
+        url: "{{route('add_subscriber')}}",
+        data: {
+            "_token": CSRF_TOKEN,
+            "first_name": first_name,
+            "last_name": last_name,
+            "email_address": email_address
+        },
+        dataType: 'JSON',
+        success: function (results) {
+            if (results.success === true) {
+                swal("Done!", results.message, "success");
+                setTimeout(function () {
+                    location.reload()
+                }, 3000);
+            } else {
+                swal("Error!", results.message, "error");
+            }
+        }
+    });
+}
+
+
+
+// top banner script
+
+$('#search_input').keyup(delay(function (e) {
+    console.log('Time elapsed!', this.value);
+    findRelatedService(this);
+}, 1000));
+
+function delay(callback, ms) {
+    var timer = 0;
+    console.log(timer);
+    return function () {
+        var context = this, args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+            callback.apply(context, args);
+        }, ms || 0);
+    };
+}
+
+function findRelatedService(obj) {
+    $('#relatedSearchProduct').css('display', 'block');
+    var search = $(obj).val();
+    if (!search) {
+        $('#relatedSearchProduct').css('display', 'none');
+        return false;
+    }
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+        type: 'POST',
+        url: "{{route('get_related_search')}}",
+        data: {
+            _token: CSRF_TOKEN,
+            search: search,
+        },
+        async: false,
+        dataType: 'JSON',
+        success: function (results) {
+            if (results.success == true) {
+                var productList = '';
+                console.log(results.related_search);
+                var related = results.related_search;
+                for (var i = 0; i < related.length; i++) {
+                    productList += "<a onclick='fillSearchProductValue(this)' data-value='" + related[i] + "'><span class='product_search_name'>" + related[i] + "</span></a>";
+                }
+                $('#relatedSearchProduct').html(productList);
+            }
+        }
+    });
+}
+
+function fillSearchProductValue(obj) {
+    var search = $(obj).data('value');
+    $('#search_input').val(search);
+    $('#relatedSearchProduct').css('display', 'none');
+    $('#relatedSearchProduct').html('');
+}

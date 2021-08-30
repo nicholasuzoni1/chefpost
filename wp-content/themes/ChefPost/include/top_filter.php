@@ -92,59 +92,6 @@
 </form>
 
 <script type="text/javascript">
-    $('#search_input').keyup(delay(function (e) {
-        console.log('Time elapsed!', this.value);
-        findRelatedService(this);
-    }, 1000));
 
-    function delay(callback, ms) {
-        var timer = 0;
-        console.log(timer);
-        return function () {
-            var context = this, args = arguments;
-            clearTimeout(timer);
-            timer = setTimeout(function () {
-                callback.apply(context, args);
-            }, ms || 0);
-        };
-    }
-
-    function findRelatedService(obj) {
-        $('#relatedSearchProduct').css('display', 'block');
-        var search = $(obj).val();
-        if (!search) {
-            $('#relatedSearchProduct').css('display', 'none');
-            return false;
-        }
-        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-        $.ajax({
-            type: 'POST',
-            url: "{{route('get_related_search')}}",
-            data: {
-                _token: CSRF_TOKEN,
-                search: search,
-            },
-            async: false,
-            dataType: 'JSON',
-            success: function (results) {
-                if (results.success == true) {
-                    var productList = '';
-                    console.log(results.related_search);
-                    var related = results.related_search;
-                    for (var i = 0; i < related.length; i++) {
-                        productList += "<a onclick='fillSearchProductValue(this)' data-value='" + related[i] + "'><span class='product_search_name'>" + related[i] + "</span></a>";
-                    }
-                    $('#relatedSearchProduct').html(productList);
-                }
-            }
-        });
-    }
-
-    function fillSearchProductValue(obj) {
-        var search = $(obj).data('value');
-        $('#search_input').val(search);
-        $('#relatedSearchProduct').css('display', 'none');
-        $('#relatedSearchProduct').html('');
-    }
 
 </script>
