@@ -189,6 +189,19 @@ function shortcode_getChefs()
 }
 add_shortcode('show-chefs', 'shortcode_getChefs');
 
+function shortcode_getCountriesCodes()
+{
+    $response = wp_remote_retrieve_body( wp_remote_get ( 'http://localhost:8000/api/wordpress/get-countries' ));
+    $response = json_decode($response, true);
+    $options = $response['countries'];
+    $result = '';
+    foreach ($options as $key => $country){
+        $result .= '<option value="'.$country['phone_code'].'">+'.$country['phone_code'].'</option>';
+    }
+    return $result;
+}
+add_shortcode('show-countries-codes', 'shortcode_getCountriesCodes');
+
 function create_our_story_post_type()
 {
     register_post_type('Our Story',

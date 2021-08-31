@@ -246,6 +246,21 @@
     });
 </script>
 <script type="text/javascript">
+    (async () => {
+        const rawResponse = await fetch('http://localhost:8000/api/wordpress/get-countries', {
+            method: 'GET'
+        });
+        const content = await rawResponse.json();
+        if (content.success == true) {
+            var countries_html = '';
+            var countries = content.countries;
+            for (var i = 0; i < countries.length; i++) {
+                countries_html += `<option value="${countries[i].phone_code}">+${countries[i].phone_code}</option>`;
+            }
+            $('#phone_code').append(countries_html);
+        }
+    })();
+
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             $('header').addClass('header');
@@ -371,6 +386,53 @@
         'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '260311002478597');
     fbq('track', 'PageView');
+
+    $(document).on('click', '#user-login-form', function (e) {
+        var formdata = new FormData();
+        formdata.append("phone_email", $("#user_phone_email_login").val().trim());
+        formdata.append("password", $("#user_password").val().trim());
+        (async () => {
+            const rawResponse = await fetch('http://localhost:8000/api/wordpress/user_login', {
+                method: 'POST',
+                body: formdata
+            });
+            const content = await rawResponse.json();
+            if(content.success){
+                $('#myModal').modal('hide');
+                $("#user_phone_email_login").val('')
+                $("#user_password").val('')
+                swal( "An email verification link has been sent to your email account", "Please click on the link that has been sent to your email account to verify your email", "success");
+            }
+        })();
+    })
+
+    $(document).on('click', '#signup_button', function (e) {
+        var formdata = new FormData();
+        formdata.append("first_name", $("#first_name").val().trim());
+        formdata.append("last_name", $("#last_name").val().trim());
+        formdata.append("email", $("#user_email_address").val().trim());
+        formdata.append("phone_code", $("#phone_code").val().trim());
+        formdata.append("phone", $("#user_phone_number").val().trim());
+        formdata.append("password", $("#register_password").val().trim());
+        (async () => {
+            const rawResponse = await fetch('http://localhost:8000/api/wordpress/user_signup', {
+                method: 'POST',
+                body: formdata
+            });
+            const content = await rawResponse.json();
+            console.log(content)
+            if(content.success){
+                $('#myModal').modal('hide');
+                $("#first_name").val('')
+                $("#last_name").val('')
+                $("#user_email_address").val('')
+                $("#phone_code").val('')
+                $("#user_phone_number").val('')
+                $("#register_password").val('')
+                swal( "An email verification link has been sent to your email account", "Please click on the link that has been sent to your email account to verify your email", "success");
+            }
+        })();
+    })
 
 </script>
 <noscript><img height="1" width="1" style="display:none"

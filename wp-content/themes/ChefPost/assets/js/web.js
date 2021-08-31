@@ -386,3 +386,199 @@ function fillSearchProductValue(obj) {
     $('#relatedSearchProduct').css('display', 'none');
     $('#relatedSearchProduct').html('');
 }
+var signupFormSubmission = 0;
+$(document).on('submit',"#user-signup-form",function(event){
+    if(signupFormSubmission == 0){
+        event.preventDefault();
+        grecaptcha.ready(function() {
+            grecaptcha.execute("{{env('RECAPTCHA_SITE_KEY')}}", {action: 'user_signup'}).then(function(token) {
+                $('#user-signup-form').prepend('<input type="hidden" name="token" value="' + token + '">');
+                signupFormSubmission = 1;
+                $('#user-signup-form').unbind('submit').submit();
+            });
+        });
+    }
+})
+
+const isNumericInput = (event) => {
+    const key = event.keyCode;
+    return ((key >= 48 && key <= 57) || // Allow number line
+        (key >= 96 && key <= 105) // Allow number pad
+    );
+};
+
+const isModifierKey = (event) => {
+    const key = event.keyCode;
+    return (event.shiftKey === true || key === 35 || key === 36) || // Allow Shift, Home, End
+        (key === 8 || key === 9 || key === 13 || key === 46) || // Allow Backspace, Tab, Enter, Delete
+        (key > 36 && key < 41) || // Allow left, up, right, down
+        (
+            // Allow Ctrl/Command + A,C,V,X,Z
+            (event.ctrlKey === true || event.metaKey === true) &&
+            (key === 65 || key === 67 || key === 86 || key === 88 || key === 90)
+        )
+};
+
+const enforceFormat = (event) => {
+    // Input must be of a valid number format or a modifier key, and not longer than ten digits
+    if(!isNumericInput(event) && !isModifierKey(event)){
+        event.preventDefault();
+    }
+};
+
+const formatToPhone = (event) => {
+    if(isModifierKey(event)) {return;}
+
+    // I am lazy and don't like to type things more than once
+    const target = event.target;
+    const input = target.value.replace(/\D/g,'').substring(0,10); // First ten digits of input only
+    const areaCode = input.substring(0,3);
+    const middle = input.substring(3,6);
+    const last = input.substring(6,10);
+
+    if(input.length > 6){target.value = `(${areaCode}) ${middle} - ${last}`;}
+    else if(input.length > 3){target.value = `(${areaCode}) ${middle}`;}
+    else if(input.length > 0){target.value = `(${areaCode}`;}
+};
+
+const inputElement = document.getElementById('user_phone_number');
+inputElement.addEventListener('keydown',enforceFormat);
+inputElement.addEventListener('keyup',formatToPhone);
+function change_input_type(type,placeholder)
+{
+    $('#user_phone_email').attr('type',type);
+    $('#user_phone_email').attr('placeholder',placeholder);
+}
+function checKEmailOrOtp()
+{
+    var type = $('input[name="phone_email"]:checked').val();
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    var user_phone_email = $('#user_phone_email').val();
+    if(!user_phone_email)
+    {
+        var value = (type == 'email') ? 'email address' : 'phone number';
+        swal("Error!", 'Please enter '+value, "error");
+    }
+    console.log(type,CSRF_TOKEN,user_phone_email);
+    $.ajax({
+        type: 'POST',
+        url : "{{route('forgot-password')}}",
+        data: {
+            _token: CSRF_TOKEN,
+            phone_email:type,
+            user_phone_email:user_phone_email
+        },
+        dataType: 'JSON',
+        success: function (results) {
+            if(results.success == true)
+            {
+                if(results.type == 'email')
+                {
+                    swal( "A Reset password link has been sent to your email account", "Please click on the link that has been sent to your email account to verify your email and create your new password", "success");
+                    setTimeout(function() {location.reload();}, 3000);
+                }
+                else
+                {
+                    $('#user_phone_code').html(results.user.phone_code);
+                    $('#user_phone_number').html(results.user.phone);
+                    $('#user_phone_phone').val(results.user.phone);
+                    $('#myModal2').modal('show');
+                }
+            }
+            else
+            {
+                swal("Error!", results.message, "error");
+            }
+        }
+    });
+}
+function checkOtp()
+{
+    var first = $('#first_otp').val();
+    var second = $('#second_otp').val();
+    var third = $('#third_otp').val();
+    var fourth = $('#fourth_otp').val();
+    var otp = first+""+second+""+third+""+fourth;
+    if(!otp)
+    {
+        swal("Error!", "Please enter OTP.", "error");
+    }
+    var phone = $('#user_phone_phone').val();
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+        type: 'POST',
+        url : "{{route('check-otp')}}",
+        data: {
+            _token: CSRF_TOKEN,
+            otp : otp,
+            phone : phone
+        },
+        dataType: 'JSON',
+        success: function (results) {
+            if(results.success == true)
+            {
+                $('#user_phone_phone_phone').val(results.user.phone);
+                $('#myModal3').modal('show');
+            }
+            else
+            {
+                swal("Error!", results.message, "error");
+            }
+        }
+    });
+}
+function resetPassword()
+{
+    var phone = $('#user_phone_phone_phone').val();
+    var password = $('#new_password_field').val();
+    var c_password = $('#confirm_password_field').val();
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    if(password == c_password)
+    {
+        $.ajax({
+            type: 'POST',
+            url : "{{route('reset-password-post')}}",
+            data: {
+                _token: CSRF_TOKEN,
+                password : password,
+                phone : phone
+            },
+            dataType: 'JSON',
+            success: function (results) {
+                if(results.success == true)
+                {
+                    $('#myModal3').modal('hide');
+                    $('#myModal2').modal('hide');
+                    $('#myModal').modal('hide');
+                    swal("Success!", results.message, "success");
+                    setTimeout(function() {location.reload();}, 3000);
+                }
+                else
+                {
+                    swal("Error!", results.message, "error");
+                }
+            }
+        });
+    }
+    else
+    {
+        swal("Error!", 'Password does not match', "error");
+    }
+}
+function terms_policy(obj)
+{
+    if($(obj).prop("checked") == true){
+        $('#signup_button').prop('disabled', false);
+    }else{
+        swal('Warning!','Please, agree the terms & condition to continue.','warning');
+        $('#signup_button').prop('disabled', true);
+    }
+}
+$(document).on('click','.open_login_popup',function(){
+    $('#myModal').modal('show');
+    $('.nav-tabs a[href="#loginTab"]').tab('show');
+})
+$(document).on('click','.open_signup_popup',function(){
+    $('#myModal').modal('show');
+    $('.nav-tabs a[href="#registerTab"]').tab('show');
+})
