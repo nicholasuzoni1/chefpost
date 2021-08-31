@@ -1,4 +1,11 @@
-let base_url = 'http://localhost:8000/api/';
+$("ul.sub-menu").parent().addClass("dropdown");
+$("ul.sub-menu").addClass("dropdown-menu");
+$("ul#menu-header li.dropdown a").addClass("dropdown-toggle");
+$("ul.sub-menu li a").removeClass("dropdown-toggle");
+$('.navbar .dropdown-toggle').append('');
+$('a.dropdown-toggle').attr('data-toggle', 'dropdown');
+
+
 $('#search_input').keyup(delay(function (e) {
     console.log('Time elapsed!', this.value);
     findRelatedService(this);
@@ -6,6 +13,7 @@ $('#search_input').keyup(delay(function (e) {
 
 function delay(callback, ms) {
     var timer = 0;
+    console.log(timer);
     return function () {
         var context = this, args = arguments;
         clearTimeout(timer);

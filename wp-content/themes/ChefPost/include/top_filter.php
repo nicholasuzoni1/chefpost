@@ -63,6 +63,8 @@
                     <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_date.png' ?>">
                 </div>
             </div>
+
+
             <div class="col-lg-2  brdrr-1">
                 <div class="select-address" style="padding-left: 6px;">
                     <?php echo do_shortcode("[show-time]"); ?>
