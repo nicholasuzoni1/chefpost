@@ -101,7 +101,7 @@
                     <div class="d-none d-lg-flex col-lg-6">
                         <div class="figBlock">
                             <img class="img-fluid full-width rounded-image" style="height: 100%;"
-                                 src="{{asset('frontend/images/popup-image.png')}}" alt="img"/>
+                                 src="<?php echo get_template_directory_uri() . '/assets/images/popup-image.png' ?>" alt="img"/>
                         </div>
                     </div>
                     <div class="col-lg-6">

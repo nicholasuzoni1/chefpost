@@ -401,7 +401,8 @@
                 $('#myModal').modal('hide');
                 $("#user_phone_email_login").val('')
                 $("#user_password").val('')
-                swal( "An email verification link has been sent to your email account", "Please click on the link that has been sent to your email account to verify your email", "success");
+                swal( "Success", "User logged in successfully.", "success");
+                window.location.replace(`http://localhost:8000/api_login/${content.user_id}/${content.token}`);
             }
         })();
     })
