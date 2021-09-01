@@ -556,13 +556,17 @@ header .btn-transparent {
 .how-it-works {
   padding: 50px 0 20px 0;
 }
-.how-it-works h3 {
+.how-it-works h3,
+.section-heading h3
+{
   color: #2D2A26;
   font-size: 32px;
   font-weight: bold;
   letter-spacing: 0;
 }
-.how-it-works p {
+.how-it-works p,
+.section-heading p
+{
   opacity: 0.7;
   color: #2D2A26;
   font-size: 16px;
@@ -2445,4 +2449,7 @@ select{
 }
 .navbar-nav .dropdown-menu .menu-item:not(:last-child){
     border-bottom: 1px solid #ddd;
+}
+.bannar.inner-page .img-size img{
+    height: 500px;
 }
