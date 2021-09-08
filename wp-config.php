@@ -89,7 +89,10 @@ $table_prefix = 'wp_';
 define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
-
+/*SSL*/
+define('FORCE_SSL_ADMIN', true);
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
+    $_SERVER['HTTPS'] = 'on';
 
 
 /* That's all, stop editing! Happy publishing. */
