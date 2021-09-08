@@ -372,7 +372,7 @@ function findRelatedService(obj) {
     formdata.append("search", search);
 
     (async () => {
-        const rawResponse = await fetch(base_url+'wordpress/search', {
+        const rawResponse = await fetch('https://dev.chefpost.com/api/wordpress/search', {
             method: 'POST',
             body: formdata
         });
