@@ -71,7 +71,8 @@ while ($loop->have_posts()) : $loop->the_post();
             });
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPq-XJNLX2AefMk4PVjjKHzPSLDES6VHs&libraries=places&callback=initializeAutocomplete" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPq-XJNLX2AefMk4PVjjKHzPSLDES6VHs&libraries=places&callback=initializeAutocomplete"
+            async defer></script>
     <?php
     wp_reset_query();
 endwhile;
@@ -287,22 +288,18 @@ endwhile;
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-
                     <!-- Client Code -->
                     <div id="fd-form-5fc7d7b8c792d45aa601ef32"></div>
                     <script>
-                        // window.fd('form', {
-                        //     formId: '5fc7d7b8c792d45aa601ef32',
-                        //     containerEl: '#fd-form-5fc7d7b8c792d45aa601ef32'
-                        // });
+                        window.fd('form', {
+                            formId: '5fc7d7b8c792d45aa601ef32',
+                            containerEl: '#fd-form-5fc7d7b8c792d45aa601ef32'
+                        });
                     </script>
                     <!-- CLient Code -->
                 </div>
             </div>
         </div>
     </section>
-    <script type="text/javascript">
-
-    </script>
 <?php include get_template_directory() . '/include/modals.php'; ?>
 <?php get_footer(); ?>

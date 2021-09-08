@@ -38,65 +38,60 @@ get_header(); ?>
     <?php endwhile; ?>
     <section>
         <div class="container">
-            <div class="">
+            <div class="nav nav-pills my-3" id="blog-tab">
+                <?php
+                $args = array(
+                    'exclude' => array(1, 2, 6)
+                );
+                $categories = get_categories($args);
+                $i = 0;
 
-                <div class="nav nav-pills my-3" id="pills-tab" role="tablist">
-                    <?php
-                    $args = array(
-                        'exclude' => array(1, 2, 6)
-                    );
-                    $categories = get_categories($args);
-                    $i = 0;
-
-                    foreach ($categories as $category) {
-                        ?>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link <?= $i === 0 ? 'active' : '' ?>"
-                               data-toggle="pill" id="pills-<?= $category->term_id ?>-category"
-                               href="#category-<?php echo $category->term_id ?>" role="tab"
-                               aria-controls="category-<?php echo $category->term_id ?>" aria-selected="true">
-                                <?php echo $category->name ?>
-                            </a>
-                        </li>
-                        <?php
-                        $i++;
-                    }
+                foreach ($categories as $category) {
                     ?>
-                </div>
-                <div class="tab-content">
+                    <li class="nav-item">
+                        <button class="hover-ripple theme-button tab-a"
+                                data-id="<?= $category->term_id ?>-category">
+                            <?php echo $category->name ?>
+                        </button>
+                    </li>
                     <?php
-                    $x = 0;
-                    foreach ($categories as $category) {
-                        $args_2 = array('post_type' => 'post', 'posts_per_page' => 100, 'category_name' => $category->name);
-                        $loop = new wp_Query($args_2);
-                        ?>
-                        <div class="tab-pane fade <?= $x === 0 ? 'show active' : '' ?>"
-                             id="category-<?php echo $category->term_id ?>" role="tabpanel"
-                             aria-labelledby="pills-<?php echo $category->term_id ?>-category">
-                            <div class="row align-items-center">
-                                <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-                                    <div class="col-md-6 col-lg-4">
-                                        <div class="services-card-btm">
-                                            <a href="<?php the_permalink(); ?>" target="_blank">
-                                                <img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>"
-                                                     style="height:227px; border-radius:3%; min-width: 290px">
-                                            </a>
-                                            <h5><?php echo the_title(); ?></h5>
-                                            <p class="mb-1"><?php echo get_the_content(); ?></p>
-                                            <p class="meta">Posted by <?php the_author_posts_link(); ?><span
-                                                        class="px-1">on</span><?php the_time('F jS, Y'); ?>
-                                        </div>
-                                    </div>
-                                <?php endwhile; ?>
-                            </div>
-                        </div>
-                        <?php
-                        wp_reset_query();
-                        $x++;
-                    }
-                    ?>
-                </div>
+                    $i++;
+                }
+                ?>
             </div>
+            <div class="blog-tab-content">
+                <?php
+                $x = 0;
+                foreach ($categories as $category) {
+                    $args_2 = array('post_type' => 'post', 'posts_per_page' => 100, 'category_name' => $category->name);
+                    $loop = new wp_Query($args_2);
+                    ?>
+                    <div class="tab"
+                         data-id="<?= $category->term_id ?>-category">
+                        <div class="row align-items-center">
+                            <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="services-card-btm">
+                                        <a href="<?php the_permalink(); ?>" target="_blank">
+                                            <img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>"
+                                                 style="height:227px; border-radius:3%; min-width: 290px">
+                                        </a>
+                                        <h5><?php echo the_title(); ?></h5>
+                                        <p class="mb-1"><?php echo get_the_content(); ?></p>
+                                        <p class="meta">Posted by <?php the_author_posts_link(); ?><span
+                                                    class="px-1">on</span><?php the_time('F jS, Y'); ?>
+                                    </div>
+                                </div>
+                            <?php endwhile; ?>
+                        </div>
+                    </div>
+                    <?php
+                    wp_reset_query();
+                    $x++;
+                }
+                ?>
+            </div>
+
         </div>
     </section>
     <section class="common-section">
@@ -122,7 +117,8 @@ get_header(); ?>
 
                         </div>
                         <div class="col-lg-8 mb-3">
-                            <a href="<?php the_permalink(); ?>" target="_blank"><h5 style="font-weight: 700;"><?php echo the_title(); ?></h5></a>
+                            <a href="<?php the_permalink(); ?>" target="_blank"><h5
+                                        style="font-weight: 700;"><?php echo the_title(); ?></h5></a>
                             <p class="mb-1"><?php echo get_the_content(); ?></p>
                             <p class="meta">Posted by <?php the_author_posts_link(); ?><span
                                         class="px-1">on</span><?php the_time('F jS, Y'); ?>
@@ -135,6 +131,18 @@ get_header(); ?>
             ?>
 
     </section>
+
 </main>
 <?php get_footer(); ?>
+<script>
+    $('.tab-a').click(function () {
+        $(".tab").removeClass('tab-active');
+        $(".tab[data-id='" + $(this).attr('data-id') + "']").addClass("tab-active");
+        $(".tab-a").removeClass('active-a');
+        $(this).parent().find(".tab-a").addClass('active-a');
+    });
+    $("#blog-tab .tab-a:first").addClass('active-a');
+    $(".blog-tab-content .tab:first").addClass('tab-active');
+
+</script>
 

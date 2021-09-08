@@ -21,6 +21,23 @@
             </div>
         <?php endwhile; ?>
     </section>
+    <section class="subscribe pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <!-- Client Code -->
+                    <div id="fd-form-5fc7d7b8c792d45aa601ef32"></div>
+                    <script>
+                        window.fd('form', {
+                            formId: '5fc7d7b8c792d45aa601ef32',
+                            containerEl: '#fd-form-5fc7d7b8c792d45aa601ef32'
+                        });
+                    </script>
+                    <!-- CLient Code -->
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 <?php get_footer(); ?>
 
