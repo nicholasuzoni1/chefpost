@@ -247,7 +247,7 @@
 </script>
 <script type="text/javascript">
     (async () => {
-        const rawResponse = await fetch('http://localhost:8000/api/wordpress/get-countries', {
+        const rawResponse = await fetch('https://dev.chefpost.com/api/wordpress/get-countries', {
             method: 'GET'
         });
         const content = await rawResponse.json();
@@ -392,7 +392,7 @@
         formdata.append("phone_email", $("#user_phone_email_login").val().trim());
         formdata.append("password", $("#user_password").val().trim());
         (async () => {
-            const rawResponse = await fetch('http://localhost:8000/api/wordpress/user_login', {
+            const rawResponse = await fetch('https://dev.chefpost.com/api/wordpress/user_login', {
                 method: 'POST',
                 body: formdata
             });
@@ -402,7 +402,7 @@
                 $("#user_phone_email_login").val('')
                 $("#user_password").val('')
                 swal( "Success", "User logged in successfully.", "success");
-                window.location.replace(`http://localhost:8000/api_login/${content.user_id}/${content.token}`);
+                window.location.replace(`https://dev.chefpost.com/api_login/${content.user_id}/${content.token}`);
             }
         })();
     })
@@ -416,7 +416,7 @@
         formdata.append("phone", $("#user_phone_number").val().trim());
         formdata.append("password", $("#register_password").val().trim());
         (async () => {
-            const rawResponse = await fetch('http://localhost:8000/api/wordpress/user_signup', {
+            const rawResponse = await fetch('https://dev.chefpost.com/api/wordpress/user_signup', {
                 method: 'POST',
                 body: formdata
             });
