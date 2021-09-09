@@ -68,7 +68,7 @@ get_header(); ?>
                     ?>
                     <div class="tab"
                          data-id="<?= $category->term_id ?>-category">
-                        <div class="row align-items-center">
+                        <div class="row align-items-start">
                             <?php while ($loop->have_posts()) : $loop->the_post(); ?>
                                 <div class="col-md-6 col-lg-4">
                                     <div class="services-card-btm">
@@ -77,7 +77,8 @@ get_header(); ?>
                                                  style="height:227px; border-radius:3%; min-width: 290px">
                                         </a>
                                         <h5><?php echo the_title(); ?></h5>
-                                        <p class="mb-1"><?php echo get_the_content(); ?></p>
+<!--                                        <p class="mb-1">--><?php //echo get_the_content(); ?><!--</p>-->
+                                        <p class="mb-1"><?php echo wp_trim_words( get_the_content(), 15, '...' );?></p>
                                         <p class="meta">Posted by <?php the_author_posts_link(); ?><span
                                                     class="px-1">on</span><?php the_time('F jS, Y'); ?>
                                     </div>
@@ -108,7 +109,7 @@ get_header(); ?>
                 $loop = new wp_Query($args);
                 ?>
                 <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-                    <div class="row">
+                    <div class="row align-items-start">
                         <div class="col-lg-4 mb-3">
                             <a href="<?php the_permalink(); ?>" target="_blank">
                                 <img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>"
@@ -119,7 +120,8 @@ get_header(); ?>
                         <div class="col-lg-8 mb-3">
                             <a href="<?php the_permalink(); ?>" target="_blank"><h5
                                         style="font-weight: 700;"><?php echo the_title(); ?></h5></a>
-                            <p class="mb-1"><?php echo get_the_content(); ?></p>
+<!--                            <p class="mb-1">--><?php //echo get_the_content(); ?><!--</p>-->
+                            <p class="mb-1"><?php echo wp_trim_words( get_the_content(), 40, '...' );?></p>
                             <p class="meta">Posted by <?php the_author_posts_link(); ?><span
                                         class="px-1">on</span><?php the_time('F jS, Y'); ?>
                         </div>

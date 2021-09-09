@@ -5,13 +5,14 @@
 $args = array('post_type' => 'banners', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => 1);
 $loop = new WP_Query($args);
 while ($loop->have_posts()) : $loop->the_post();
+    $image = get_field('image');
     ?>
     <section class="bannar">
         <div id="crousel-demo" class="carousel slide" data-ride="carousel">
             <!-- The slideshow -->
             <div class="carousel-inner img-size">
                 <div class="carousel-item active">
-                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+                    <img src="<?php echo $image; ?>" alt="">
                     <div class="main-pos">
                         <div class="container">
                             <div class="row">
@@ -148,7 +149,7 @@ endwhile;
         </div>
     </section>
 
-<?php echo do_shortcode("[full-page-list post_type='How It Works']"); ?>
+<?php echo do_shortcode("[full-page-list post_type='How It Works'  posts_per_page=4]"); ?>
 
     <!--Story Section-->
 

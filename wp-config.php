@@ -86,6 +86,7 @@ $table_prefix = 'wp_';
  *
  * @link https://wordpress.org/support/article/debugging-in-wordpress/
  */
+
 define( 'WP_DEBUG', false );
 
 /* Add any custom values between this line and the "stop editing" line. */
@@ -98,6 +99,7 @@ if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROT
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
+
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', __DIR__ . '/' );
 }
