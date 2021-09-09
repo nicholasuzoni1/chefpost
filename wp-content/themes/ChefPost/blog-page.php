@@ -86,6 +86,7 @@ get_header(); ?>
                             <?php endwhile; ?>
                         </div>
                     </div>
+
                     <?php
                     wp_reset_query();
                     $x++;
