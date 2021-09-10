@@ -95,9 +95,10 @@ endwhile;
                             $loop = new WP_Query($args);
                             while ($loop->have_posts()) : $loop->the_post();
                                 $image = get_field('image');
+                                $link = get_field('link');
                                 ?>
                                 <div class="col-md-3">
-                                    <a href="#">
+                                    <a href="<?php echo $link; ?>">
                                         <div class="services-card">
                                             <img src="<?php echo $image; ?>"
                                                  style="height: 178px; border-radius: 3%; max-width: 245px;">

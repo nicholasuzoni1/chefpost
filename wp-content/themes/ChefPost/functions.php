@@ -175,7 +175,7 @@ function shortcode_getChefs()
     $options = $response['data'];
     $result = '<div id="owl-example-second" class="owl-carousel">';
     foreach ($options as $key => $chef){
-        $result .= '<a href="#">
+        $result .= '<a href="https://dev.chefpost.com/chef/chef-'.$chef['first_name'].'">
             <div class="col-md-12">
                 <div class="chef-image">
                     <img class="img-fluid" src="'. $chef['profile_pic'] .'" alt="'.$chef['first_name'].' '.$chef['last_name'].'">
