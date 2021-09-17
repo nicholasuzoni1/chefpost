@@ -99,7 +99,7 @@ endwhile;
                                 <div class="col-md-3">
                                     <a href="#">
                                         <div class="services-card">
-                                            <img src="<?php echo $image; ?>"
+                                            <img src="<?php the_post_thumbnail_url(array(245, 178)); ?>"
                                                  style="height: 178px; border-radius: 3%; max-width: 245px;">
                                             <div class="pt-2">
                                                 <h5><?php echo get_the_title() ?></h5>
