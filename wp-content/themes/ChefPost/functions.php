@@ -40,6 +40,9 @@ function base_url()
     global $url;
     global $wp;
     $url = home_url($wp->request);
+    if (strpos($url, 'localhost') !== false || strpos($url, '127.0.0.1') !== false) $url = 'http://localhost:8000/';
+    elseif (strpos($url, 'dev') !== false) $url = 'https://dev.chefpost.com/';
+    else $url = 'https://chefpost.com/';
 }
 
 add_action('after_setup_theme', 'base_url');
