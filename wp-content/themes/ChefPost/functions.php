@@ -35,12 +35,14 @@ function chefPost_scripts()
 
 add_action('wp_enqueue_scripts', 'chefPost_scripts');
 
-function base_url() {
+function base_url()
+{
     global $url;
     global $wp;
-    $url = home_url( $wp->request );
+    $url = home_url($wp->request);
 }
-add_action( 'after_setup_theme', 'base_url' );
+
+add_action('after_setup_theme', 'base_url');
 
 if (!function_exists('theme_menu')) {
     function theme_menu()
@@ -176,36 +178,38 @@ add_action('init', 'create_how_it_work_post_type');
 $base_url = 'https://dev.chefpost.com/api/';
 function shortcode_getChefs()
 {
-    $response = wp_remote_retrieve_body( wp_remote_get ( 'https://dev.chefpost.com/api/wordpress/get-all-chefs' ));
+    $response = wp_remote_retrieve_body(wp_remote_get('https://dev.chefpost.com/api/wordpress/get-all-chefs'));
     $response = json_decode($response, true);
     $options = $response['data'];
     $result = '<div id="owl-example-second" class="owl-carousel">';
-    foreach ($options as $key => $chef){
-        $result .= '<a href="https://dev.chefpost.com/chef/chef-'.$chef['first_name'].'">
+    foreach ($options as $key => $chef) {
+        $result .= '<a href="https://dev.chefpost.com/chef/chef-' . $chef['first_name'] . '">
             <div class="col-md-12">
                 <div class="chef-image">
-                    <img class="img-fluid" src="'. $chef['profile_pic'] .'" alt="'.$chef['first_name'].' '.$chef['last_name'].'">
+                    <img class="img-fluid" src="' . $chef['profile_pic'] . '" alt="' . $chef['first_name'] . ' ' . $chef['last_name'] . '">
                 </div>
-                <h4 class="text-center">'.'Chef '.$chef['first_name'] .'</h4>
+                <h4 class="text-center">' . 'Chef ' . $chef['first_name'] . '</h4>
             </div>
         </a>';
     }
     $result .= '</div>';
     return $result;
 }
+
 add_shortcode('show-chefs', 'shortcode_getChefs');
 
 function shortcode_getCountriesCodes()
 {
-    $response = wp_remote_retrieve_body( wp_remote_get ( 'https://dev.chefpost.com/api/wordpress/get-countries' ));
+    $response = wp_remote_retrieve_body(wp_remote_get('https://dev.chefpost.com/api/wordpress/get-countries'));
     $response = json_decode($response, true);
     $options = $response['countries'];
     $result = '';
-    foreach ($options as $key => $country){
-        $result .= '<option value="'.$country['phone_code'].'">+'.$country['phone_code'].'</option>';
+    foreach ($options as $key => $country) {
+        $result .= '<option value="' . $country['phone_code'] . '">+' . $country['phone_code'] . '</option>';
     }
     return $result;
 }
+
 add_shortcode('show-countries-codes', 'shortcode_getCountriesCodes');
 
 function create_our_story_post_type()
@@ -461,10 +465,12 @@ function full_page_list_shortcode($atts = [], $content = null, $tag = '')
     // return output
     return $result;
 }
+
 function full_page_list_shortcode_init()
 {
     add_shortcode('full-page-list', 'full_page_list_shortcode');
 }
+
 add_action('init', 'full_page_list_shortcode_init');
 
 
@@ -493,15 +499,16 @@ function col3_list_shortcode($atts = [], $content = null, $tag = '')
             $query->the_post();
             $image = get_field('image');
             $result .= '
-        <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4">
+                    <a href="'.get_field('link').'">
                         <div class="services-card-btm">
                             <img class="img-fluid" src="' . $image . '"
                                  style="height:227px; border-radius:3%; min-width: 290px"/>
                             <h5>' . get_the_title() . '</h5>
                             <p class="mb-1">' . get_the_content() . '</p>
                         </div>
-                    </div>
-         ';
+                    </a>
+                </div>';
         endwhile;
         wp_reset_postdata();
 
@@ -512,24 +519,26 @@ function col3_list_shortcode($atts = [], $content = null, $tag = '')
     // return output
     return $result;
 }
+
 function col3_list_shortcode_init()
 {
     add_shortcode('col3-list', 'col3_list_shortcode');
 }
+
 add_action('init', 'col3_list_shortcode_init');
 
 
 function shortcode_select_time()
 {
-    $response = wp_remote_retrieve_body( wp_remote_get ( 'https://dev.chefpost.com/api/wordpress/get-timings' ));
+    $response = wp_remote_retrieve_body(wp_remote_get('https://dev.chefpost.com/api/wordpress/get-timings'));
     $response = json_decode($response);
     $options = $response->data;
 
     $result = '<select style="appearance: none;" class="time-select border-0" name="time" id="inputTime" placeholder="Select Time">
                     <option value="">Select Time</option>';
-                    foreach($options as $key=>$value) {
-                        $result .= '<option value="'.$key.'">'.$value.'</option>';
-                    }
+    foreach ($options as $key => $value) {
+        $result .= '<option value="' . $key . '">' . $value . '</option>';
+    }
     $result .= '</select>';
     return $result;
 }
