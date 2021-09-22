@@ -178,15 +178,15 @@ add_action('init', 'create_how_it_work_post_type');
 //    register_post_type( 'How It Works', $args );
 //}
 //add_action( 'init', 'how_it_work_post_type_arg', 0 );
-$base_url = 'https://dev.chefpost.com/api/';
 function shortcode_getChefs()
 {
-    $response = wp_remote_retrieve_body(wp_remote_get('https://dev.chefpost.com/api/wordpress/get-all-chefs'));
+    global $url;
+    $response = wp_remote_retrieve_body(wp_remote_get($url.'api/wordpress/get-all-chefs'));
     $response = json_decode($response, true);
     $options = $response['data'];
     $result = '<div id="owl-example-second" class="owl-carousel">';
     foreach ($options as $key => $chef) {
-        $result .= '<a href="https://dev.chefpost.com/chef/chef-' . $chef['first_name'] . '">
+        $result .= '<a href="'.$url.'chef/chef-' . $chef['first_name'] . '">
             <div class="col-md-12">
                 <div class="chef-image">
                     <img class="img-fluid" src="' . $chef['profile_pic'] . '" alt="' . $chef['first_name'] . ' ' . $chef['last_name'] . '">
@@ -203,7 +203,8 @@ add_shortcode('show-chefs', 'shortcode_getChefs');
 
 function shortcode_getCountriesCodes()
 {
-    $response = wp_remote_retrieve_body(wp_remote_get('https://dev.chefpost.com/api/wordpress/get-countries'));
+    global $url;
+    $response = wp_remote_retrieve_body(wp_remote_get($url.'api/wordpress/get-countries'));
     $response = json_decode($response, true);
     $options = $response['countries'];
     $result = '';
@@ -533,7 +534,8 @@ add_action('init', 'col3_list_shortcode_init');
 
 function shortcode_select_time()
 {
-    $response = wp_remote_retrieve_body(wp_remote_get('https://dev.chefpost.com/api/wordpress/get-timings'));
+    global $url;
+    $response = wp_remote_retrieve_body(wp_remote_get($url.'api/wordpress/get-timings'));
     $response = json_decode($response);
     $options = $response->data;
 
