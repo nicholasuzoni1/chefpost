@@ -88,6 +88,7 @@ function create_services_post_type()
                 'singular_name' => __('Service')
             ),
             'taxonomies' => array('category'),
+            'supports' => array('title', 'editor', 'author', 'thumbnail', 'comments'),
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'services'),
@@ -125,6 +126,7 @@ function create_how_it_work_post_type()
                 'singular_name' => __('How It Works')
             ),
             'taxonomies' => array('category'),
+            'supports' => array('title', 'editor', 'author', 'thumbnail', 'comments'),
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'How It Works'),
@@ -193,6 +195,7 @@ function shortcode_getChefs()
     $result .= '</div>';
     return $result;
 }
+
 add_shortcode('show-chefs', 'shortcode_getChefs');
 
 function shortcode_getCountriesCodes()
@@ -435,14 +438,13 @@ function full_page_list_shortcode($atts = [], $content = null, $tag = '')
     if ($query->have_posts()) :
         while ($query->have_posts()) :
             $query->the_post();
-            $image = get_field('image');
             $result .= '
          <div class="image-and-text-block mt-3">
                 <div class="container">
                     <div class="row d-flex align-items-center sec-height">
-                        <img src=' . $image . ' class="img-pos">
+                        <img src='. get_the_post_thumbnail_url() .' class="img-pos">
                         <div class="col-md-5">
-                            <h3>' . get_the_title() . '</h3>
+                            <h3><a style="color: #946C73;" href=' . get_the_permalink() . '>' . get_the_title() . '</a></h3>
                             <p>' . get_the_content() . '</p>
                         </div>
                         <div class="col-md-7">
@@ -461,10 +463,12 @@ function full_page_list_shortcode($atts = [], $content = null, $tag = '')
     // return output
     return $result;
 }
+
 function full_page_list_shortcode_init()
 {
     add_shortcode('full-page-list', 'full_page_list_shortcode');
 }
+
 add_action('init', 'full_page_list_shortcode_init');
 
 
@@ -512,10 +516,12 @@ function col3_list_shortcode($atts = [], $content = null, $tag = '')
     // return output
     return $result;
 }
+
 function col3_list_shortcode_init()
 {
     add_shortcode('col3-list', 'col3_list_shortcode');
 }
+
 add_action('init', 'col3_list_shortcode_init');
 
 
