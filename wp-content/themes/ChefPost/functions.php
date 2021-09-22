@@ -35,6 +35,12 @@ function chefPost_scripts()
 
 add_action('wp_enqueue_scripts', 'chefPost_scripts');
 
+function base_url() {
+    global $url;
+    global $wp;
+    $url = home_url( $wp->request );
+}
+add_action( 'after_setup_theme', 'base_url' );
 
 if (!function_exists('theme_menu')) {
     function theme_menu()

@@ -1,3 +1,4 @@
+<?php global $url?>
 <footer>
     <div class="container">
         <div class="row">
@@ -247,6 +248,7 @@
 </script>
 <script type="text/javascript">
     (async () => {
+        console.log("<?php echo $url?>")
         const rawResponse = await fetch('https://dev.chefpost.com/api/wordpress/get-countries', {
             method: 'GET'
         });
