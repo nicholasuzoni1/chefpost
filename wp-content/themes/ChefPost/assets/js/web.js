@@ -1,10 +1,13 @@
+let base_url = window.location.href;
+if(base_url.includes('localhost') || base_url.includes('127.0.0.1')) base_url = 'http://localhost:8000/';
+else if(base_url.includes('dev')) base_url = 'https://dev.chefpost.com/';
+else base_url = 'https://chefpost.com/';
 $("ul.sub-menu").parent().addClass("dropdown");
 $("ul.sub-menu").addClass("dropdown-menu");
 $("ul#menu-header li.dropdown a").addClass("dropdown-toggle");
 $("ul.sub-menu li a").removeClass("dropdown-toggle");
 $('.navbar .dropdown-toggle').append('');
 $('a.dropdown-toggle').attr('data-toggle', 'dropdown');
-
 
 $('#search_input').keyup(delay(function (e) {
     console.log('Time elapsed!', this.value);
@@ -372,7 +375,7 @@ function findRelatedService(obj) {
     formdata.append("search", search);
 
     (async () => {
-        const rawResponse = await fetch('https://dev.chefpost.com/api/wordpress/search', {
+        const rawResponse = await fetch(base_url+'api/wordpress/search', {
             method: 'POST',
             body: formdata
         });

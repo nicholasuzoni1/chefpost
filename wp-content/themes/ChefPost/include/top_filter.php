@@ -1,5 +1,5 @@
+<?php global $url ?>
 <style>
-
     .outer-main .dropdown {
         position: relative;
         display: inline-block;
@@ -35,7 +35,8 @@
         display: block;
     }
 </style>
-<form action="https://dev.chefpost.com/filter">
+
+<form action="<?php echo $url.'filter' ?>">
     <div class="bg-white  pt-2 pb-2 pl-3 pr-3 rounded">
         <div class="row align-items-center">
             <div class="col-lg-4">

@@ -1,3 +1,4 @@
+<?php global $url?>
 <?php get_header(); ?>
 
     <!--Banner Section-->
@@ -191,7 +192,7 @@ endwhile;
                     <h3>Menus, cuisines or diets…</h3>
                 </div>
                 <div class="col-4 text-right">
-                    <a class="theme-button bordered float-right hover-ripple view-all" href="https://dev.chefpost.com/cuisines">View all</a>
+                    <a class="theme-button bordered float-right hover-ripple view-all" href="<?php echo $url.'cuisines' ?>">View all</a>
                 </div>
             </div>
             <?php echo do_shortcode("[col3-list post_type='Cuisines' posts_per_page='3']"); ?>
