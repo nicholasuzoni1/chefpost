@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header(); global $url; ?>
 <main class="main how-it-works" style="background: #FFFFFF;">
     <section class="container">
         <?php while (have_posts()) : the_post(); ?>
@@ -9,6 +9,7 @@
                             <p class="meta mb-0">Posted by <a href="#"><?php the_author_posts_link(); ?></a>
                                 on <?php the_time('F jS, Y'); ?></p>
                             <h3 class="h5 title"><?php the_title(); ?></h3>
+                            <a href="<?php echo $url.'filter?' ?>" style="background-color: #aa182c; color: white" class="bt btn-lg">Book It Now</a>
                         </div>
                     </div>
                     <div class="col-lg-8">

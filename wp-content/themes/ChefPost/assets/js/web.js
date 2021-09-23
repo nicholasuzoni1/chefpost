@@ -453,8 +453,10 @@ const formatToPhone = (event) => {
 };
 
 const inputElement = document.getElementById('user_phone_number');
-inputElement.addEventListener('keydown',enforceFormat);
-inputElement.addEventListener('keyup',formatToPhone);
+if(inputElement != null){
+    inputElement.addEventListener('keydown',enforceFormat);
+    inputElement.addEventListener('keyup',formatToPhone);
+}
 function change_input_type(type,placeholder)
 {
     $('#user_phone_email').attr('type',type);
