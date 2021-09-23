@@ -595,3 +595,54 @@ $(document).on('click','.open_signup_popup',function(){
     $('#myModal').modal('show');
     $('.nav-tabs a[href="#registerTab"]').tab('show');
 })
+function submitCustomerForm() {
+    var first_name = $('#first_name_field').val();
+    var last_name = $('#last_name_field').val();
+    var email_address = $('#email_address_field').val();
+    var phone = $('#phone_number_field').val();
+    var message = $('#message_field').val();
+    if (!first_name) {
+        swal('warning', 'Please enter your first name', 'warning');
+        return false;
+    }
+    if (!email_address) {
+        swal('warning', 'Please enter your email address', 'warning');
+        return false;
+    }
+    if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email_address)) {
+        swal('warning', 'Please enter your valid email address', 'warning');
+        return false;
+    }
+    if (!message) {
+        swal('warning', 'Please enter your message', 'warning');
+        return false;
+    }
+    var formdata = new FormData();
+    formdata.append("first_name", first_name);
+    formdata.append("last_name", last_name);
+    formdata.append("email", email_address);
+    formdata.append("phone", phone);
+    formdata.append("message", message);
+    (async () => {
+        const rawResponse = await fetch(base_url+'api/wordpress/customer-inquiry', {
+            method: 'POST',
+            body: formdata
+        });
+        const results = await rawResponse.json();
+        if (results.success === true) {
+            swal({
+                title: "Done!",
+                text: results.message,
+                type: "success"
+            }).then(function () {
+                let base_url = window.location.href;
+                if(base_url.includes('localhost') || base_url.includes('127.0.0.1')) base_url = 'http://localhost/chef-post/';
+                else if(base_url.includes('dev')) base_url = 'https://dev-wordpress.chefpost.com/';
+                else base_url = 'https://wordpress.chefpost.com/';
+                window.location = base_url;
+            });
+        } else {
+            swal("Error!", results.message, "error");
+        }
+    })();
+}
