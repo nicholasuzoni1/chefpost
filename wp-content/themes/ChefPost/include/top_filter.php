@@ -83,7 +83,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="theme-button with-background float-right hover-ripple search-button">Search</button>
+                    <button class="theme-button with-background float-right hover-ripple search-button">Find A Chef</button>
                 </div>
             </div>
         </div>
