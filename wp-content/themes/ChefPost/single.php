@@ -8,8 +8,8 @@
                         <div class="pl-3 pl-lg-4">
 <!--                            <p class="meta mb-0">Posted by <a href="#">--><?php //the_author_posts_link(); ?><!--</a>-->
 <!--                                on --><?php //the_time('F jS, Y'); ?><!--</p>-->
-                            <h3 class="h5 title"><?php the_title(); ?></h3>
-                            <a href="<?php echo $url.'filter?' ?>" style="background-color: #aa182c; color: white" class="bt btn-lg">Book It Now</a>
+                            <h4 class="title"><?php the_title(); ?></h4>
+                            <a href="<?php link('link'); ?>" style="background-color: #aa182c; color: white" class="bt btn-lg">Book It Now</a>
                         </div>
                     </div>
                     <div class="col-lg-8">
