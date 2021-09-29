@@ -2,6 +2,7 @@
 <main class="main how-it-works" style="background: #FFFFFF;">
     <section class="container">
         <?php while (have_posts()) : the_post(); ?>
+            <?php $link = get_field('link'); ?>
             <div class="singleBanner mb-4" style="margin-top: -7px;">
                 <div class="row align-items-center">
                     <div class="col-lg-4">
@@ -9,7 +10,7 @@
 <!--                            <p class="meta mb-0">Posted by <a href="#">--><?php //the_author_posts_link(); ?><!--</a>-->
 <!--                                on --><?php //the_time('F jS, Y'); ?><!--</p>-->
                             <h4 class="title"><?php the_title(); ?></h4>
-                            <a href="<?php link('link'); ?>" style="background-color: #aa182c; color: white" class="bt btn-lg">Book It Now</a>
+                            <a href="<?php echo $link; ?>" style="background-color: #aa182c; color: white" class="bt btn-lg">Book It Now</a>
                         </div>
                     </div>
                     <div class="col-lg-8">
