@@ -13,7 +13,8 @@ global $url; ?>
                     <div class="row align-items-center">
                         <div class="col-lg-4">
                             <div class="pl-3 pl-lg-4 text-center">
-                                <a href="<?php echo $link; ?>" style="background-color: #aa182c; color: white" class="bt btn-sm">Book It Now</a>
+                                <a href="<?php echo $link; ?>" style="background-color: #aa182c; color: white"
+                                   class="bt btn-sm">Book It Now</a>
                             </div>
                         </div>
                         <div class="col-lg-8">
@@ -24,13 +25,10 @@ global $url; ?>
                 <div class="singleBanner mb-4">
                     <div class="row align-items-center">
                         <div class="col-lg-8">
-                            <img width="768" height="512" src="https://www.shankitchen.com/wp-content/uploads/2017/07/Prepare.jpg">
+                            <img width="768" height="512"
+                                 src="https://www.shankitchen.com/wp-content/uploads/2017/07/Prepare.jpg">
                         </div>
-                        <div class="col-lg-4">
-                            <div class="pl-3 pl-lg-4 text-center">
-                                <a href="<?php echo $link; ?>" style="background-color: #aa182c; color: white" class="bt btn-sm">Book It Now</a>
-                            </div>
-                        </div>
+                        <div class="col-lg-4"></div>
                     </div>
                 </div>
             </div>
@@ -87,7 +85,7 @@ global $url; ?>
         });
         const content = await rawResponse.json();
         if (content.success == true) {
-            for(i = 0; i < content.data.length; i++){
+            for (i = 0; i < content.data.length; i++) {
                 $("#services").append(`
                     <div class="col-lg-3">
                     <div class="meal-block" style="position: relative;">

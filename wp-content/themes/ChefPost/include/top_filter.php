@@ -36,22 +36,24 @@
     }
 </style>
 
-<form action="<?php echo $url.'filter' ?>">
+<form action="<?php echo $url . 'filter' ?>">
     <div class="bg-white  pt-2 pb-2 pl-3 pr-3 rounded">
         <div class="row align-items-center">
             <div class="col-lg-4">
                 <div class="select-address brdrr-1">
                     <input id="autocomplete" type="text" onFocus="initializeAutocomplete()" class="form-control "
-                           name="address" placeholder="City or Zip Code" value="<?php $_GET['address']!= '' ? $_GET['address'] : '' ?>"
+                           name="address" placeholder="City or Zip Code"
+                           value="<?php $_GET['address'] != '' ? $_GET['address'] : '' ?>"
                            style="width: 90%" required>
 
-                    <input type="hidden" name="city" id="city" placeholder="City" value="<?php $_GET['city']!= '' ? $_GET['city'] : '' ?>">
+                    <input type="hidden" name="city" id="city" placeholder="City"
+                           value="<?php $_GET['city'] != '' ? $_GET['city'] : '' ?>">
                     <input type="hidden" name="latitude" id="latitude" placeholder="Latitude"
-                           value="<?php $_GET['latitude']!= '' ? $_GET['latitude'] : '' ?>">
+                           value="<?php $_GET['latitude'] != '' ? $_GET['latitude'] : '' ?>">
                     <input type="hidden" name="longitude" id="longitude" placeholder="Longitude"
-                           value="<?php $_GET['longitude']!= '' ? $_GET['longitude'] : '' ?>">
+                           value="<?php $_GET['longitude'] != '' ? $_GET['longitude'] : '' ?>">
                     <input type="hidden" name="place_id" id="location_id" placeholder="Location Ids"
-                           value="<?php $_GET['place_id']!= '' ? $_GET['place_id'] : '' ?>">
+                           value="<?php $_GET['place_id'] != '' ? $_GET['place_id'] : '' ?>">
 
 
                     <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_location.png' ?>">
@@ -76,14 +78,18 @@
             <div class="col-lg-4">
                 <div class="input-btn d-flex">
                     <div class="outer-main">
-                        <input type="" id="search_input" name="search" placeholder="Types of service, cuisines, chefs…" value="<?php $_GET['search'] != '' ? $_GET['search'] : '' ?>" style="font-size: 18px;" autocomplete="off">
+                        <input type="" id="search_input" name="search" placeholder="Types of service, cuisines, chefs…"
+                               value="<?php $_GET['search'] != '' ? $_GET['search'] : '' ?>" style="font-size: 18px;"
+                               autocomplete="off">
                         <div class="dropdown">
                             <div id="myDIV">
                                 <div id="relatedSearchProduct" class="dropdown-content" style="display: none"></div>
                             </div>
                         </div>
                     </div>
-                    <button class="theme-button with-background float-right hover-ripple search-button">Find A Chef</button>
+                    <button class="theme-search-button with-background float-right hover-ripple search-button">Find A
+                        Chef
+                    </button>
                 </div>
             </div>
         </div>

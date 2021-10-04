@@ -1,6 +1,6 @@
 let base_url = window.location.href;
-if(base_url.includes('localhost') || base_url.includes('127.0.0.1')) base_url = 'http://localhost:8000/';
-else if(base_url.includes('dev')) base_url = 'https://dev.chefpost.com/';
+if (base_url.includes('localhost') || base_url.includes('127.0.0.1')) base_url = 'http://localhost:8000/';
+else if (base_url.includes('dev')) base_url = 'https://dev.chefpost.com/';
 else base_url = 'https://chefpost.com/';
 $("ul.sub-menu").parent().addClass("dropdown");
 $("ul.sub-menu").addClass("dropdown-menu");
@@ -375,7 +375,7 @@ function findRelatedService(obj) {
     formdata.append("search", search);
 
     (async () => {
-        const rawResponse = await fetch(base_url+'api/wordpress/search', {
+        const rawResponse = await fetch(base_url + 'api/wordpress/search', {
             method: 'POST',
             body: formdata
         });
@@ -397,12 +397,13 @@ function fillSearchProductValue(obj) {
     $('#relatedSearchProduct').css('display', 'none');
     $('#relatedSearchProduct').html('');
 }
+
 var signupFormSubmission = 0;
-$(document).on('submit',"#user-signup-form",function(event){
-    if(signupFormSubmission == 0){
+$(document).on('submit', "#user-signup-form", function (event) {
+    if (signupFormSubmission == 0) {
         event.preventDefault();
-        grecaptcha.ready(function() {
-            grecaptcha.execute("{{env('RECAPTCHA_SITE_KEY')}}", {action: 'user_signup'}).then(function(token) {
+        grecaptcha.ready(function () {
+            grecaptcha.execute("{{env('RECAPTCHA_SITE_KEY')}}", {action: 'user_signup'}).then(function (token) {
                 $('#user-signup-form').prepend('<input type="hidden" name="token" value="' + token + '">');
                 signupFormSubmission = 1;
                 $('#user-signup-form').unbind('submit').submit();
@@ -432,169 +433,171 @@ const isModifierKey = (event) => {
 
 const enforceFormat = (event) => {
     // Input must be of a valid number format or a modifier key, and not longer than ten digits
-    if(!isNumericInput(event) && !isModifierKey(event)){
+    if (!isNumericInput(event) && !isModifierKey(event)) {
         event.preventDefault();
     }
 };
 
 const formatToPhone = (event) => {
-    if(isModifierKey(event)) {return;}
+    if (isModifierKey(event)) {
+        return;
+    }
 
     // I am lazy and don't like to type things more than once
     const target = event.target;
-    const input = target.value.replace(/\D/g,'').substring(0,10); // First ten digits of input only
-    const areaCode = input.substring(0,3);
-    const middle = input.substring(3,6);
-    const last = input.substring(6,10);
+    const input = target.value.replace(/\D/g, '').substring(0, 10); // First ten digits of input only
+    const areaCode = input.substring(0, 3);
+    const middle = input.substring(3, 6);
+    const last = input.substring(6, 10);
 
-    if(input.length > 6){target.value = `(${areaCode}) ${middle} - ${last}`;}
-    else if(input.length > 3){target.value = `(${areaCode}) ${middle}`;}
-    else if(input.length > 0){target.value = `(${areaCode}`;}
+    if (input.length > 6) {
+        target.value = `(${areaCode}) ${middle} - ${last}`;
+    }
+    else if (input.length > 3) {
+        target.value = `(${areaCode}) ${middle}`;
+    }
+    else if (input.length > 0) {
+        target.value = `(${areaCode}`;
+    }
 };
 
 const inputElement = document.getElementById('user_phone_number');
-if(inputElement != null){
-    inputElement.addEventListener('keydown',enforceFormat);
-    inputElement.addEventListener('keyup',formatToPhone);
+if (inputElement != null) {
+    inputElement.addEventListener('keydown', enforceFormat);
+    inputElement.addEventListener('keyup', formatToPhone);
 }
-function change_input_type(type,placeholder)
-{
-    $('#user_phone_email').attr('type',type);
-    $('#user_phone_email').attr('placeholder',placeholder);
+
+function change_input_type(type, placeholder) {
+    $('#user_phone_email').attr('type', type);
+    $('#user_phone_email').attr('placeholder', placeholder);
 }
-function checKEmailOrOtp()
-{
+
+function checKEmailOrOtp() {
     var type = $('input[name="phone_email"]:checked').val();
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     var user_phone_email = $('#user_phone_email').val();
-    if(!user_phone_email)
-    {
+    if (!user_phone_email) {
         var value = (type == 'email') ? 'email address' : 'phone number';
-        swal("Error!", 'Please enter '+value, "error");
+        swal("Error!", 'Please enter ' + value, "error");
     }
-    console.log(type,CSRF_TOKEN,user_phone_email);
+    console.log(type, CSRF_TOKEN, user_phone_email);
     $.ajax({
         type: 'POST',
-        url : "{{route('forgot-password')}}",
+        url: "{{route('forgot-password')}}",
         data: {
             _token: CSRF_TOKEN,
-            phone_email:type,
-            user_phone_email:user_phone_email
+            phone_email: type,
+            user_phone_email: user_phone_email
         },
         dataType: 'JSON',
         success: function (results) {
-            if(results.success == true)
-            {
-                if(results.type == 'email')
-                {
-                    swal( "A Reset password link has been sent to your email account", "Please click on the link that has been sent to your email account to verify your email and create your new password", "success");
-                    setTimeout(function() {location.reload();}, 3000);
+            if (results.success == true) {
+                if (results.type == 'email') {
+                    swal("A Reset password link has been sent to your email account", "Please click on the link that has been sent to your email account to verify your email and create your new password", "success");
+                    setTimeout(function () {
+                        location.reload();
+                    }, 3000);
                 }
-                else
-                {
+                else {
                     $('#user_phone_code').html(results.user.phone_code);
                     $('#user_phone_number').html(results.user.phone);
                     $('#user_phone_phone').val(results.user.phone);
                     $('#myModal2').modal('show');
                 }
             }
-            else
-            {
+            else {
                 swal("Error!", results.message, "error");
             }
         }
     });
 }
-function checkOtp()
-{
+
+function checkOtp() {
     var first = $('#first_otp').val();
     var second = $('#second_otp').val();
     var third = $('#third_otp').val();
     var fourth = $('#fourth_otp').val();
-    var otp = first+""+second+""+third+""+fourth;
-    if(!otp)
-    {
+    var otp = first + "" + second + "" + third + "" + fourth;
+    if (!otp) {
         swal("Error!", "Please enter OTP.", "error");
     }
     var phone = $('#user_phone_phone').val();
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     $.ajax({
         type: 'POST',
-        url : "{{route('check-otp')}}",
+        url: "{{route('check-otp')}}",
         data: {
             _token: CSRF_TOKEN,
-            otp : otp,
-            phone : phone
+            otp: otp,
+            phone: phone
         },
         dataType: 'JSON',
         success: function (results) {
-            if(results.success == true)
-            {
+            if (results.success == true) {
                 $('#user_phone_phone_phone').val(results.user.phone);
                 $('#myModal3').modal('show');
             }
-            else
-            {
+            else {
                 swal("Error!", results.message, "error");
             }
         }
     });
 }
-function resetPassword()
-{
+
+function resetPassword() {
     var phone = $('#user_phone_phone_phone').val();
     var password = $('#new_password_field').val();
     var c_password = $('#confirm_password_field').val();
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-    if(password == c_password)
-    {
+    if (password == c_password) {
         $.ajax({
             type: 'POST',
-            url : "{{route('reset-password-post')}}",
+            url: "{{route('reset-password-post')}}",
             data: {
                 _token: CSRF_TOKEN,
-                password : password,
-                phone : phone
+                password: password,
+                phone: phone
             },
             dataType: 'JSON',
             success: function (results) {
-                if(results.success == true)
-                {
+                if (results.success == true) {
                     $('#myModal3').modal('hide');
                     $('#myModal2').modal('hide');
                     $('#myModal').modal('hide');
                     swal("Success!", results.message, "success");
-                    setTimeout(function() {location.reload();}, 3000);
+                    setTimeout(function () {
+                        location.reload();
+                    }, 3000);
                 }
-                else
-                {
+                else {
                     swal("Error!", results.message, "error");
                 }
             }
         });
     }
-    else
-    {
+    else {
         swal("Error!", 'Password does not match', "error");
     }
 }
-function terms_policy(obj)
-{
-    if($(obj).prop("checked") == true){
+
+function terms_policy(obj) {
+    if ($(obj).prop("checked") == true) {
         $('#signup_button').prop('disabled', false);
-    }else{
-        swal('Warning!','Please, agree the terms & condition to continue.','warning');
+    } else {
+        swal('Warning!', 'Please, agree the terms & condition to continue.', 'warning');
         $('#signup_button').prop('disabled', true);
     }
 }
-$(document).on('click','.open_login_popup',function(){
+
+$(document).on('click', '.open_login_popup', function () {
     $('#myModal').modal('show');
     $('.nav-tabs a[href="#loginTab"]').tab('show');
 })
-$(document).on('click','.open_signup_popup',function(){
+$(document).on('click', '.open_signup_popup', function () {
     $('#myModal').modal('show');
     $('.nav-tabs a[href="#registerTab"]').tab('show');
 })
+
 function submitCustomerForm() {
     var first_name = $('#first_name_field').val();
     var last_name = $('#last_name_field').val();
@@ -624,7 +627,7 @@ function submitCustomerForm() {
     formdata.append("phone", phone);
     formdata.append("message", message);
     (async () => {
-        const rawResponse = await fetch(base_url+'api/wordpress/customer-inquiry', {
+        const rawResponse = await fetch(base_url + 'api/wordpress/customer-inquiry', {
             method: 'POST',
             body: formdata
         });
@@ -636,8 +639,8 @@ function submitCustomerForm() {
                 type: "success"
             }).then(function () {
                 let base_url = window.location.href;
-                if(base_url.includes('localhost') || base_url.includes('127.0.0.1')) base_url = 'http://localhost/chef-post/';
-                else if(base_url.includes('dev')) base_url = 'https://dev-wordpress.chefpost.com/';
+                if (base_url.includes('localhost') || base_url.includes('127.0.0.1')) base_url = 'http://localhost/chef-post/';
+                else if (base_url.includes('dev')) base_url = 'https://dev-wordpress.chefpost.com/';
                 else base_url = 'https://wordpress.chefpost.com/';
                 window.location = base_url;
             });

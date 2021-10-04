@@ -314,7 +314,27 @@ button:focus {
     /*height: 64px;*/
 }
 
+.theme-search-button {
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    padding: 4px 10px;
+    margin-top: 5px;
+    border: 1px solid #AA182C;
+    font-family: 'Gelion' !important;
+    background-color: #FAEFDF;
+    /*height: 64px;*/
+}
+
 .theme-button.with-background {
+    background-color: #AA182C;
+    color: #FFFFFF;
+
+}
+
+.theme-search-button.with-background {
     background-color: #AA182C;
     color: #FFFFFF;
 
