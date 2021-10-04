@@ -452,7 +452,7 @@ function full_page_list_shortcode($atts = [], $content = null, $tag = '')
                     <div class="row d-flex align-items-center sec-height">
                         <img src='. get_the_post_thumbnail_url() .' class="img-pos">
                         <div class="col-md-5">
-                            <h3><a style="color: #946C73;" href="'. $url.'filter?'.'">' . get_the_title() . '</a></h3>
+                            <h3><a style="color: #946C73;" href="'. get_permalink() .'">' . get_the_title() . '</a></h3>
                             <p>' . get_the_content() . '</p>
                             
                         </div>
