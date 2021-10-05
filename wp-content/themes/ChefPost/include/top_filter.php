@@ -81,11 +81,11 @@
                         <input type="" id="search_input" name="search" placeholder="Types of service, cuisines, chefs…"
                                value="<?php $_GET['search'] != '' ? $_GET['search'] : '' ?>" style="font-size: 18px;"
                                autocomplete="off">
-                        <div class="dropdown">
-                            <div id="myDIV">
-                                <div id="relatedSearchProduct" class="dropdown-content" style="display: none"></div>
-                            </div>
-                        </div>
+<!--                        <div class="dropdown">-->
+<!--                            <div id="myDIV">-->
+<!--                                <div id="relatedSearchProduct" class="dropdown-content" style="display: none"></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
                     <button class="theme-search-button with-background float-right hover-ripple search-button">Find A
                         Chef
