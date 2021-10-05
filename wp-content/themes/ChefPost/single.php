@@ -13,8 +13,11 @@ global $url; ?>
                     <div class="row align-items-center">
                         <div class="col-lg-4">
                             <div class="pl-3 pl-lg-4 text-center">
-                                <a href="<?php echo $link; ?>" style="background-color: #aa182c; color: white"
-                                   class="bt btn-lg">Book It Now</a>
+                                <div class="text-left">
+                                    <h4 class="title"><?php the_title(); ?></h4>
+                                    <a href="<?php echo $link; ?>" style="background-color: #aa182c; color: white"
+                                       class="bt btn-sm">Book It Now</a>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-8">
