@@ -90,7 +90,7 @@ endwhile;
                         <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Our Services Heading Section')) :
                         endif; ?>
 
-                        <div class="row justify-content-center">
+                        <div class="row" style="justify-content: space-evenly;">
                             <?php
                             $args = array('post_type' => 'services', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => 4);
                             $loop = new WP_Query($args);

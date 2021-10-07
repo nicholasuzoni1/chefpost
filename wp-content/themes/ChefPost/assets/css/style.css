@@ -427,6 +427,7 @@ header .shrink .navbar-brand img {
     font-weight: 800;
     letter-spacing: 0;
     font-family: 'Gilroy' !important;
+    display:inline-block;
 }
 
 header .navbar-light .navbar-nav .nav-link:focus, header .navbar-light .navbar-nav .nav-link:hover {
@@ -2947,6 +2948,7 @@ select {
     background: #FAEFDF;
     border-radius: 0;
     border: none;
+    min-width: 225px;
 }
 
 .navbar-nav .dropdown-menu .menu-item {
