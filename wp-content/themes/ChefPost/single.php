@@ -28,24 +28,24 @@ global $url; ?>
                 <div class="post-content">
                     <?php the_content('Read More'); ?>
                 </div>
-                <div class="singleBanner mb-4">
-                    <div class="row align-items-center">
-                        <div class="col-lg-8">
-                            <img width="768" height="512"
-                                 src="https://www.shankitchen.com/wp-content/uploads/2017/07/Prepare.jpg">
-                        </div>
-                        <div class="col-lg-4"></div>
-                    </div>
-                </div>
+<!--                <div class="singleBanner mb-4">-->
+<!--                    <div class="row align-items-center">-->
+<!--                        <div class="col-lg-8">-->
+<!--                            <img width="768" height="512"-->
+<!--                                 src="https://www.shankitchen.com/wp-content/uploads/2017/07/Prepare.jpg">-->
+<!--                        </div>-->
+<!--                        <div class="col-lg-4"></div>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
-            <div class="post-content">
-                <?php the_content('Read More'); ?>
-            </div>
+<!--            <div class="post-content">-->
+<!--                --><?php //the_content('Read More'); ?>
+<!--            </div>-->
         <?php endwhile; ?>
 
-        <div class="row" id="services">
-
-        </div>
+<!--        <div class="row" id="services">-->
+<!---->
+<!--        </div>-->
 
     </section>
     <section class="subscribe" style="background:#fbf9f6; margin-bottom: -25px;">
@@ -72,36 +72,36 @@ global $url; ?>
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-    let name = $(".title").html()
-    name = name.replace(/\s/g, '-');
-
-    (async () => {
-        const rawResponse = await fetch(base_url + `api/wordpress/services/${name}`, {
-            method: 'GET'
-        });
-        const content = await rawResponse.json();
-        if (content.success == true) {
-            for (i = 0; i < content.data.length; i++) {
-                $("#services").append(`
-                    <div class="col-lg-3">
-                    <div class="meal-block" style="position: relative;">
-                        <div class="meal-image">
-                            <a href="${base_url}chef/chef-${content.data[i]['user'].first_name}/${capitalizeFirstLetter(name.toLowerCase())}/${content.data[i]['slug']}" style="color: black">
-                                <img class="img-fluid" style="border-radius: 3%" src="${base_url}${content.data[i]['image_url']}">
-                            </a>
-                        </div>
-                        <div class="mt-2">
-                            <h6>
-                                <a href="http://localhost:8000/chef/chef-Gina/Cook-with-my-ingredients/homemade-breakfast" style="color: black">${content.data[i]['title']}</a>
-                                <strong class="float-right">$${content.data[i]['price']}</strong>
-                            </h6>
-                            <p>${content.data[i]['description']}</p>
-                        </div>
-                    </div>
-                </div>
-                `)
-            }
-        }
-    })();
+    // let name = $(".title").html()
+    // name = name.replace(/\s/g, '-');
+    //
+    // (async () => {
+    //     const rawResponse = await fetch(base_url + `api/wordpress/services/${name}`, {
+    //         method: 'GET'
+    //     });
+    //     const content = await rawResponse.json();
+    //     if (content.success == true) {
+    //         for (i = 0; i < content.data.length; i++) {
+    //             $("#services").append(`
+    //                 <div class="col-lg-3">
+    //                 <div class="meal-block" style="position: relative;">
+    //                     <div class="meal-image">
+    //                         <a href="${base_url}chef/chef-${content.data[i]['user'].first_name}/${capitalizeFirstLetter(name.toLowerCase())}/${content.data[i]['slug']}" style="color: black">
+    //                             <img class="img-fluid" style="border-radius: 3%" src="${base_url}${content.data[i]['image_url']}">
+    //                         </a>
+    //                     </div>
+    //                     <div class="mt-2">
+    //                         <h6>
+    //                             <a href="http://localhost:8000/chef/chef-Gina/Cook-with-my-ingredients/homemade-breakfast" style="color: black">${content.data[i]['title']}</a>
+    //                             <strong class="float-right">$${content.data[i]['price']}</strong>
+    //                         </h6>
+    //                         <p>${content.data[i]['description']}</p>
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //             `)
+    //         }
+    //     }
+    // })();
 </script>
 
