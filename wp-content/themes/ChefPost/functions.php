@@ -93,6 +93,7 @@ function create_services_post_type()
                 'singular_name' => __('Service')
             ),
             'taxonomies' => array('category'),
+            'show_in_rest' => true,
             'supports' => array('title', 'editor', 'author', 'thumbnail', 'comments'),
             'public' => true,
             'has_archive' => true,
@@ -131,6 +132,7 @@ function create_how_it_work_post_type()
                 'singular_name' => __('How It Works')
             ),
             'taxonomies' => array('category'),
+            'show_in_rest' => true,
             'supports' => array('title', 'editor', 'author', 'thumbnail', 'comments'),
             'public' => true,
             'has_archive' => true,
@@ -582,8 +584,6 @@ function widgets_init()
         'before_widget' => '<div class="section-heading">',
         'after_widget' => '</div>',
     ));
-
-
 }
 
 add_action('widgets_init', 'widgets_init');
