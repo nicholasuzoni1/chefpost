@@ -15,8 +15,8 @@ global $url; ?>
                             <div class="pl-3 pl-lg-4 text-center">
                                 <div class="text-left">
                                     <h4 class="title"><?php the_title(); ?></h4>
-                                    <a href="<?php echo $link; ?>" style="background-color: #aa182c; color: white"
-                                       class="bt btn-sm">Book It Now</a>
+<!--                                    <a href="--><?php //echo $link; ?><!--" style="background-color: #aa182c; color: white"-->
+<!--                                       class="bt btn-sm">Book It Now</a>-->
                                 </div>
                             </div>
                         </div>
