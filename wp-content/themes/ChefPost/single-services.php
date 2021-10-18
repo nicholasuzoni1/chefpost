@@ -12,7 +12,7 @@
  * @package ChefPost
  */
 get_header(); ?>
-<main class="main how-it-works" style="background: #FFFFFF;">
+<main class="main how-it-works" style="background: #FFFFFF; padding: 80px 0 20px 0;">
     <section class="container">
         <?php while (have_posts()) : the_post(); ?>
             <?php the_content(); ?>
