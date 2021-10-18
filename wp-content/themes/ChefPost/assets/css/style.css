@@ -840,7 +840,9 @@ header .btn-transparent {
     font-family: "Atlas Grotesk";
 }
 
-.services-card-btm h5 {
+.services-card-btm h5,
+.services-card-btm h5 a
+{
     color: #2D2A26;
     font-size: 20px;
     font-weight: bold;
