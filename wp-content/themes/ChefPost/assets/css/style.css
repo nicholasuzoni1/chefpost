@@ -3076,3 +3076,24 @@ fieldset {
 :-ms-input-placeholder {
     color: #888;
 }
+.services-img img {
+    border-radius: 6px !important;
+    height: 227px;
+    min-width: 350px;
+}
+.wp-block-media-text__media img, .wp-block-media-text__media video {
+    max-width: unset;
+    width: auto;
+    vertical-align: middle;
+}
+.srvBtn a {
+    background-color: #AA182C;
+    color: #FFFFFF !important;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    padding: 10px 28px;
+    border: 1px solid #AA182C;
+    font-family: 'Gelion' !important;
+}
