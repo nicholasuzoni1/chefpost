@@ -21,7 +21,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <link rel="icon" type="image/png" sizes="16x16"
           href="<?php echo get_template_directory_uri() . '/assets/images/ic_cart.png' ?>">
-    <title><?php bloginfo('title'); ?></title>
+    <title>ChefPost</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" media="screen"/>
     <?php wp_head(); ?>
