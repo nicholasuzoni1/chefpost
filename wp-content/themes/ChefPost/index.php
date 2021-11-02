@@ -274,7 +274,7 @@ while ($loop->have_posts()) : $loop->the_post();
                 <div class="col-md-10 col-lg-8 text-center">
                     <h3><?php echo get_the_title() ?></h3>
                     <p><?php echo get_the_content() ?></p>
-                    <a href="https://www.fountain.com/chefpost/apply/miami-florida-chef?preview=true"
+                    <a href="https://view.flodesk.com/pages/618042b7db5bc2b4fb307d40?preview=true"
                        target="_blank">
                         <button class="theme-button hover-ripple">Apply now!</button>
                     </a>
