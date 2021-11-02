@@ -1,7 +1,7 @@
 let base_url = window.location.href;
 if (base_url.includes('localhost') || base_url.includes('127.0.0.1')) base_url = 'http://localhost:8000/';
 else if (base_url.includes('dev')) base_url = 'https://dev.chefpost.com/';
-else base_url = 'https://chefpost.com/';
+else base_url = 'https://booking.chefpost.com/';
 $("ul.sub-menu").parent().addClass("dropdown");
 $("ul.sub-menu").addClass("dropdown-menu");
 $("ul#menu-header li.dropdown a").addClass("dropdown-toggle");
