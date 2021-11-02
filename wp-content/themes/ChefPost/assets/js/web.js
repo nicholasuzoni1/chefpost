@@ -641,7 +641,7 @@ function submitCustomerForm() {
                 let base_url = window.location.href;
                 if (base_url.includes('localhost') || base_url.includes('127.0.0.1')) base_url = 'http://localhost/chef-post/';
                 else if (base_url.includes('dev')) base_url = 'https://dev-wordpress.chefpost.com/';
-                else base_url = 'https://wordpress.chefpost.com/';
+                else base_url = 'https://chefpost.com/';
                 window.location = base_url;
             });
         } else {
