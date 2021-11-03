@@ -92,7 +92,7 @@ endwhile;
 
                         <div class="row" style="justify-content: space-evenly;">
                             <?php
-                            $args = array('post_type' => 'services', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => 4);
+                            $args = array('post_type' => 'services', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => 4, 'category_name' => 'Home page Services');
                             $loop = new WP_Query($args);
                             while ($loop->have_posts()) : $loop->the_post();
                                 $image = get_field('image');
