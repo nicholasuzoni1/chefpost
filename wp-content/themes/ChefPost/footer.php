@@ -1,4 +1,6 @@
 <?php global $url?>
+<?php include get_template_directory() . '/include/modals.php'; ?>
+
 <footer>
     <div class="container">
         <div class="row">

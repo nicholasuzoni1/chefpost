@@ -304,5 +304,5 @@ endwhile;
             </div>
         </div>
     </section>
-<?php include get_template_directory() . '/include/modals.php'; ?>
+<?php //include get_template_directory() . '/include/modals.php'; ?>
 <?php get_footer(); ?>
