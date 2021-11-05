@@ -156,7 +156,7 @@
 <!--                                        </div>-->
                                         <div class="col-lg-12 mb-3">
 <!--                                            <a href="http://localhost:8000?key=wordpress_google_login" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">-->
-                                            <a href="https://dev.chefpost.com?key=wordpress_google_login" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
+                                            <a href="https://booking.chefpost.com?key=wordpress_google_login" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
                                                 <button type="button" class="full-width hover-ripple facebook-btn"
                                                         style="background-color: #4285F4;">
                                                     Login with Google
