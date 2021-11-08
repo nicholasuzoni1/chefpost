@@ -6,12 +6,12 @@
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-Redirect 301 /cuisines https://booking.chefpost.com/cuisines
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
+Redirect 301 /cuisines https://booking.chefpost.com/cuisines
 </IfModule>
 # END WordPress
 
