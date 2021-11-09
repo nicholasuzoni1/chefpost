@@ -21,12 +21,13 @@ Redirect 301 /chef/chef-Reni https://booking.chefpost.com/chef/chef-Reni
 Redirect 301 /chef/chef-Reni?id=580 https://booking.chefpost.com/chef/chef-Reni?id=580
 Redirect 301 /chef/chef-Gina https://booking.chefpost.com/chef/chef-Gina
 Redirect 301 /chef/chef-Gina?id=2 https://booking.chefpost.com/chef/chef-Gina?id=2
-Redirect 301 /chef/chef-Anna https://booking.chefpost.com/chef-Anna
-Redirect 301 /chef/chef-Anna?id=515 https://booking.chefpost.com/chef-Anna?id=515
+
+Redirect 301 /chef/chef-Anna https://booking.chefpost.com/chef/chef-Anna
+Redirect 301 /chef/chef-Anna?id=515 https://booking.chefpost.com/chef/chef-Anna?id=515
+
 Redirect 301 /chef/chef-Selene https://booking.chefpost.com/chef/chef-Selene
 Redirect 301 /chef/chef-Selene?id=603 https://booking.chefpost.com/chef/chef-Selene?id=603
-Redirect 301 /chef/chef-Selene https://booking.chefpost.com/chef/chef-Selene
-Redirect 301 /chef/chef-Selene?id=603 https://booking.chefpost.com/chef/chef-Selene?id=603
+
 Redirect 301 /chef/chef-Rossy https://booking.chefpost.com/chef/chef-Rossy
 Redirect 301 /chef/chef-Rossy?id=508 https://booking.chefpost.com/chef/chef-Rossy?id=508
 Redirect 301 /chef/chef-Julieta https://booking.chefpost.com/chef/chef-Julieta
@@ -42,9 +43,9 @@ Redirect 301 /chef/chef-Selene/Events/mexico-lindo https://booking.chefpost.com/
 Redirect 301 /chef/chef-David/Events/asian-horderves https://booking.chefpost.com/chef/chef-David/Events/asian-horderves
 Redirect 301 /chef/chef-Selene/Events/healthy-brunch https://booking.chefpost.com/chef/chef-Selene/Events/healthy-brunch
 Redirect 301 /chef/chef-Rossy/Events/weekend-brunch-2 https://booking.chefpost.com/chef/chef-Rossy/Events/weekend-brunch-2
-Redirect 301 /chef-David/Fine-dining/the-godfather https://booking.chefpost.com/chef-David/Fine-dining/the-godfather
-Redirect 301 /chef-Reni/Events/hors-doeuvre-party https://booking.chefpost.com/chef-Reni/Events/hors-doeuvre-party
-Redirect 301 /chef-Gina/Fine-dining/posta-cartagenera https://booking.chefpost.com/chef-Gina/Fine-dining/posta-cartagenera
+Redirect 301 /chef/chef-David/Fine-dining/the-godfather https://booking.chefpost.com/chef/chef-David/Fine-dining/the-godfather
+Redirect 301 /chef/chef-Reni/Events/hors-doeuvre-party https://booking.chefpost.com/chef/chef-Reni/Events/hors-doeuvre-party
+Redirect 301 /chef/chef-Gina/Fine-dining/posta-cartagenera https://booking.chefpost.com/chef/chef-Gina/Fine-dining/posta-cartagenera
 Redirect 301 /chef/chef-Gina/Fine-dining/mushroom-stroganoff https://booking.chefpost.com/chef/chef-Gina/Fine-dining/mushroom-stroganoff
 Redirect 301 /chef/chef-David/Events/learn-to-prep https://booking.chefpost.com/chef/chef-David/Events/learn-to-prep
 Redirect 301 /chef/chef-Liz/Fine-dining/chinese-4-course https://booking.chefpost.com/chef/chef-Liz/Fine-dining/chinese-4-course
@@ -55,9 +56,13 @@ Redirect 301 /chef/chef-Gina/Events/kids-party-menu-2 https://booking.chefpost.c
 Redirect 301 /chef/chef-Reni/Events/special-4-course-dinner https://booking.chefpost.com/chef/chef-Reni/Events/special-4-course-dinner
 Redirect 301 /chef/chef-Julieta/Fine-dining/lunch-3-course https://booking.chefpost.com/chef/chef-Julieta/Fine-dining/lunch-3-course
 Redirect 301 /chef/chef-Liz/Events/custom-menu-3-course https://booking.chefpost.com/chef/chef-Liz/Events/custom-menu-3-course
+#error
 Redirect 301 /chef/chef-Anna/Fine-dining/plant-based-japanese https://booking.chefpost.com/chef/chef-Anna/Fine-dining/plant-based-japanese
+#error
 Redirect 301 /chef/chef-Anna/Fine-dining/plant-based-brunch https://booking.chefpost.com/chef/chef-Anna/Fine-dining/plant-based-brunch
+#error
 Redirect 301 /chef/chef-Anna/Meal-Prep/vegan-weekday-meal https://booking.chefpost.com/chef/chef-Anna/Meal-Prep/vegan-weekday-meal
+
 Redirect 301 /chef/chef-Reni/Fine-dining/special-mediterranean-menu https://booking.chefpost.com/chef/chef-Reni/Fine-dining/special-mediterranean-menu
 Redirect 301 /chef/chef-Gina/Prix-fixe-Menu/posta-cartagenera https://booking.chefpost.com/chef/chef-Gina/Prix-fixe-Menu/posta-cartagenera
 Redirect 301 /chef/chef-David/Fine-dining/the-french-connection https://booking.chefpost.com/chef/chef-David/Fine-dining/the-french-connection
@@ -66,14 +71,18 @@ Redirect 301 /chef/chef-David/Prix-fixe-Menu/almond-crusted-halibut https://book
 Redirect 301 /chef/chef-David/Prix-fixe-Menu/braised-short-rib https://booking.chefpost.com/chef/chef-David/Prix-fixe-Menu/braised-short-rib
 Redirect 301 /chef/chef-Liz/Meal-Prep/weekday-lunch-and-dinner https://booking.chefpost.com/chef/chef-Liz/Meal-Prep/weekday-lunch-and-dinner
 Redirect 301 /chef/chef-Liz/Prix-fixe-Menu/vegan-4-course https://booking.chefpost.com/chef/chef-Liz/Prix-fixe-Menu/vegan-4-course
+#error
 Redirect 301 /chef/chef-Anna/Meal-Prep/vegan-meal-prep-2 https://booking.chefpost.com/chef/chef-Anna/Meal-Prep/vegan-meal-prep-2
+
 Redirect 301 /chef/chef-Reni/Prix-fixe-Menu/mediterranean-rosemary-chicken https://booking.chefpost.com/chef/chef-Reni/Prix-fixe-Menu/mediterranean-rosemary-chicken
 Redirect 301 /chef/chef-Reni/Prix-fixe-Menu/latin-family-style https://booking.chefpost.com/chef/chef-Reni/Prix-fixe-Menu/latin-family-style
 Redirect 301 /chef/chef-Julieta/Fine-dining/peruvian-3-course-menu https://booking.chefpost.com/chef/chef-Julieta/Fine-dining/peruvian-3-course-menu
 Redirect 301 /chef/chef-Anna/Fine-dining/plant-based-indian-menu https://booking.chefpost.com/chef/chef-Anna/Fine-dining/plant-based-indian-menu
 Redirect 301 /chef/chef-Julieta/Prix-fixe-Menu/italian-3-course https://booking.chefpost.com/chef/chef-Julieta/Prix-fixe-Menu/italian-3-course
 Redirect 301 /chef/chef-Gina/Cook-with-my-ingredients/homemade-breakfast https://booking.chefpost.com/chef/chef-Gina/Cook-with-my-ingredients/homemade-breakfast
+#error
 Redirect 301 /chef/chef-Anna/Fine-dining/italian-vegan-3-course-menu https://booking.chefpost.com/chef/chef-Anna/Fine-dining/italian-vegan-3-course-menu
+
 Redirect 301 /chef/chef-Julieta/Prix-fixe-Menu/peruvian-3-course-menu https://booking.chefpost.com/chef/chef-Julieta/Prix-fixe-Menu/peruvian-3-course-menu
 Redirect 301 /chef/chef-Rossy/Fine-dining/custom-menu-3-course-2 https://booking.chefpost.com/chef/chef-Rossy/Fine-dining/custom-menu-3-course-2
 Redirect 301 /chef/chef-Gina/Meal-Prep/meal-prep-session-5-meals https://booking.chefpost.com/chef/chef-Gina/Meal-Prep/meal-prep-session-5-meals
