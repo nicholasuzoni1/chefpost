@@ -98,7 +98,8 @@ get_header(); ?>
     </section>
     <section class="common-section">
         <div class="container">
-            <div class="section-heading mb-4"><h3 class="mt-2">Recent Post</h3>
+            <div class="section-heading mb-4">
+                <h3 class="mt-2">Recent Post</h3>
             </div>
             <?php
             $args = array(
