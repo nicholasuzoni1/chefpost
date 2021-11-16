@@ -76,7 +76,7 @@ get_header(); ?>
                                             <img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>"
                                                  style="height:227px; border-radius:3%; min-width: 290px">
                                         </a>
-                                        <h5><?php echo the_title(); ?></h5>
+                                        <h5><?php echo the_title();?><small><span class="px-2">|</span><?php the_time('F jS, Y'); ?></small></h5>
 <!--                                        <p class="mb-1">--><?php //echo get_the_content(); ?><!--</p>-->
                                         <p class="mb-1"><?php echo wp_trim_words( get_the_content(), 15, '...' );?></p>
 <!--                                        <p class="meta">Posted by --><?php //the_author_posts_link(); ?><!--<span-->
@@ -121,7 +121,7 @@ get_header(); ?>
                         </div>
                         <div class="col-lg-8 mb-3">
                             <a href="<?php the_permalink(); ?>" target="_blank"><h5
-                                        style="font-weight: 700;"><?php echo the_title(); ?></h5></a>
+                                        style="font-weight: 700;"><?php echo the_title(); ?><small><span class="px-2">|</span><?php the_time('F jS, Y'); ?></small></h5></a>
 <!--                            <p class="mb-1">--><?php //echo get_the_content(); ?><!--</p>-->
                             <p class="mb-1"><?php echo wp_trim_words( get_the_content(), 40, '...' );?></p>
 <!--                            <p class="meta">Posted by --><?php //the_author_posts_link(); ?><!--<span-->
