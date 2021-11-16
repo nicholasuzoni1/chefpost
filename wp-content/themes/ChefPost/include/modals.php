@@ -97,6 +97,9 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body p-0">
+                <div data-dismiss="modal" style="display: inline;cursor: pointer;position: absolute;top: 8px;right: 15px;z-index: 2;">
+                    <i class="fa fa-times fa-lg"></i>
+                </div>
                 <div class="row">
                     <div class="d-none d-lg-flex col-lg-6">
                         <div class="figBlock">
@@ -223,8 +226,8 @@
                                                value="1" name="condition_check" checked
                                                onchange="terms_policy(this)">
                                         <label for="styled-checkbox-1" style="margin: 15px 0px 12px 0;"> <span>By signing up you agree to the <a
-                                                        href="{{route('terms_and_conditions')}}" target="_blank">Terms of use</a> & <a
-                                                        href="{{route('privacy_policy')}}" target="_blank">Privacy Policy</a></span></label>
+                                                        href="<?php echo esc_url(home_url('/terms-of-service')); ?>" target="_blank">Terms of use</a> & <a
+                                                        href="<?php echo esc_url(home_url('/privacy-policy')); ?>" target="_blank">Privacy Policy</a></span></label>
                                     </div>
                                     <!-- </label> -->
                                     <button class="w-100 theme-button with-background mb-2 hover-ripple"
@@ -267,6 +270,9 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body p-0">
+                <div data-dismiss="modal" style="display: inline;cursor: pointer;position: absolute;top: 8px;right: 15px;z-index: 2;">
+                    <i class="fa fa-times fa-lg"></i>
+                </div>
                 <div class="row">
                     <div class="col-md-6 p-0 d-none d-sm-block">
                         <div class="figBlock">
