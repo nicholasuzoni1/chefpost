@@ -145,7 +145,7 @@
                                         </div>
                                     </div>
                                     <button id="user-login-form" class="w-100 theme-button with-background mb-2 hover-ripple mt-5"
-                                            type="submit">LOGIN
+                                            type="submit">Sign in
                                     </button>
                                     <small class="d-block mb-2 text-center">Or</small>
                                     <div class="form-row">
@@ -162,7 +162,7 @@
                                             <a href="https://booking.chefpost.com?key=wordpress_google_login" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
                                                 <button type="button" class="full-width hover-ripple facebook-btn"
                                                         style="background-color: #4285F4;">
-                                                    Login with Google
+                                                    Sign in with Google
                                                 </button>
                                             </a>
                                         </div>
@@ -231,7 +231,7 @@
                                     </div>
                                     <!-- </label> -->
                                     <button class="w-100 theme-button with-background mb-2 hover-ripple"
-                                            type="submit" id="signup_button">SIGN UP
+                                            type="submit" id="signup_button">Sign Up
                                     </button>
                                         <small class="d-block mb-2 text-center">Or</small>
                                         <div class="form-row">
@@ -249,7 +249,7 @@
                                                     <button type="button" class="full-width hover-ripple facebook-btn"
                                                             style="background-color: #4285F4;">
 <!--                                                        <img style="margin-right: 15px;" src="{{asset('user/images/facebook_white.svg')}}">-->
-                                                        sign up with Google
+                                                        Sign up with Google
                                                     </button>
                                                 </a>
                                             </div>
