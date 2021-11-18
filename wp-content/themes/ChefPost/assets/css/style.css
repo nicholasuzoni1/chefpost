@@ -110,18 +110,18 @@ body {
     overflow-y: hidden;
     scroll-behavior: smooth;
     background: #fbf9f6;
-
+    font-size: 12px;
 }
 
 p {
-    font-family: Atlas Grotesk !important;
+    font-family: Atlas Grotesk;
 }
 
-h1, h2, h3 {
+h1, h2{font-family: caslongraphiqueefregular}
+
+ h3 {
     font-family: Gelion !important;
 }
-
-/*h1, h2, h3{font-family: caslongraphiqueefregular !important;}*/
 
 a {
     text-decoration: none !important;
@@ -734,6 +734,13 @@ header .btn-transparent {
 
 .how-it-works h3,
 .section-heading h3 {
+    color: #2D2A26;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0;
+}
+
+.section-heading h1 {
     color: #2D2A26;
     font-size: 32px;
     font-weight: bold;
@@ -2969,11 +2976,15 @@ select {
     margin-bottom: 4px;
     margin-right: 15px;
     text-transform: uppercase;
+    background: transparent;
+    border: none;
+    padding: 6px 14px;
+    font-size: 16px;
 }
 
 .tab-a.active-a {
-    background-color: #AA182C;
-    color: #FFFFFF;
+    background-color: transparent;
+    color: #AA182C;
 }
 
 .tab {

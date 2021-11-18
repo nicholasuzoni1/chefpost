@@ -18,7 +18,7 @@ get_header(); ?>
     <section class="main how-it-works header-setting">
         <div class="container-fluid p-0">
             <div class="section-heading">
-                <h3 class="text-center title"><?php the_title(); ?></h3>
+                <h1 class="text-center title"><?php the_title(); ?></h1>
             </div>
         </div>
     </section>

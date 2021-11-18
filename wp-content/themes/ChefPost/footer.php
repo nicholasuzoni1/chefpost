@@ -67,8 +67,10 @@
             </div>
         </div>
     </div>
-
 </footer>
+<div class="copyright">
+    <p class="mb-0">© Copyright Chefpost 2021</p>
+</div>
 <?php wp_footer(); ?>
 <!-- end #footer -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
