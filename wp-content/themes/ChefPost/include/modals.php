@@ -233,8 +233,8 @@
                                     <button class="w-100 theme-button with-background mb-2 hover-ripple"
                                             type="submit" id="signup_button">SIGN UP
                                     </button>
-<!--                                        <small class="d-block mb-2 text-center">Or</small>-->
-<!--                                        <div class="form-row">-->
+                                        <small class="d-block mb-2 text-center">Or</small>
+                                        <div class="form-row">
 <!--                                            <div class="col-lg-6 mb-3">-->
 <!--                                                <a href="{{route('fb_redirect')}}">-->
 <!--                                                    <button type="button" class="full-width hover-ripple facebook-btn">-->
@@ -244,17 +244,16 @@
 <!--                                                    </button>-->
 <!--                                                </a>-->
 <!--                                            </div>-->
-<!--                                            <div class="col-lg-6 mb-3">-->
-<!--                                                <a href="{{route('google_redirect')}}">-->
-<!--                                                    <button type="button" class="full-width hover-ripple facebook-btn"-->
-<!--                                                            style="background-color: #4285F4;">-->
-<!--                                                        {{--<img style="    margin-right: 15px;"-->
-<!--                                                                 src="{{asset('user/images/facebook_white.svg')}}">--}}-->
-<!--                                                        Login with Google-->
-<!--                                                    </button>-->
-<!--                                                </a>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
+                                            <div class="col-12 mb-3">
+                                                <a href="{{route('google_redirect')}}">
+                                                    <button type="button" class="full-width hover-ripple facebook-btn"
+                                                            style="background-color: #4285F4;">
+<!--                                                        <img style="margin-right: 15px;" src="{{asset('user/images/facebook_white.svg')}}">-->
+                                                        sign up with Google
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
                         </div>
