@@ -8,7 +8,7 @@
  *
  * @package Chef post
  */
-
+global $url;
 ?>
 <!doctype html>
 <html>
@@ -27,9 +27,9 @@
     <?php wp_head(); ?>
     <!-- CLient Code -->
     <script>
-        (function(w, d, t, s, n) {
+        (function (w, d, t, s, n) {
             w.FlodeskObject = n;
-            var fn = function() {
+            var fn = function () {
                 (w[n].q = w[n].q || []).push(arguments);
             };
             w[n] = w[n] || fn;
@@ -82,30 +82,35 @@
             <!--                </li>-->
             <!--            </ul>-->
             <ul class="navbar-nav ml-auto d-flex align-items-center">
-                <!--                <li class="nav-item">-->
-                <!--                    <a class="nav-link" href="{{route('get-cart')}}">-->
-                <!--                        <img src="{{asset('frontend/images/ic_cart.png')}}">-->
-                <!--                        @if($cart_count)-->
-                <!--                        <span style="background: white; border-radius: 100%; padding: 3px;" id="total_cart_count">{{$cart_count}}</span>-->
-                <!--                        @endif-->
-                <!--                    </a>-->
-                <!--                </li>-->
-                <!--                <li class="nav-item">-->
-                <!--                    <a class="nav-link" href="{{route('edit-profile')}}">-->
-                <!--                        <img src="{{asset('frontend/images/ic_profile.png')}}">-->
-                <!--                    </a>-->
-                <!--                </li>-->
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <button class="hover-ripple theme-button with-background open_login_popup">LOGIN</button>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <button class="hover-ripple theme-button bordered open_signup_popup">SIGN UP</button>
-                    </a>
-                </li>
-                <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Header Contact Info')) :
+                <?php
+                die($_COOKIE["Chefpost_Login"]);
+                if (empty($_COOKIE["Chefpost_Login"]) || $_COOKIE["Chefpost_Login"] == '') {
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <button class="hover-ripple theme-button with-background open_login_popup">LOGIN</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <button class="hover-ripple theme-button bordered open_signup_popup">SIGN UP</button>
+                        </a>
+                    </li>
+                <?php } else {
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $url . "/get-cart" ?>">
+                            <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_cart.png' ?>">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $url . "/edit-profile" ?>">
+                            <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_profile.png' ?>">
+                        </a>
+                    </li>
+                    <?php
+                }
+                if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Header Contact Info')) :
                 endif; ?>
             </ul>
         </div>

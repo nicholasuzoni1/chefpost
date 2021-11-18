@@ -159,7 +159,7 @@
 <!--                                        </div>-->
                                         <div class="col-lg-12 mb-3">
 <!--                                            <a href="http://localhost:8000?key=wordpress_google_login" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">-->
-                                            <a href="https://booking.chefpost.com?key=wordpress_google_login" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
+                                            <a href="<?php echo $url . "?key=wordpress_google_login" ?>" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
                                                 <button type="button" class="full-width hover-ripple facebook-btn"
                                                         style="background-color: #4285F4;">
                                                     Sign in with Google
@@ -233,8 +233,28 @@
                                     <button class="w-100 theme-button with-background mb-2 hover-ripple"
                                             type="submit" id="signup_button">Sign Up
                                     </button>
-                                        <small class="d-block mb-2 text-center">Or</small>
-                                        <div class="form-row">
+                                    <small class="d-block mb-2 text-center">Or</small>
+                                    <div class="form-row">
+                                        <!--                                        <div class="col-lg-6 mb-3">-->
+                                        <!--                                            <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=837754193815119&kid_directed_site=0&app_id=837754193815119&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv3.3%2Fdialog%2Foauth%3Fclient_id%3D837754193815119%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A8000%252Ffb_callback%26scope%3Demail%26response_type%3Dcode%26state%3Dg5Wk2daPLC9WDw0GcCzMgaDoPj4CwtABYfFc7icr%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D770fb918-b89b-4988-b5bf-21a889011dca%26tp%3Dunspecified&cancel_url=http%3A%2F%2Flocalhost%3A8000%2Ffb_callback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Dg5Wk2daPLC9WDw0GcCzMgaDoPj4CwtABYfFc7icr%23_%3D_&display=page&locale=ur_PK&pl_dbl=0">-->
+                                        <!--                                            <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=837754193815119&kid_directed_site=0&app_id=837754193815119&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv3.3%2Fdialog%2Foauth%3Fclient_id%3D837754193815119%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A8000%252Ffb_callback%26scope%3Demail%26response_type%3Dcode%26state%3Dg5Wk2daPLC9WDw0GcCzMgaDoPj4CwtABYfFc7icr%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D770fb918-b89b-4988-b5bf-21a889011dca%26tp%3Dunspecified&cancel_url=http%3A%2F%2Flocalhost%3A8000%2Ffb_callback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Dg5Wk2daPLC9WDw0GcCzMgaDoPj4CwtABYfFc7icr%23_%3D_&display=page&locale=ur_PK&pl_dbl=0">-->
+                                        <!--                                                <button type="button" class="full-width hover-ripple facebook-btn">-->
+                                        <!--                                                    Login with Facebook-->
+                                        <!--                                                </button>-->
+                                        <!--                                            </a>-->
+                                        <!--                                        </div>-->
+                                        <div class="col-lg-12 mb-3">
+                                            <!--                                            <a href="http://localhost:8000?key=wordpress_google_login" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">-->
+                                            <a href="<?php echo $url . "?key=wordpress_google_login" ?>" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
+                                                <button type="button" class="full-width hover-ripple facebook-btn"
+                                                        style="background-color: #4285F4;">
+                                                    Sign Up with Google
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+<!--                                        <small class="d-block mb-2 text-center">Or</small>-->
+<!--                                        <div class="form-row">-->
 <!--                                            <div class="col-lg-6 mb-3">-->
 <!--                                                <a href="{{route('fb_redirect')}}">-->
 <!--                                                    <button type="button" class="full-width hover-ripple facebook-btn">-->
@@ -244,16 +264,17 @@
 <!--                                                    </button>-->
 <!--                                                </a>-->
 <!--                                            </div>-->
-                                            <div class="col-12 mb-3">
-                                                <a href="{{route('google_redirect')}}">
-                                                    <button type="button" class="full-width hover-ripple facebook-btn"
-                                                            style="background-color: #4285F4;">
-<!--                                                        <img style="margin-right: 15px;" src="{{asset('user/images/facebook_white.svg')}}">-->
-                                                        Sign up with Google
-                                                    </button>
-                                                </a>
-                                            </div>
-                                        </div>
+<!--                                            <div class="col-lg-6 mb-3">-->
+<!--                                                <a href="{{route('google_redirect')}}">-->
+<!--                                                    <button type="button" class="full-width hover-ripple facebook-btn"-->
+<!--                                                            style="background-color: #4285F4;">-->
+<!--                                                        {{--<img style="    margin-right: 15px;"-->
+<!--                                                                 src="{{asset('user/images/facebook_white.svg')}}">--}}-->
+<!--                                                        Login with Google-->
+<!--                                                    </button>-->
+<!--                                                </a>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
                                 </div>
                             </div>
                         </div>
