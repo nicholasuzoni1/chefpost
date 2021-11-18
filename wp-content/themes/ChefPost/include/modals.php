@@ -145,7 +145,7 @@
                                         </div>
                                     </div>
                                     <button id="user-login-form" class="w-100 theme-button with-background mb-2 hover-ripple mt-5"
-                                            type="submit">LOGIN
+                                            type="submit">Sign in
                                     </button>
                                     <small class="d-block mb-2 text-center">Or</small>
                                     <div class="form-row">
@@ -162,7 +162,7 @@
                                             <a href="<?php echo $url . "?key=wordpress_google_login" ?>" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
                                                 <button type="button" class="full-width hover-ripple facebook-btn"
                                                         style="background-color: #4285F4;">
-                                                    Login with Google
+                                                    Sign in with Google
                                                 </button>
                                             </a>
                                         </div>
@@ -231,7 +231,7 @@
                                     </div>
                                     <!-- </label> -->
                                     <button class="w-100 theme-button with-background mb-2 hover-ripple"
-                                            type="submit" id="signup_button">SIGN UP
+                                            type="submit" id="signup_button">Sign Up
                                     </button>
                                     <small class="d-block mb-2 text-center">Or</small>
                                     <div class="form-row">
@@ -290,6 +290,9 @@
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body p-0">
+                <div data-dismiss="modal" style="display: inline;cursor: pointer;position: absolute;top: 8px;right: 15px;z-index: 2;">
+                    <i class="fa fa-times fa-lg"></i>
+                </div>
                 <div class="row">
                     <div class="col-md-6 p-0 d-none d-sm-block">
                         <div class="figBlock">
