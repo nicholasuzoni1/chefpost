@@ -110,18 +110,18 @@ body {
     overflow-y: hidden;
     scroll-behavior: smooth;
     background: #fbf9f6;
-
+    font-size: 12px;
 }
 
 p {
-    font-family: Atlas Grotesk !important;
+    font-family: Atlas Grotesk;
 }
 
-h1, h2, h3 {
+h1, h2{font-family: caslongraphiqueefregular}
+
+ h3 {
     font-family: Gelion !important;
 }
-
-/*h1, h2, h3{font-family: caslongraphiqueefregular !important;}*/
 
 a {
     text-decoration: none !important;
@@ -740,6 +740,13 @@ header .btn-transparent {
     letter-spacing: 0;
 }
 
+.section-heading h1 {
+    color: #2D2A26;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 0;
+}
+
 .how-it-works p,
 .section-heading p {
     opacity: 0.7;
@@ -840,7 +847,9 @@ header .btn-transparent {
     font-family: "Atlas Grotesk";
 }
 
-.services-card-btm h5 {
+.services-card-btm h5,
+.services-card-btm h5 a
+{
     color: #2D2A26;
     font-size: 20px;
     font-weight: bold;
@@ -2967,11 +2976,15 @@ select {
     margin-bottom: 4px;
     margin-right: 15px;
     text-transform: uppercase;
+    background: transparent;
+    border: none;
+    padding: 6px 14px;
+    font-size: 16px;
 }
 
 .tab-a.active-a {
-    background-color: #AA182C;
-    color: #FFFFFF;
+    background-color: transparent;
+    color: #AA182C;
 }
 
 .tab {
@@ -3075,4 +3088,25 @@ fieldset {
 
 :-ms-input-placeholder {
     color: #888;
+}
+.services-img img {
+    border-radius: 6px !important;
+    height: 227px;
+    min-width: 350px;
+}
+.wp-block-media-text__media img, .wp-block-media-text__media video {
+    max-width: unset;
+    width: auto;
+    vertical-align: middle;
+}
+.srvBtn a {
+    background-color: #AA182C;
+    color: #FFFFFF !important;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+    padding: 10px 28px;
+    border: 1px solid #AA182C;
+    font-family: 'Gelion' !important;
 }
