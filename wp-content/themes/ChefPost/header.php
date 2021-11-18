@@ -83,7 +83,7 @@ global $url;
             <!--            </ul>-->
             <ul class="navbar-nav ml-auto d-flex align-items-center">
                 <?php
-                die($_COOKIE["Chefpost_Login"]);
+//                die($_COOKIE["Chefpost_Login"]);
                 if (empty($_COOKIE["Chefpost_Login"]) || $_COOKIE["Chefpost_Login"] == '') {
                     ?>
                     <li class="nav-item">
