@@ -71,10 +71,7 @@
             <!--                </li>-->
             <!--            </ul>-->
             <ul class="navbar-nav ml-auto d-flex align-items-center">
-                <?php
-                echo $_COOKIE["Chefpost_Login"];
-                if (empty($_COOKIE["Chefpost_Login"]) || $_COOKIE["Chefpost_Login"] == '') {
-                    ?>
+                <ul class="navbar-nav ml-auto align-items-center" id="guest">
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <button class="hover-ripple theme-button with-background open_login_popup">LOGIN</button>
@@ -85,20 +82,21 @@
                             <button class="hover-ripple theme-button bordered open_signup_popup">SIGN UP</button>
                         </a>
                     </li>
-                <?php } else {
-                    ?>
+                </ul>
+
+                <ul class="navbar-nav ml-auto align-items-center" id="user">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $url . "/get-cart" ?>">
+                        <a class="nav-link" href="<?php echo $url . "get-cart" ?>">
                             <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_cart.png' ?>">
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $url . "/edit-profile" ?>">
+                        <a class="nav-link" href="<?php echo $url . "edit-profile" ?>">
                             <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_profile.png' ?>">
                         </a>
                     </li>
-                    <?php
-                }
+                </ul>
+                <?php
                 if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Header Contact Info')) :
                 endif; ?>
             </ul>
@@ -107,33 +105,25 @@
     <input type="hidden" value="<?php echo $_SERVER['REMOTE_ADDR'] ?>" id="ip">
 </header>
 <script>
-    console.log(12)
-    console.log(document.getElementById("ip").value)
-    //$(document).ready(function () {
-    //    var formdata = new FormData();
-    //    formdata.append("first_name", $("#first_name").val().trim());
-    //    formdata.append("last_name", $("#last_name").val().trim());
-    //    formdata.append("email", $("#user_email_address").val().trim());
-    //    formdata.append("phone_code", $("#phone_code").val().trim());
-    //    formdata.append("phone", $("#user_phone_number").val().trim());
-    //    formdata.append("password", $("#register_password").val().trim());
-    //    (async () => {
-    //        const rawResponse = await fetch('<?php //echo $url?>//api/wordpress/user_signup', {
-    //            method: 'POST',
-    //            body: formdata
-    //        });
-    //        const content = await rawResponse.json();
-    //        console.log(content)
-    //        if (content.success) {
-    //            $('#myModal').modal('hide');
-    //            $("#first_name").val('')
-    //            $("#last_name").val('')
-    //            $("#user_email_address").val('')
-    //            $("#phone_code").val('')
-    //            $("#user_phone_number").val('')
-    //            $("#register_password").val('')
-    //            swal("An email verification link has been sent to your email account", "Please click on the link that has been sent to your email account to verify your email", "success");
-    //        }
-    //    })();
-    //})
+    var formdata = new FormData();
+    formdata.append("ip", document.getElementById("ip").value);
+    document.getElementById("guest").style.display = 'none';
+    document.getElementById("user").style.display = 'none';
+    (async () => {
+        const rawResponse = await fetch('<?php echo $url?>api/wordpress/get_login_status', {
+            method: 'POST',
+            body: formdata
+        });
+        const content = await rawResponse.json();
+        if (content.success) {
+            if (content.user) {
+                document.getElementById("user").style.display = 'flex';
+            } else {
+                document.getElementById("guest").style.display = 'flex';
+            }
+        } else {
+            document.getElementById("guest").style.display = 'flex';
+            swal("Error", content.message, "error");
+        }
+    })();
 </script>
