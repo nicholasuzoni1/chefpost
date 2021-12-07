@@ -1,4 +1,4 @@
-<?php global $url?>
+<?php global $url ?>
 <?php include get_template_directory() . '/include/modals.php'; ?>
 
 <footer>
@@ -43,22 +43,28 @@
                 <h5>Social Connect</h5>
                 <ul class="list-inline mb-4">
                     <li class="mr-4"><a href="https://www.instagram.com/chefpost/" target="_blank"><img
-                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_insta.png'?>"></a></li>
+                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_insta.png' ?>"></a>
+                    </li>
                     <li class="mr-4"><a href="https://www.facebook.com/chefpost-102917058142370" target="_blank"><img
-                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_fb.png'?>"></a></li>
+                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_fb.png' ?>"></a>
+                    </li>
                     <li class="mr-4"><a href="https://www.pinterest.com/Chefpostpins/" target="_blank"><img
-                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_pinterest.svg'?>"></a></li>
+                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_pinterest.svg' ?>"></a>
+                    </li>
                     <li class="mr-4"><a href="https://www.youtube.com/channel/UCT5OHOUo0ScfQO3F8ck9-Pg" target="_blank"><img
-                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_youtube.png'?>"></a></li>
+                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_youtube.png' ?>"></a>
+                    </li>
                 </ul>
-<!--                <ul class="list-inline mb-0">-->
-<!--                    <li class="mr-2"><a href="https://apps.apple.com/us/app/chefpost/id1561131582" target="_blank"><img-->
-<!--                                    style="border-radius: 5px;" width="110"-->
-<!--                                    src="--><?php //echo get_template_directory_uri() . '/assets/images/AppStore.png'?><!--"></a></li>-->
-<!--                    <li class="mr-2"><a href="https://play.google.com/store/apps/details?id=com.chefpostuser"-->
-<!--                                        target="_blank"><img width="110" style="border-radius: 5px;"-->
-<!--                                                             src="--><?php //echo get_template_directory_uri() . '/assets/images/GooglePlay.png'?><!--"></a></li>-->
-<!--                </ul>-->
+                <!--                <ul class="list-inline mb-0">-->
+                <!--                    <li class="mr-2"><a href="https://apps.apple.com/us/app/chefpost/id1561131582" target="_blank"><img-->
+                <!--                                    style="border-radius: 5px;" width="110"-->
+                <!--                                    src="-->
+                <?php //echo get_template_directory_uri() . '/assets/images/AppStore.png'?><!--"></a></li>-->
+                <!--                    <li class="mr-2"><a href="https://play.google.com/store/apps/details?id=com.chefpostuser"-->
+                <!--                                        target="_blank"><img width="110" style="border-radius: 5px;"-->
+                <!--                                                             src="-->
+                <?php //echo get_template_directory_uri() . '/assets/images/GooglePlay.png'?><!--"></a></li>-->
+                <!--                </ul>-->
             </div>
             <div class="col-md-3 small-text-center">
                 <a class="" href="<?php echo esc_url(home_url('/')); ?>">
@@ -402,17 +408,17 @@
                 body: formdata
             });
             const content = await rawResponse.json();
-            if(content.success){
+            if (content.success) {
                 $('#myModal').modal('hide');
                 $("#user_phone_email_login").val('')
                 $("#user_password").val('')
-                swal( "Success", "User logged in successfully.", "success");
+                swal("Success", "User logged in successfully.", "success");
                 window.location.replace(`<?php echo $url?>api_login/${content.user_id}/${content.token}`);
             } else {
                 $('#myModal').modal('hide');
                 $("#user_phone_email_login").val('')
                 $("#user_password").val('')
-                swal( "Error", "Invalid credentials.", "error");
+                swal("Error", "Invalid credentials.", "error");
             }
         })();
     })
@@ -432,7 +438,7 @@
             });
             const content = await rawResponse.json();
             console.log(content)
-            if(content.success){
+            if (content.success) {
                 $('#myModal').modal('hide');
                 $("#first_name").val('')
                 $("#last_name").val('')
@@ -440,7 +446,7 @@
                 $("#phone_code").val('')
                 $("#user_phone_number").val('')
                 $("#register_password").val('')
-                swal( "An email verification link has been sent to your email account", "Please click on the link that has been sent to your email account to verify your email", "success");
+                swal("An email verification link has been sent to your email account", "Please click on the link that has been sent to your email account to verify your email", "success");
             }
         })();
     })
