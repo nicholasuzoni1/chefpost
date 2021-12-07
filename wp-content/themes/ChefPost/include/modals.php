@@ -149,17 +149,19 @@
                                     </button>
                                     <small class="d-block mb-2 text-center">Or</small>
                                     <div class="form-row">
-<!--                                        <div class="col-lg-6 mb-3">-->
-<!--                                            <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=837754193815119&kid_directed_site=0&app_id=837754193815119&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv3.3%2Fdialog%2Foauth%3Fclient_id%3D837754193815119%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A8000%252Ffb_callback%26scope%3Demail%26response_type%3Dcode%26state%3Dg5Wk2daPLC9WDw0GcCzMgaDoPj4CwtABYfFc7icr%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D770fb918-b89b-4988-b5bf-21a889011dca%26tp%3Dunspecified&cancel_url=http%3A%2F%2Flocalhost%3A8000%2Ffb_callback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Dg5Wk2daPLC9WDw0GcCzMgaDoPj4CwtABYfFc7icr%23_%3D_&display=page&locale=ur_PK&pl_dbl=0">-->
-<!--                                            <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=837754193815119&kid_directed_site=0&app_id=837754193815119&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv3.3%2Fdialog%2Foauth%3Fclient_id%3D837754193815119%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A8000%252Ffb_callback%26scope%3Demail%26response_type%3Dcode%26state%3Dg5Wk2daPLC9WDw0GcCzMgaDoPj4CwtABYfFc7icr%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D770fb918-b89b-4988-b5bf-21a889011dca%26tp%3Dunspecified&cancel_url=http%3A%2F%2Flocalhost%3A8000%2Ffb_callback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Dg5Wk2daPLC9WDw0GcCzMgaDoPj4CwtABYfFc7icr%23_%3D_&display=page&locale=ur_PK&pl_dbl=0">-->
-<!--                                                <button type="button" class="full-width hover-ripple facebook-btn">-->
-<!--                                                    Login with Facebook-->
-<!--                                                </button>-->
-<!--                                            </a>-->
-<!--                                        </div>-->
+                                        <!--                                        <div class="col-lg-6 mb-3">-->
+                                        <!--                                            <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=837754193815119&kid_directed_site=0&app_id=837754193815119&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv3.3%2Fdialog%2Foauth%3Fclient_id%3D837754193815119%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A8000%252Ffb_callback%26scope%3Demail%26response_type%3Dcode%26state%3Dg5Wk2daPLC9WDw0GcCzMgaDoPj4CwtABYfFc7icr%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D770fb918-b89b-4988-b5bf-21a889011dca%26tp%3Dunspecified&cancel_url=http%3A%2F%2Flocalhost%3A8000%2Ffb_callback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Dg5Wk2daPLC9WDw0GcCzMgaDoPj4CwtABYfFc7icr%23_%3D_&display=page&locale=ur_PK&pl_dbl=0">-->
+                                        <!--                                            <a href="https://www.facebook.com/login.php?skip_api_login=1&api_key=837754193815119&kid_directed_site=0&app_id=837754193815119&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv3.3%2Fdialog%2Foauth%3Fclient_id%3D837754193815119%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A8000%252Ffb_callback%26scope%3Demail%26response_type%3Dcode%26state%3Dg5Wk2daPLC9WDw0GcCzMgaDoPj4CwtABYfFc7icr%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D770fb918-b89b-4988-b5bf-21a889011dca%26tp%3Dunspecified&cancel_url=http%3A%2F%2Flocalhost%3A8000%2Ffb_callback%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3Dg5Wk2daPLC9WDw0GcCzMgaDoPj4CwtABYfFc7icr%23_%3D_&display=page&locale=ur_PK&pl_dbl=0">-->
+                                        <!--                                                <button type="button" class="full-width hover-ripple facebook-btn">-->
+                                        <!--                                                    Login with Facebook-->
+                                        <!--                                                </button>-->
+                                        <!--                                            </a>-->
+                                        <!--                                        </div>-->
                                         <div class="col-lg-12 mb-3">
-<!--                                            <a href="http://localhost:8000?key=wordpress_google_login" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">-->
-                                            <a href="<?php echo $url . "?key=wordpress_google_login" ?>" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
+                                            <!--                                            <a href="http://localhost:8000?key=wordpress_google_login" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">-->
+                                            <a href="<?php echo $url . "?key=wordpress_google_login" ?>"
+                                               data-plugin="nsl" data-action="connect" data-redirect="current"
+                                               data-provider="google" data-popupwidth="600" data-popupheight="600">
                                                 <button type="button" class="full-width hover-ripple facebook-btn"
                                                         style="background-color: #4285F4;">
                                                     Sign in with Google
@@ -202,7 +204,7 @@
                                     <label>
                                         <p class="label-txt">Phone Number</p>
                                         <select class="wd-30 number-box-in" name="phone_code" id="phone_code">
-<!--                                            --><?php //echo do_shortcode("[show-countries-codes]"); ?>
+                                            <!--                                            --><?php //echo do_shortcode("[show-countries-codes]"); ?>
                                         </select>
                                         <div class="wd-70">
                                             <input type="tel" class="input" name="phone" id="user_phone_number"
@@ -226,12 +228,14 @@
                                                value="1" name="condition_check" checked
                                                onchange="terms_policy(this)">
                                         <label for="styled-checkbox-1" style="margin: 15px 0px 12px 0;"> <span>By signing up you agree to the <a
-                                                        href="<?php echo esc_url(home_url('/terms-of-service')); ?>" target="_blank">Terms of use</a> & <a
-                                                        href="<?php echo esc_url(home_url('/privacy-policy')); ?>" target="_blank">Privacy Policy</a></span></label>
+                                                        href="<?php echo esc_url(home_url('/terms-of-service')); ?>"
+                                                        target="_blank">Terms of use</a> & <a
+                                                        href="<?php echo esc_url(home_url('/privacy-policy')); ?>"
+                                                        target="_blank">Privacy Policy</a></span></label>
                                     </div>
                                     <!-- </label> -->
                                     <button class="w-100 theme-button with-background mb-2 hover-ripple"
-                                            type="submit" id="signup_button">Sign Up
+                                            type="submit" id="signup_button">SIGN UP
                                     </button>
                                     <small class="d-block mb-2 text-center">Or</small>
                                     <div class="form-row">
@@ -245,7 +249,9 @@
                                         <!--                                        </div>-->
                                         <div class="col-lg-12 mb-3">
                                             <!--                                            <a href="http://localhost:8000?key=wordpress_google_login" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">-->
-                                            <a href="<?php echo $url . "?key=wordpress_google_login" ?>" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">
+                                            <a href="<?php echo $url . "?key=wordpress_google_login" ?>"
+                                               data-plugin="nsl" data-action="connect" data-redirect="current"
+                                               data-provider="google" data-popupwidth="600" data-popupheight="600">
                                                 <button type="button" class="full-width hover-ripple facebook-btn"
                                                         style="background-color: #4285F4;">
                                                     Sign Up with Google
@@ -253,28 +259,28 @@
                                             </a>
                                         </div>
                                     </div>
-<!--                                        <small class="d-block mb-2 text-center">Or</small>-->
-<!--                                        <div class="form-row">-->
-<!--                                            <div class="col-lg-6 mb-3">-->
-<!--                                                <a href="{{route('fb_redirect')}}">-->
-<!--                                                    <button type="button" class="full-width hover-ripple facebook-btn">-->
-<!--                                                        {{--<img style="    margin-right: 15px;"-->
-<!--                                                                 src="{{asset('user/images/facebook_white.svg')}}">--}}-->
-<!--                                                        Login with Facebook-->
-<!--                                                    </button>-->
-<!--                                                </a>-->
-<!--                                            </div>-->
-<!--                                            <div class="col-lg-6 mb-3">-->
-<!--                                                <a href="{{route('google_redirect')}}">-->
-<!--                                                    <button type="button" class="full-width hover-ripple facebook-btn"-->
-<!--                                                            style="background-color: #4285F4;">-->
-<!--                                                        {{--<img style="    margin-right: 15px;"-->
-<!--                                                                 src="{{asset('user/images/facebook_white.svg')}}">--}}-->
-<!--                                                        Login with Google-->
-<!--                                                    </button>-->
-<!--                                                </a>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
+                                    <!--                                        <small class="d-block mb-2 text-center">Or</small>-->
+                                    <!--                                        <div class="form-row">-->
+                                    <!--                                            <div class="col-lg-6 mb-3">-->
+                                    <!--                                                <a href="{{route('fb_redirect')}}">-->
+                                    <!--                                                    <button type="button" class="full-width hover-ripple facebook-btn">-->
+                                    <!--                                                        {{--<img style="    margin-right: 15px;"-->
+                                    <!--                                                                 src="{{asset('user/images/facebook_white.svg')}}">--}}-->
+                                    <!--                                                        Login with Facebook-->
+                                    <!--                                                    </button>-->
+                                    <!--                                                </a>-->
+                                    <!--                                            </div>-->
+                                    <!--                                            <div class="col-lg-6 mb-3">-->
+                                    <!--                                                <a href="{{route('google_redirect')}}">-->
+                                    <!--                                                    <button type="button" class="full-width hover-ripple facebook-btn"-->
+                                    <!--                                                            style="background-color: #4285F4;">-->
+                                    <!--                                                        {{--<img style="    margin-right: 15px;"-->
+                                    <!--                                                                 src="{{asset('user/images/facebook_white.svg')}}">--}}-->
+                                    <!--                                                        Login with Google-->
+                                    <!--                                                    </button>-->
+                                    <!--                                                </a>-->
+                                    <!--                                            </div>-->
+                                    <!--                                        </div>-->
                                 </div>
                             </div>
                         </div>
@@ -297,44 +303,28 @@
                     <div class="col-md-6 p-0 d-none d-sm-block">
                         <div class="figBlock">
                             <img class="img-fluid rounded-image full-width"
-                                 src="{{asset('frontend/images/popup-image.png')}}" alt="img"/>
+                                 src="<?php echo get_template_directory_uri() . '/assets/images/popup-image.png' ?>"
+                                 alt="img"/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="pl-4 pr-5 pt-5">
                             <h4 class="forgot-pswd-deading mb-4">Forgot Password</h4>
                             <p>Enter your email address to reset your password.</p>
-                            <form class="mt-3" method="post" name="forgot_password_form" id="forgot_password_form"
-                                  action="{{route('forgot-password')}}">
-                                <div class="login-form">
-                                    <!-- <input id="partitioned" type="text" maxlength="4"> -->
-                                    <ul class="list-inline">
-                                        <!-- <li class="d-inline-block mr-3">
-                                          <input type="radio" id="user_email" name="phone_email" value="email" checked="" onchange="change_input_type('email','your.email@email.com')">
-                                          <label for="user_email">Email Id
-                                        </li>
-                                        <li class="d-inline-block mr-3">
-                                          <input type="radio" id="user_phone" name="phone_email" value="phone" onchange="change_input_type('number','1234567890')">
-                                          <label for="user_phone">Phone number</label>
-                                        </li> -->
-                                    </ul>
-                                    <input type="hidden" id="user_email" name="phone_email" value="email">
+                            <label>
+                                <p class="label-txt">Email Address</p>
+                                <input type="email" name="user_phone_email" id='user_phone_email' class="input"
+                                       placeholder="your.email@email.com" required>
+                                <div class="line-box">
+                                    <div class="line"></div>
                                 </div>
-                                <label>
-                                    <p class="label-txt">Email Address</p>
-                                    <input type="email" name="user_phone_email" id='user_phone_email' class="input"
-                                           placeholder="your.email@email.com" required>
-                                    <div class="line-box">
-                                        <div class="line"></div>
-                                    </div>
-                                </label>
+                            </label>
 
-                                <div class="pt-4">
-                                    <button class="w-100 theme-button with-background mb-2 hover-ripple mt-5"
-                                            type="button" onclick="checKEmailOrOtp()">SUBMIT
-                                    </button>
-                                </div>
-                            </form>
+                            <div class="pt-4">
+                                <button class="w-100 theme-button with-background mb-2 hover-ripple mt-5"
+                                        type="button" onclick="sendResetPassword()">SUBMIT
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -470,8 +460,27 @@
         </div>
     </div>
 </div>
-<script src="https://www.google.com/recaptcha/api.js?render={{env('RECAPTCHA_SITE_KEY')}}"></script>
-
-<script type="text/javascript">
-
+<script>
+    function sendResetPassword() {
+        var formdata = new FormData();
+        formdata.append("user_phone_email", document.getElementById("user_phone_email").value);
+        (async () => {
+            const rawResponse = await fetch('<?php echo $url?>api/wordpress/resetPassword', {
+                method: 'POST',
+                body: formdata
+            });
+            const content = await rawResponse.json();
+            $('#myModal').modal('hide');
+            if (content.success) {
+                if (content.user) {
+                    $('#myModal1').modal('hide');
+                    swal("Success", content.message, "success");
+                } else {
+                    swal("Error", content.message, "error");
+                }
+            } else {
+                swal("Error", content.message, "error");
+            }
+        })();
+    }
 </script>
