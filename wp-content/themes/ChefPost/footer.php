@@ -408,6 +408,11 @@
                 $("#user_password").val('')
                 swal( "Success", "User logged in successfully.", "success");
                 window.location.replace(`<?php echo $url?>api_login/${content.user_id}/${content.token}`);
+            } else {
+                $('#myModal').modal('hide');
+                $("#user_phone_email_login").val('')
+                $("#user_password").val('')
+                swal( "Error", "Invalid credentials.", "error");
             }
         })();
     })
