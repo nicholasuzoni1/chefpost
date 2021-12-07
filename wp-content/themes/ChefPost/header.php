@@ -1,15 +1,4 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Chef post
- */
-global $url;
-?>
+<?php global $url; ?>
 <!doctype html>
 <html>
 <head>
@@ -115,4 +104,36 @@ global $url;
             </ul>
         </div>
     </nav>
+    <input type="hidden" value="<?php echo $_SERVER['REMOTE_ADDR'] ?>" id="ip">
 </header>
+<script>
+    console.log(12)
+    console.log(document.getElementById("ip").value)
+    //$(document).ready(function () {
+    //    var formdata = new FormData();
+    //    formdata.append("first_name", $("#first_name").val().trim());
+    //    formdata.append("last_name", $("#last_name").val().trim());
+    //    formdata.append("email", $("#user_email_address").val().trim());
+    //    formdata.append("phone_code", $("#phone_code").val().trim());
+    //    formdata.append("phone", $("#user_phone_number").val().trim());
+    //    formdata.append("password", $("#register_password").val().trim());
+    //    (async () => {
+    //        const rawResponse = await fetch('<?php //echo $url?>//api/wordpress/user_signup', {
+    //            method: 'POST',
+    //            body: formdata
+    //        });
+    //        const content = await rawResponse.json();
+    //        console.log(content)
+    //        if (content.success) {
+    //            $('#myModal').modal('hide');
+    //            $("#first_name").val('')
+    //            $("#last_name").val('')
+    //            $("#user_email_address").val('')
+    //            $("#phone_code").val('')
+    //            $("#user_phone_number").val('')
+    //            $("#register_password").val('')
+    //            swal("An email verification link has been sent to your email account", "Please click on the link that has been sent to your email account to verify your email", "success");
+    //        }
+    //    })();
+    //})
+</script>
