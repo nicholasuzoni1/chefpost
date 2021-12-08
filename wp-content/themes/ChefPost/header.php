@@ -105,25 +105,36 @@
     <input type="hidden" value="<?php echo $_SERVER['REMOTE_ADDR'] ?>" id="ip">
 </header>
 <script>
-    var formdata = new FormData();
-    formdata.append("ip", document.getElementById("ip").value);
     document.getElementById("guest").style.display = 'none';
     document.getElementById("user").style.display = 'none';
-    (async () => {
-        const rawResponse = await fetch('<?php echo $url?>api/wordpress/get_login_status', {
-            method: 'POST',
-            body: formdata
-        });
-        const content = await rawResponse.json();
-        if (content.success) {
-            if (content.user) {
-                document.getElementById("user").style.display = 'flex';
+    let logged_in = localStorage.getItem('logged_in');
+    if (logged_in != null && logged_in != "") {
+        var formdata = new FormData();
+        formdata.append("logged_in", logged_in);
+        (async () => {
+            const rawResponse = await fetch('<?php echo $url?>api/wordpress/get_login_status', {
+                method: 'POST',
+                body: formdata
+            });
+            const content = await rawResponse.json();
+            if (content.success) {
+                if (content.user) {
+                    document.getElementById("guest").style.display = 'none';
+                    document.getElementById("user").style.display = 'flex';
+                } else {
+                    localStorage.removeItem('logged_in');
+                    document.getElementById("user").style.display = 'none';
+                    document.getElementById("guest").style.display = 'flex';
+                }
             } else {
+                localStorage.removeItem('logged_in');
+                document.getElementById("user").style.display = 'none';
                 document.getElementById("guest").style.display = 'flex';
+                swal("Error", content.message, "error");
             }
-        } else {
-            document.getElementById("guest").style.display = 'flex';
-            swal("Error", content.message, "error");
-        }
-    })();
+        })();
+    } else {
+        document.getElementById("user").style.display = 'none';
+        document.getElementById("guest").style.display = 'flex';
+    }
 </script>
