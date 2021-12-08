@@ -409,10 +409,12 @@
             });
             const content = await rawResponse.json();
             if (content.success) {
+                console.log(content)
                 $('#myModal').modal('hide');
                 $("#user_phone_email_login").val('')
                 $("#user_password").val('')
                 swal("Success", "User logged in successfully.", "success");
+                localStorage.setItem("logged_in", content.token)
                 window.location.replace(`<?php echo $url?>api_login/${content.user_id}/${content.token}`);
             } else {
                 $('#myModal').modal('hide');
