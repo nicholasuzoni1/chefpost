@@ -159,7 +159,7 @@
                                         <!--                                        </div>-->
                                         <div class="col-lg-12 mb-3">
                                             <!--                                            <a href="http://localhost:8000?key=wordpress_google_login" data-plugin="nsl" data-action="connect" data-redirect="current" data-provider="google" data-popupwidth="600" data-popupheight="600">-->
-                                            <a href="<?php echo $url . "?key=wordpress_google_login" ?>"
+                                            <a href="#" onclick="googleLogin()"
                                                data-plugin="nsl" data-action="connect" data-redirect="current"
                                                data-provider="google" data-popupwidth="600" data-popupheight="600">
                                                 <button type="button" class="full-width hover-ripple facebook-btn"
@@ -461,6 +461,24 @@
     </div>
 </div>
 <script>
+    function googleLogin() {
+        let _token = makeid(45);
+        let url = "<?php echo $url ?>?key=wordpress_google_login&token=" + _token
+        localStorage.setItem("logged_in", _token)
+        window.location.href = url
+    }
+
+    function makeid(length) {
+        var result           = '';
+        var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < length; i++ ) {
+            result += characters.charAt(Math.floor(Math.random() *
+                charactersLength));
+        }
+        return result;
+    }
+
     function sendResetPassword() {
         var formdata = new FormData();
         formdata.append("user_phone_email", document.getElementById("user_phone_email").value);
