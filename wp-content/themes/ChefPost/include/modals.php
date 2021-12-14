@@ -139,7 +139,10 @@
                                         </div>
                                     </label>
                                     <div class="row mb-4">
-                                        <div class="col-md-12 text-right">
+                                        <div class="col-md-6 text-left">
+                                            <a class="theme-color" href="<?php echo $url ?>guest_bookings">Get Guest Bookings</a>
+                                        </div>
+                                        <div class="col-md-6 text-right">
                                             <a class="theme-color" href="" data-toggle="modal"
                                                data-target="#myModal1">Forgot Password ?</a>
                                         </div>
