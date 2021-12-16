@@ -87,9 +87,9 @@
 }
 
 @font-face {
-    font-family: 'caslongraphiqueefregular';
-    src: url('../fonts/caslongraphiqueef-webfont.woff2') format('woff2'),
-    url('../fonts/caslongraphiqueef-webfont.woff') format('woff');
+    font-family: 'CaslonGraphiqueEF';
+    src: url('../fonts/CaslonGraphiqueEF.ttf') format('ttf'),
+    url('../fonts/CaslonGraphiqueEF.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
 
@@ -117,7 +117,7 @@ p {
     font-family: Atlas Grotesk;
 }
 
-h1, h2{font-family: caslongraphiqueefregular}
+h1, h2{font-family: CaslonGraphiqueEF}
 
  h3 {
     font-family: Gelion !important;
