@@ -105,7 +105,7 @@ body {
     /*background: #fff;*/
     color: #444;
     font-family: 'Gelion';
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     max-width: 100%;
     overflow-y: hidden;
     scroll-behavior: smooth;
@@ -117,7 +117,17 @@ p {
     font-family: Atlas Grotesk;
 }
 
-h1, h2{font-family: CaslonGraphiqueEF}
+h1, h2{
+    font-family: Gelion;
+    color: #2D2A26;
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: normal;
+}
+h2{
+    font-size: 35px;
+}
 
  h3 {
     font-family: Gelion !important;
