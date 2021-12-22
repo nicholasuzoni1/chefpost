@@ -424,6 +424,44 @@ function shortcode_how_it_works_post_type()
 add_shortcode('how-it-works', 'shortcode_how_it_works_post_type');
 
 
+function shortcode_testimonials_post_type()
+{
+
+    $args = array(
+        'post_type' => 'Testimonials',
+        'publish_status' => 'published',
+        'orderby' => 'date',
+        'order' => 'ASC',
+
+    );
+
+    $query = new WP_Query($args);
+
+    $result = '<section class="owl-carousel">';
+    if ($query->have_posts()) :
+        while ($query->have_posts()) :
+            $query->the_post();
+            $image = get_template_directory_uri() . '/assets/images/star.svg';
+            $result .= '
+             <div class="testimonial-wrap">
+                <img  class="mb-5"
+                     src=' . $image . ' height="25">
+                <p>' . get_the_content() . '</p>
+                <div style="font-size: 16px;" >
+                    <strong>' . get_the_title() . '</strong></div>
+            </div>
+         ';
+        endwhile;
+        wp_reset_postdata();
+
+    endif;
+    $result .= '</section>';
+    return $result;
+}
+
+add_shortcode('testimonials', 'shortcode_testimonials_post_type');
+
+
 function full_page_list_shortcode($atts = [], $content = null, $tag = '')
 {
     global $url;

@@ -209,52 +209,7 @@ endwhile;
                     <!-- <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br> tempor incididunt ut.</p> -->
                 </div>
                 <div class="col-md-12">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <?php
-                            $c = 0;
-                            $class = '';
-                            $args = array('post_type' => 'Testimonials', 'orderby' => 'date', 'order' => 'ASC');
-                            $loop = new WP_Query($args);
-                            while ($loop->have_posts()) : $loop->the_post();
-                                $c++;
-                                if ($c == 1) $class .= ' active';
-                                else $class = '';
-                                ?>
-                                <div class="carousel-item <?php echo $class; ?>">
-                                    <div class="mt-5 mb-5">
-                                        <div class="row">
-                                            <div class="offset-md-1 col-md-10">
-                                                <div class="testimonial-wrap">
-                                                    <img class="mb-4"
-                                                         src="<?php echo get_template_directory_uri() . '/assets/images/ic_esclamation.png' ?>">
-                                                    <h6><?php echo get_the_content() ?></h6>
-                                                    <div class="line mt-5">
-                                                        <strong><?php echo get_the_title() ?></strong></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php
-                                wp_reset_query();
-                            endwhile;
-                            ?>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                           data-slide="prev">
-                            <span style="transform: rotate(180deg);" class="carousel-control-prev-icon"
-                                  aria-hidden="true"><img
-                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_next.png' ?>"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                           data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"><img
-                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_next.png' ?>"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
+                <?php echo do_shortcode("[testimonials]"); ?>
                 </div>
             </div>
         </div>
@@ -306,3 +261,21 @@ endwhile;
     </section>
 <?php //include get_template_directory() . '/include/modals.php'; ?>
 <?php get_footer(); ?>
+<script>
+$('.owl-carousel').owlCarousel({
+    margin: 16,
+    nav: true,
+    navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+    responsive: {
+        0: {
+            items: 1
+        },
+        600: {
+            items: 2
+        },
+        1000: {
+            items: 3
+        }
+    }
+});
+</script>
