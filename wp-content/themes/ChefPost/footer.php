@@ -55,16 +55,16 @@
                                     src="<?php echo get_template_directory_uri() . '/assets/images/ic_youtube.png' ?>"></a>
                     </li>
                 </ul>
-                <!--                <ul class="list-inline mb-0">-->
-                <!--                    <li class="mr-2"><a href="https://apps.apple.com/us/app/chefpost/id1561131582" target="_blank"><img-->
-                <!--                                    style="border-radius: 5px;" width="110"-->
-                <!--                                    src="-->
-                <?php //echo get_template_directory_uri() . '/assets/images/AppStore.png'?><!--"></a></li>-->
-                <!--                    <li class="mr-2"><a href="https://play.google.com/store/apps/details?id=com.chefpostuser"-->
-                <!--                                        target="_blank"><img width="110" style="border-radius: 5px;"-->
-                <!--                                                             src="-->
-                <?php //echo get_template_directory_uri() . '/assets/images/GooglePlay.png'?><!--"></a></li>-->
-                <!--                </ul>-->
+                                <ul class="list-inline mb-0">
+                                    <li class="mr-2"><a href="https://apps.apple.com/us/app/chefpost/id1561131582" target="_blank"><img
+                                                    style="border-radius: 5px;" width="110"
+                                                    src="
+                <?php echo get_template_directory_uri() . '/assets/images/AppStore.png'?>"></a></li>
+                                    <li class="mr-2"><a href="https://play.google.com/store/apps/details?id=com.chefpostuser"
+                                                        target="_blank"><img width="110" style="border-radius: 5px;"
+                                                                             src="
+                <?php echo get_template_directory_uri() . '/assets/images/GooglePlay.png'?>"></a></li>
+                                </ul>
             </div>
             <div class="col-md-3 small-text-center">
                 <a class="" href="<?php echo esc_url(home_url('/')); ?>">
@@ -452,6 +452,23 @@
             }
         })();
     })
+
+    $('#testimonial-carousel').owlCarousel({
+        margin: 16,
+        nav: true,
+        navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    });
 
 </script>
 <noscript><img height="1" width="1" style="display:none"

@@ -185,12 +185,12 @@ add_action('init', 'create_how_it_work_post_type');
 function shortcode_getChefs()
 {
     global $url;
-    $response = wp_remote_retrieve_body(wp_remote_get($url.'api/wordpress/get-all-chefs'));
+    $response = wp_remote_retrieve_body(wp_remote_get($url . 'api/wordpress/get-all-chefs'));
     $response = json_decode($response, true);
     $options = $response['data'];
     $result = '<div id="owl-example-second" class="owl-carousel">';
     foreach ($options as $key => $chef) {
-        $result .= '<a href="'.$url.'chef/chef-' . $chef['first_name'] . '">
+        $result .= '<a href="' . $url . 'chef/chef-' . $chef['first_name'] . '">
             <div class="col-md-12">
                 <div class="chef-image">
                     <img class="img-fluid" src="' . $chef['profile_pic'] . '" alt="' . $chef['first_name'] . ' ' . $chef['last_name'] . '">
@@ -208,7 +208,7 @@ add_shortcode('show-chefs', 'shortcode_getChefs');
 function shortcode_getCountriesCodes()
 {
     global $url;
-    $response = wp_remote_retrieve_body(wp_remote_get($url.'api/wordpress/get-countries'));
+    $response = wp_remote_retrieve_body(wp_remote_get($url . 'api/wordpress/get-countries'));
     $response = json_decode($response, true);
     $options = $response['countries'];
     $result = '';
@@ -437,7 +437,7 @@ function shortcode_testimonials_post_type()
 
     $query = new WP_Query($args);
 
-    $result = '<section class="owl-carousel">';
+    $result = '<section class="owl-carousel" id="testimonial-carousel">';
     if ($query->have_posts()) :
         while ($query->have_posts()) :
             $query->the_post();
@@ -490,9 +490,9 @@ function full_page_list_shortcode($atts = [], $content = null, $tag = '')
          <div class="image-and-text-block mt-3">
                 <div class="container">
                     <div class="row d-flex align-items-center sec-height">
-                        <img src='. get_the_post_thumbnail_url() .' class="img-pos">
+                        <img src=' . get_the_post_thumbnail_url() . ' class="img-pos">
                         <div class="col-md-5">
-                            <h3><a style="color: #946C73;" href="'. get_permalink() .'">' . get_the_title() . '</a></h3>
+                            <h3><a style="color: #946C73;" href="' . get_permalink() . '">' . get_the_title() . '</a></h3>
                             <p>' . get_the_content() . '</p>
                             
                         </div>
@@ -547,7 +547,7 @@ function col3_list_shortcode($atts = [], $content = null, $tag = '')
             $image = get_field('image');
             $result .= '
                 <div class="col-md-6 col-lg-4">
-                    <a href="'.get_field('link').'">
+                    <a href="' . get_field('link') . '">
                         <div class="services-card-btm">
                             <img class="img-fluid" src="' . $image . '"
                                  style="height:227px; border-radius:3%; min-width: 290px"/>
@@ -578,7 +578,7 @@ add_action('init', 'col3_list_shortcode_init');
 function shortcode_select_time()
 {
     global $url;
-    $response = wp_remote_retrieve_body(wp_remote_get($url.'api/wordpress/get-timings'));
+    $response = wp_remote_retrieve_body(wp_remote_get($url . 'api/wordpress/get-timings'));
     $response = json_decode($response);
     $options = $response->data;
 
