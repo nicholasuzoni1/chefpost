@@ -75,7 +75,7 @@
     </div>
 </footer>
 <div class="copyright">
-    <p class="mb-0">© Copyright Chefpost 2021</p>
+    <p class="mb-0" style=""><span style="font-size: 30px; margin-right: 4px;">&copy; </span>Chefpost <?php echo date("Y"); ?></p>
 </div>
 <?php wp_footer(); ?>
 <!-- end #footer -->
