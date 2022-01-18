@@ -10,7 +10,7 @@ function chefPost_scripts()
     wp_enqueue_style('owl.carousel', get_template_directory_uri() . '/assets/css/owl.carousel.min.css', array(), 1, 'all');
     wp_enqueue_style('owl.carousel-theme', get_template_directory_uri() . '/assets/css/owl.theme.default.min.css', array(), 1, 'all');
     wp_enqueue_style('Bootstrap-datepicker', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css', array(), 1, 'all');
-    wp_enqueue_style('theme', get_template_directory_uri() . '/assets/css/style.css', array(), 1, 'all');
+    wp_enqueue_style('theme-css', get_template_directory_uri() . '/assets/css/style.css', array(), 1, 'all');
     wp_enqueue_style('responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), 1, 'all');
     wp_enqueue_style('animate', get_template_directory_uri() . '/assets/css/animate.css', array(), 1, 'all');
 
@@ -34,6 +34,14 @@ function chefPost_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'chefPost_scripts');
+
+add_filter( 'style_loader_tag',  'preload_filter', 10, 2 );
+function preload_filter( $html, $handle ){
+    if (strcmp($handle, 'theme-css') == 0) {
+        $html = str_replace("rel='stylesheet'", "rel='stylesheet preload' as='style' ", $html);
+    }
+    return $html;
+}
 
 function base_url()
 {
