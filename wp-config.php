@@ -23,15 +23,10 @@ define('FS_METHOD','direct');
 
 //Local DB
 
-<<<<<<< HEAD
+
 define( 'DB_NAME', 'chefpost_6996' );
 define( 'DB_USER', 'root' );
 define( 'DB_PASSWORD', 'Chefpost!123456' );
-=======
-define( 'DB_NAME', 'chefpost_wp2' );
-define( 'DB_USER', 'root' );
-define( 'DB_PASSWORD', 'Chefpost@2022' );
->>>>>>> d7569fe3b24196c59efba57d82871733629463f7
 
 //live DB
 

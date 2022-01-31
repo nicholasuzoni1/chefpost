@@ -75,11 +75,7 @@
     </div>
 </footer>
 <div class="copyright">
-<<<<<<< HEAD
-    <p class="mb-0">© Copyright Chefpost <?php echo date(Y);?></p>
-=======
     <p class="mb-0" style=""><span style="font-size: 30px; margin-right: 4px;">&copy; </span>Chefpost <?php echo date("Y"); ?></p>
->>>>>>> d7569fe3b24196c59efba57d82871733629463f7
 </div>
 <?php wp_footer(); ?>
 <!-- end #footer -->
