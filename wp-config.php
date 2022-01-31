@@ -23,9 +23,9 @@ define('FS_METHOD','direct');
 
 //Local DB
 
-define( 'DB_NAME', 'chef_post' );
+define( 'DB_NAME', 'chefpost_6996' );
 define( 'DB_USER', 'root' );
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'Chefpost!123456' );
 
 //live DB
 

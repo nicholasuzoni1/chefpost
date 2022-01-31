@@ -15,7 +15,7 @@
                 ?>
                 <!--                <ul class="list-inline mb-0">-->
                 <!--                    <li class="d-block"><a href="{{route('about_us')}}">Our Story</a></li>-->
-                <!--                     <li class="d-block"><a href="{{route('blogs')}}">Blogs</a></li> -->
+<!--                                     <li class="d-block"><a href="{{route('blog')}}">Blog</a></li> -->
                 <!--                    <li class="d-block"><a href="{{route('career')}}">Career</a></li>-->
                 <!--                   <li class="d-block"><a href="{{route('press')}}">Press</a></li> -->
                 <!--                </ul>-->
@@ -75,7 +75,7 @@
     </div>
 </footer>
 <div class="copyright">
-    <p class="mb-0">© Copyright Chefpost 2021</p>
+    <p class="mb-0">© Copyright Chefpost <?php echo date(Y);?></p>
 </div>
 <?php wp_footer(); ?>
 <!-- end #footer -->
