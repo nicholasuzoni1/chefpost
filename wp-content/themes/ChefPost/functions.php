@@ -1,7 +1,5 @@
 <?php
-/**
- * Enqueue scripts and styles.
- */
+
 function chefPost_scripts()
 {
     wp_enqueue_style('bootstrap', get_stylesheet_uri());
@@ -35,8 +33,9 @@ function chefPost_scripts()
 
 add_action('wp_enqueue_scripts', 'chefPost_scripts');
 
-add_filter( 'style_loader_tag',  'preload_filter', 10, 2 );
-function preload_filter( $html, $handle ){
+add_filter('style_loader_tag', 'preload_filter', 10, 2);
+function preload_filter($html, $handle)
+{
     if (strcmp($handle, 'theme-css') == 0) {
         $html = str_replace("rel='stylesheet'", "rel='stylesheet preload' as='style' ", $html);
     }
@@ -151,45 +150,6 @@ function create_how_it_work_post_type()
 
 add_action('init', 'create_how_it_work_post_type');
 
-//function how_it_work_post_type_arg() {
-//    $labels = array(
-//        'name'                => _x( 'How It Works', 'Post Type General Name', 'ChefPost' ),
-//        'singular_name'       => _x( 'How It Works', 'Post Type Singular Name', 'ChefPost' ),
-//        'menu_name'           => __( 'How It Works', 'ChefPost' ),
-//        'parent_item_colon'   => __( 'Parent How It Works', 'ChefPost' ),
-//        'all_items'           => __( 'All How It Works', 'ChefPost' ),
-//        'view_item'           => __( 'View How It Works', 'ChefPost' ),
-//        'add_new_item'        => __( 'Add New How It Works', 'ChefPost' ),
-//        'add_new'             => __( 'Add New', 'ChefPost' ),
-//        'edit_item'           => __( 'Edit How It Works', 'ChefPost' ),
-//        'update_item'         => __( 'Update How It Works', 'ChefPost' ),
-//        'search_items'        => __( 'Search How It Works', 'ChefPost' ),
-//        'not_found'           => __( 'Not Found', 'ChefPost' ),
-//        'not_found_in_trash'  => __( 'Not found in Trash', 'ChefPost' ),
-//    );
-//
-//    $args = array(
-//        'label'               => __( 'How It Works', 'ChefPost' ),
-//        'description'         => __( 'How It Works of the company', 'ChefPost' ),
-//        'labels'              => $labels,
-//        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-//        'taxonomies'          => array( 'genres' ),
-//        'hierarchical'        => false,
-//        'public'              => true,
-//        'show_ui'             => true,
-//        'show_in_menu'        => true,
-//        'show_in_nav_menus'   => true,
-//        'show_in_admin_bar'   => true,
-//        'menu_position'       => 5,
-//        'can_export'          => true,
-//        'has_archive'         => true,
-//        'exclude_from_search' => false,
-//        'publicly_queryable'  => true,
-//        'capability_type'     => 'page',
-//    );
-//    register_post_type( 'How It Works', $args );
-//}
-//add_action( 'init', 'how_it_work_post_type_arg', 0 );
 function shortcode_getChefs()
 {
     global $url;
@@ -309,20 +269,13 @@ add_theme_support('menus');
 
 function faqs_post_type()
 {
-
-    // Set labels for custom post type
-
     $labels = array(
         'name' => 'FAQS',
         'singular_name' => 'faq',
         'add_new' => 'Add faq',
         'add_new_item' => 'Enter faq Details',
         'all_items' => 'All faqs',
-
     );
-
-
-    // Set Options for this custom post type;
 
     $args = array(
         'public' => true,
@@ -332,19 +285,15 @@ function faqs_post_type()
         'menu_icon' => 'dashicons-video-alt2',
         'supports' => array('title', 'editor', 'thumbnail'),
         'capability_type' => 'page',
-
     );
 
     register_post_type('faqs', $args);
-
 }
 
 add_action('init', 'faqs_post_type');
 
-
 function shortcode_faqs_post_type()
 {
-
     $args = array(
         'post_type' => 'faqs',
         'publish_status' => 'published',
@@ -353,7 +302,6 @@ function shortcode_faqs_post_type()
     );
 
     $query = new WP_Query($args);
-
     $result = '<div class="panel-group mt-5" id="accordion" role="tablist" aria-multiselectable="true">';
     if ($query->have_posts()) :
         while ($query->have_posts()) :
@@ -379,7 +327,6 @@ function shortcode_faqs_post_type()
          ';
         endwhile;
         wp_reset_postdata();
-
     endif;
     $result .= '</div>';
     return $result;
@@ -387,18 +334,14 @@ function shortcode_faqs_post_type()
 
 add_shortcode('faqs-list', 'shortcode_faqs_post_type');
 
-
 function shortcode_how_it_works_post_type()
 {
-
     $args = array(
         'post_type' => 'How It Works',
         'publish_status' => 'published',
         'orderby' => 'date',
         'order' => 'ASC',
-
     );
-
     $query = new WP_Query($args);
 
     $result = '<section class="how-it-works pt-0">';
@@ -434,17 +377,14 @@ add_shortcode('how-it-works', 'shortcode_how_it_works_post_type');
 
 function shortcode_testimonials_post_type()
 {
-
     $args = array(
         'post_type' => 'Testimonials',
         'publish_status' => 'published',
         'orderby' => 'date',
         'order' => 'ASC',
-
     );
 
     $query = new WP_Query($args);
-
     $result = '<section class="owl-carousel" id="testimonial-carousel">';
     if ($query->have_posts()) :
         while ($query->have_posts()) :
@@ -473,10 +413,7 @@ add_shortcode('testimonials', 'shortcode_testimonials_post_type');
 function full_page_list_shortcode($atts = [], $content = null, $tag = '')
 {
     global $url;
-    // normalize attribute keys, lowercase
     $atts = array_change_key_case((array)$atts, CASE_LOWER);
-
-    // override default attributes with user attributes
     $args = shortcode_atts(
         array(
             'publish_status' => 'published',
@@ -512,12 +449,10 @@ function full_page_list_shortcode($atts = [], $content = null, $tag = '')
          ';
         endwhile;
         wp_reset_postdata();
-
     endif;
     $result .= '</section>';
     return $result;
 
-    // return output
     return $result;
 }
 
@@ -531,10 +466,7 @@ add_action('init', 'full_page_list_shortcode_init');
 
 function col3_list_shortcode($atts = [], $content = null, $tag = '')
 {
-    // normalize attribute keys, lowercase
     $atts = array_change_key_case((array)$atts, CASE_LOWER);
-
-    // override default attributes with user attributes
     $args = shortcode_atts(
         array(
             'publish_status' => 'published',
@@ -571,7 +503,6 @@ function col3_list_shortcode($atts = [], $content = null, $tag = '')
     $result .= '</div>';
     return $result;
 
-    // return output
     return $result;
 }
 
@@ -633,5 +564,3 @@ function widgets_init()
 }
 
 add_action('widgets_init', 'widgets_init');
-
-?>
