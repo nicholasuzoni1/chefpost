@@ -13,4 +13,91 @@ RewriteRule ^index.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . index.php [L]
+
+Redirect 301 /cuisines https://booking.chefpost.com/cuisines
+Redirect 301 /filter https://booking.chefpost.com/filter
+Redirect 301 /terms-and-conditions https://booking.chefpost.com/terms-and-conditions
+Redirect 301 /chef/chef-Julieta https://booking.chefpost.com/chef/chef-Julieta
+Redirect 301 /chef/chef-Liz https://booking.chefpost.com/chef/chef-Liz
+Redirect 301 /chef/chef-Liz?id=596 https://booking.chefpost.com/chef/chef-Liz?id=596
+Redirect 301 /chef/chef-Reni https://booking.chefpost.com/chef/chef-Reni
+Redirect 301 /chef/chef-Reni?id=580 https://booking.chefpost.com/chef/chef-Reni?id=580
+Redirect 301 /chef/chef-Gina https://booking.chefpost.com/chef/chef-Gina
+Redirect 301 /chef/chef-Gina?id=2 https://booking.chefpost.com/chef/chef-Gina?id=2
+
+Redirect 301 /chef/chef-Anna https://booking.chefpost.com/chef/chef-Anna
+Redirect 301 /chef/chef-Anna?id=515 https://booking.chefpost.com/chef/chef-Anna?id=515
+
+Redirect 301 /chef/chef-Selene https://booking.chefpost.com/chef/chef-Selene
+Redirect 301 /chef/chef-Selene?id=603 https://booking.chefpost.com/chef/chef-Selene?id=603
+
+Redirect 301 /chef/chef-Rossy https://booking.chefpost.com/chef/chef-Rossy
+Redirect 301 /chef/chef-Rossy?id=508 https://booking.chefpost.com/chef/chef-Rossy?id=508
+Redirect 301 /chef/chef-Julieta https://booking.chefpost.com/chef/chef-Julieta
+Redirect 301 /chef/chef-Julieta?id=601 https://booking.chefpost.com/chef/chef-Julieta?id=601
+Redirect 301 /chef/chef-Gina/Events/brunch https://booking.chefpost.com/chef/chef-Gina/Events/brunch
+Redirect 301 /chef/chef-David https://booking.chefpost.com/chef/chef-David
+Redirect 301 /chef/chef-David?id=511 https://booking.chefpost.com/chef/chef-David?id=511
+Redirect 301 /chef/chef-Ruth https://booking.chefpost.com/chef/chef-Ruth
+Redirect 301 /chef/chef-Ruth?id=615 https://booking.chefpost.com/chef/chef-Ruth?id=615
+Redirect 301 /reset-password https://booking.chefpost.com/reset-password
+Redirect 301 /chef/chef-Reni/Events/beef-lovers https://booking.chefpost.com/chef/chef-Reni/Events/beef-lovers
+Redirect 301 /chef/chef-Selene/Events/mexico-lindo https://booking.chefpost.com/chef/chef-Selene/Events/mexico-lindo
+Redirect 301 /chef/chef-David/Events/asian-horderves https://booking.chefpost.com/chef/chef-David/Events/asian-horderves
+Redirect 301 /chef/chef-Selene/Events/healthy-brunch https://booking.chefpost.com/chef/chef-Selene/Events/healthy-brunch
+Redirect 301 /chef/chef-Rossy/Events/weekend-brunch-2 https://booking.chefpost.com/chef/chef-Rossy/Events/weekend-brunch-2
+Redirect 301 /chef/chef-David/Fine-dining/the-godfather https://booking.chefpost.com/chef/chef-David/Fine-dining/the-godfather
+Redirect 301 /chef/chef-Reni/Events/hors-doeuvre-party https://booking.chefpost.com/chef/chef-Reni/Events/hors-doeuvre-party
+Redirect 301 /chef/chef-Gina/Fine-dining/posta-cartagenera https://booking.chefpost.com/chef/chef-Gina/Fine-dining/posta-cartagenera
+Redirect 301 /chef/chef-Gina/Fine-dining/mushroom-stroganoff https://booking.chefpost.com/chef/chef-Gina/Fine-dining/mushroom-stroganoff
+Redirect 301 /chef/chef-David/Events/learn-to-prep https://booking.chefpost.com/chef/chef-David/Events/learn-to-prep
+Redirect 301 /chef/chef-Liz/Fine-dining/chinese-4-course https://booking.chefpost.com/chef/chef-Liz/Fine-dining/chinese-4-course
+Redirect 301 /chef/chef-Liz/Fine-dining/summer-prix-fixe https://booking.chefpost.com/chef/chef-Liz/Fine-dining/summer-prix-fixe
+Redirect 301 /chef/chef-Rossy/Fine-dining/three-course-menu https://booking.chefpost.com/chef/chef-Rossy/Fine-dining/three-course-menu
+Redirect 301 /chef/chef-Liz/Meal-Prep/meal-prep-session https://booking.chefpost.com/chef/chef-Liz/Meal-Prep/meal-prep-session
+Redirect 301 /chef/chef-Gina/Events/kids-party-menu-2 https://booking.chefpost.com/chef/chef-Gina/Events/kids-party-menu-2
+Redirect 301 /chef/chef-Reni/Events/special-4-course-dinner https://booking.chefpost.com/chef/chef-Reni/Events/special-4-course-dinner
+Redirect 301 /chef/chef-Julieta/Fine-dining/lunch-3-course https://booking.chefpost.com/chef/chef-Julieta/Fine-dining/lunch-3-course
+Redirect 301 /chef/chef-Liz/Events/custom-menu-3-course https://booking.chefpost.com/chef/chef-Liz/Events/custom-menu-3-course
+#error
+Redirect 301 /chef/chef-Anna/Fine-dining/plant-based-japanese https://booking.chefpost.com/chef/chef-Anna/Fine-dining/plant-based-japanese
+#error
+Redirect 301 /chef/chef-Anna/Fine-dining/plant-based-brunch https://booking.chefpost.com/chef/chef-Anna/Fine-dining/plant-based-brunch
+#error
+Redirect 301 /chef/chef-Anna/Meal-Prep/vegan-weekday-meal https://booking.chefpost.com/chef/chef-Anna/Meal-Prep/vegan-weekday-meal
+
+Redirect 301 /chef/chef-Reni/Fine-dining/special-mediterranean-menu https://booking.chefpost.com/chef/chef-Reni/Fine-dining/special-mediterranean-menu
+Redirect 301 /chef/chef-Gina/Prix-fixe-Menu/posta-cartagenera https://booking.chefpost.com/chef/chef-Gina/Prix-fixe-Menu/posta-cartagenera
+Redirect 301 /chef/chef-David/Fine-dining/the-french-connection https://booking.chefpost.com/chef/chef-David/Fine-dining/the-french-connection
+Redirect 301 /chef/chef-Liz/Prix-fixe-Menu/chinese-4-course https://booking.chefpost.com/chef/chef-Liz/Prix-fixe-Menu/chinese-4-course
+Redirect 301 /chef/chef-David/Prix-fixe-Menu/almond-crusted-halibut https://booking.chefpost.com/chef/chef-David/Prix-fixe-Menu/almond-crusted-halibut
+Redirect 301 /chef/chef-David/Prix-fixe-Menu/braised-short-rib https://booking.chefpost.com/chef/chef-David/Prix-fixe-Menu/braised-short-rib
+Redirect 301 /chef/chef-Liz/Meal-Prep/weekday-lunch-and-dinner https://booking.chefpost.com/chef/chef-Liz/Meal-Prep/weekday-lunch-and-dinner
+Redirect 301 /chef/chef-Liz/Prix-fixe-Menu/vegan-4-course https://booking.chefpost.com/chef/chef-Liz/Prix-fixe-Menu/vegan-4-course
+#error
+Redirect 301 /chef/chef-Anna/Meal-Prep/vegan-meal-prep-2 https://booking.chefpost.com/chef/chef-Anna/Meal-Prep/vegan-meal-prep-2
+
+Redirect 301 /chef/chef-Reni/Prix-fixe-Menu/mediterranean-rosemary-chicken https://booking.chefpost.com/chef/chef-Reni/Prix-fixe-Menu/mediterranean-rosemary-chicken
+Redirect 301 /chef/chef-Reni/Prix-fixe-Menu/latin-family-style https://booking.chefpost.com/chef/chef-Reni/Prix-fixe-Menu/latin-family-style
+Redirect 301 /chef/chef-Julieta/Fine-dining/peruvian-3-course-menu https://booking.chefpost.com/chef/chef-Julieta/Fine-dining/peruvian-3-course-menu
+Redirect 301 /chef/chef-Anna/Fine-dining/plant-based-indian-menu https://booking.chefpost.com/chef/chef-Anna/Fine-dining/plant-based-indian-menu
+Redirect 301 /chef/chef-Julieta/Prix-fixe-Menu/italian-3-course https://booking.chefpost.com/chef/chef-Julieta/Prix-fixe-Menu/italian-3-course
+Redirect 301 /chef/chef-Gina/Cook-with-my-ingredients/homemade-breakfast https://booking.chefpost.com/chef/chef-Gina/Cook-with-my-ingredients/homemade-breakfast
+#error
+Redirect 301 /chef/chef-Anna/Fine-dining/italian-vegan-3-course-menu https://booking.chefpost.com/chef/chef-Anna/Fine-dining/italian-vegan-3-course-menu
+
+Redirect 301 /chef/chef-Julieta/Prix-fixe-Menu/peruvian-3-course-menu https://booking.chefpost.com/chef/chef-Julieta/Prix-fixe-Menu/peruvian-3-course-menu
+Redirect 301 /chef/chef-Rossy/Fine-dining/custom-menu-3-course-2 https://booking.chefpost.com/chef/chef-Rossy/Fine-dining/custom-menu-3-course-2
+Redirect 301 /chef/chef-Gina/Meal-Prep/meal-prep-session-5-meals https://booking.chefpost.com/chef/chef-Gina/Meal-Prep/meal-prep-session-5-meals
+Redirect 301 /chef/chef-Julieta/Meal-Prep/family-meal-prep-session-5 https://booking.chefpost.com/chef/chef-Julieta/Meal-Prep/family-meal-prep-session-5
+Redirect 301 /chef/chef-Julieta/Meal-Prep/meal-prep-session-x-4-meals https://booking.chefpost.com/chef/chef-Julieta/Meal-Prep/meal-prep-session-x-4-meals
+Redirect 301 /chef/chef-Reni/Prix-fixe-Menu/surf-and-turf-4-course https://booking.chefpost.com/chef/chef-Reni/Prix-fixe-Menu/surf-and-turf-4-course
+Redirect 301 /chef/chef-David/Fine-dining/lunch-and-dinner-up-to-8-people https://booking.chefpost.com/chef/chef-David/Fine-dining/lunch-and-dinner-up-to-8-people
+Redirect 301 /chef/chef-Rossy/Meal-Prep/family-prep-meal-session-2-4-people https://booking.chefpost.com/chef/chef-Rossy/Meal-Prep/family-prep-meal-session-2-4-people
+Redirect 301 /chef/chef-Reni/Meal-Prep/prep-meal-session-for-2-4-people-3 https://booking.chefpost.com/chef/chef-Reni/Meal-Prep/prep-meal-session-for-2-4-people-3
+Redirect 301 /chef/chef-Gina/Meal-Prep/family-meal-prep-session-x-5-meals-includes-ingredients https://booking.chefpost.com/chef/chef-Gina/Meal-Prep/family-meal-prep-session-x-5-meals-includes-ingredients
+Redirect 301 /chef/chef-Rossy/Meal-Prep/mediterranean-meal-prep-session-x-4-meals-includes-ingredients https://booking.chefpost.com/chef/chef-Rossy/Meal-Prep/mediterranean-meal-prep-session-x-4-meals-includes-ingredients
+Redirect 301 /chef/chef-Ruth/Meal-Prep/meal-prep-session-x-5-meals-with-clients-ingredients https://booking.chefpost.com/chef/chef-Ruth/Meal-Prep/meal-prep-session-x-5-meals-with-clients-ingredients
+Redirect 301 /chef/chef-Ruth/Meal-Prep/family-lunch-and-dinner-x-5-people-includes-ingredients https://booking.chefpost.com/chef/chef-Ruth/Meal-Prep/family-lunch-and-dinner-x-5-people-includes-ingredients
+Redirect 301 /chef/chef-Ruth/Meal-Prep/meal-prep-session-x-5-meals-for-2-people-includes-ingredients https://booking.chefpost.com/chef/chef-Ruth/Meal-Prep/meal-prep-session-x-5-meals-for-2-people-includes-ingredients
 </IfModule>
