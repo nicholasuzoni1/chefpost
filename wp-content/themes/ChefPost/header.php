@@ -3,16 +3,25 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="description
-        "
+    <meta name="description"
           content="Book a personal chef for weekday meals, meals preps or events anytime. Available in South Florida. Book, Relax and Enjoy the Chefpost Experience">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
+    <meta name="p:domain_verify" content="13ab91ff2a46bad48366c3895d96ca44"/>
     <link rel="icon" type="image/png" sizes="16x16"
           href="<?php echo get_template_directory_uri() . '/assets/images/ic_cart.png' ?>">
     <title>Chefpost</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" media="screen"/>
+<!--    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">-->
+    <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet preload" type="text/css" media="all"/>
+    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gelion-Regular.ttf' ?>" as="font" />
+    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gelion-Medium.ttf' ?>" as="font" />
+    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gelion-Bold.ttf' ?>" as="font" />
+    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/AtlasGrotesk-Light.ttf' ?>" as="font" />
+    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gilroy-Regular.ttf' ?>" as="font" />
+    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gilroy-Medium.ttf' ?>" as="font" />
+    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gilroy-Bold.ttf' ?>" as="font" />
+    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gilroy-Heavy.ttf' ?>" as="font" />
+    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/CaslonGraphiqueEF.ttf' ?>" as="font" />
     <?php wp_head(); ?>
     <!-- CLient Code -->
     <script>

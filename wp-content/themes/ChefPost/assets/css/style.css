@@ -1232,14 +1232,19 @@ footer a {
 .copyright {
     border: 1px solid #656565;
     background-color: #AA182C;
-    padding: 12px;
     text-align: center;
+    padding: 4px 6px;
 }
 
 .copyright p {
     color: #FFFFFF;
+    font-family: 'Gelion';
     font-size: 14px;
     letter-spacing: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .forgot-pswd-deading {
