@@ -90,7 +90,7 @@ endwhile;
                         <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Our Services Heading Section')) :
                         endif; ?>
 
-                        <div class="row" style="justify-content: space-evenly;">
+                        <div class="row homeServices" style="justify-content: center;">
                             <?php
                             $args = array('post_type' => 'services', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => 4, 'category_name' => 'Home page Services');
                             $loop = new WP_Query($args);
@@ -98,12 +98,12 @@ endwhile;
                                 $image = get_field('image');
                                 $link = get_field('link');
                                 ?>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <a href="<?php echo $link; ?>">
                                         <div class="services-card">
-                                            <img src="<?php the_post_thumbnail_url(array(245, 178)); ?>"
-                                                 style="height: 178px; border-radius: 3%; max-width: 245px;">
-                                            <div class="pt-2">
+                                            <img src="<?php the_post_thumbnail_url(); ?>"
+                                                 style="height: 178px; border-radius: 3%; max-width: 100%;">
+                                            <div class="pt-2 text-center">
                                                 <h5><?php echo get_the_title() ?></h5>
                                                 <span><?php echo get_the_content() ?></span>
                                             </div>
