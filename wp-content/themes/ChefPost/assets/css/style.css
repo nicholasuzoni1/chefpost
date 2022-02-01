@@ -3150,3 +3150,6 @@ fieldset {
 .owl-carousel .next-slide:hover{
     background-position: -24px -53px;
 }
+.homeServices .col-md-4:not(:last-child){
+    margin-right: 30px;
+}
