@@ -1,7 +1,5 @@
 <?php
-/**
- * Enqueue scripts and styles.
- */
+
 function chefPost_scripts()
 {
     wp_enqueue_style('bootstrap', get_stylesheet_uri());
@@ -10,7 +8,7 @@ function chefPost_scripts()
     wp_enqueue_style('owl.carousel', get_template_directory_uri() . '/assets/css/owl.carousel.min.css', array(), 1, 'all');
     wp_enqueue_style('owl.carousel-theme', get_template_directory_uri() . '/assets/css/owl.theme.default.min.css', array(), 1, 'all');
     wp_enqueue_style('Bootstrap-datepicker', 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css', array(), 1, 'all');
-    wp_enqueue_style('theme', get_template_directory_uri() . '/assets/css/style.css', array(), 1, 'all');
+    wp_enqueue_style('theme-css', get_template_directory_uri() . '/assets/css/style.css', array(), 1, 'all');
     wp_enqueue_style('responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), 1, 'all');
     wp_enqueue_style('animate', get_template_directory_uri() . '/assets/css/animate.css', array(), 1, 'all');
 
@@ -34,6 +32,15 @@ function chefPost_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'chefPost_scripts');
+
+add_filter('style_loader_tag', 'preload_filter', 10, 2);
+function preload_filter($html, $handle)
+{
+    if (strcmp($handle, 'theme-css') == 0) {
+        $html = str_replace("rel='stylesheet'", "rel='stylesheet preload' as='style' ", $html);
+    }
+    return $html;
+}
 
 function base_url()
 {
@@ -143,54 +150,15 @@ function create_how_it_work_post_type()
 
 add_action('init', 'create_how_it_work_post_type');
 
-//function how_it_work_post_type_arg() {
-//    $labels = array(
-//        'name'                => _x( 'How It Works', 'Post Type General Name', 'ChefPost' ),
-//        'singular_name'       => _x( 'How It Works', 'Post Type Singular Name', 'ChefPost' ),
-//        'menu_name'           => __( 'How It Works', 'ChefPost' ),
-//        'parent_item_colon'   => __( 'Parent How It Works', 'ChefPost' ),
-//        'all_items'           => __( 'All How It Works', 'ChefPost' ),
-//        'view_item'           => __( 'View How It Works', 'ChefPost' ),
-//        'add_new_item'        => __( 'Add New How It Works', 'ChefPost' ),
-//        'add_new'             => __( 'Add New', 'ChefPost' ),
-//        'edit_item'           => __( 'Edit How It Works', 'ChefPost' ),
-//        'update_item'         => __( 'Update How It Works', 'ChefPost' ),
-//        'search_items'        => __( 'Search How It Works', 'ChefPost' ),
-//        'not_found'           => __( 'Not Found', 'ChefPost' ),
-//        'not_found_in_trash'  => __( 'Not found in Trash', 'ChefPost' ),
-//    );
-//
-//    $args = array(
-//        'label'               => __( 'How It Works', 'ChefPost' ),
-//        'description'         => __( 'How It Works of the company', 'ChefPost' ),
-//        'labels'              => $labels,
-//        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-//        'taxonomies'          => array( 'genres' ),
-//        'hierarchical'        => false,
-//        'public'              => true,
-//        'show_ui'             => true,
-//        'show_in_menu'        => true,
-//        'show_in_nav_menus'   => true,
-//        'show_in_admin_bar'   => true,
-//        'menu_position'       => 5,
-//        'can_export'          => true,
-//        'has_archive'         => true,
-//        'exclude_from_search' => false,
-//        'publicly_queryable'  => true,
-//        'capability_type'     => 'page',
-//    );
-//    register_post_type( 'How It Works', $args );
-//}
-//add_action( 'init', 'how_it_work_post_type_arg', 0 );
 function shortcode_getChefs()
 {
     global $url;
-    $response = wp_remote_retrieve_body(wp_remote_get($url.'api/wordpress/get-all-chefs'));
+    $response = wp_remote_retrieve_body(wp_remote_get($url . 'api/wordpress/get-all-chefs'));
     $response = json_decode($response, true);
     $options = $response['data'];
     $result = '<div id="owl-example-second" class="owl-carousel">';
     foreach ($options as $key => $chef) {
-        $result .= '<a href="'.$url.'chef/chef-' . $chef['first_name'] . '">
+        $result .= '<a href="' . $url . 'chef/chef-' . $chef['first_name'] . '">
             <div class="col-md-12">
                 <div class="chef-image">
                     <img class="img-fluid" src="' . $chef['profile_pic'] . '" alt="' . $chef['first_name'] . ' ' . $chef['last_name'] . '">
@@ -208,7 +176,7 @@ add_shortcode('show-chefs', 'shortcode_getChefs');
 function shortcode_getCountriesCodes()
 {
     global $url;
-    $response = wp_remote_retrieve_body(wp_remote_get($url.'api/wordpress/get-countries'));
+    $response = wp_remote_retrieve_body(wp_remote_get($url . 'api/wordpress/get-countries'));
     $response = json_decode($response, true);
     $options = $response['countries'];
     $result = '';
@@ -301,20 +269,13 @@ add_theme_support('menus');
 
 function faqs_post_type()
 {
-
-    // Set labels for custom post type
-
     $labels = array(
         'name' => 'FAQS',
         'singular_name' => 'faq',
         'add_new' => 'Add faq',
         'add_new_item' => 'Enter faq Details',
         'all_items' => 'All faqs',
-
     );
-
-
-    // Set Options for this custom post type;
 
     $args = array(
         'public' => true,
@@ -324,19 +285,15 @@ function faqs_post_type()
         'menu_icon' => 'dashicons-video-alt2',
         'supports' => array('title', 'editor', 'thumbnail'),
         'capability_type' => 'page',
-
     );
 
     register_post_type('faqs', $args);
-
 }
 
 add_action('init', 'faqs_post_type');
 
-
 function shortcode_faqs_post_type()
 {
-
     $args = array(
         'post_type' => 'faqs',
         'publish_status' => 'published',
@@ -345,7 +302,6 @@ function shortcode_faqs_post_type()
     );
 
     $query = new WP_Query($args);
-
     $result = '<div class="panel-group mt-5" id="accordion" role="tablist" aria-multiselectable="true">';
     if ($query->have_posts()) :
         while ($query->have_posts()) :
@@ -371,7 +327,6 @@ function shortcode_faqs_post_type()
          ';
         endwhile;
         wp_reset_postdata();
-
     endif;
     $result .= '</div>';
     return $result;
@@ -379,18 +334,14 @@ function shortcode_faqs_post_type()
 
 add_shortcode('faqs-list', 'shortcode_faqs_post_type');
 
-
 function shortcode_how_it_works_post_type()
 {
-
     $args = array(
         'post_type' => 'How It Works',
         'publish_status' => 'published',
         'orderby' => 'date',
         'order' => 'ASC',
-
     );
-
     $query = new WP_Query($args);
 
     $result = '<section class="how-it-works pt-0">';
@@ -424,13 +375,45 @@ function shortcode_how_it_works_post_type()
 add_shortcode('how-it-works', 'shortcode_how_it_works_post_type');
 
 
+function shortcode_testimonials_post_type()
+{
+    $args = array(
+        'post_type' => 'Testimonials',
+        'publish_status' => 'published',
+        'orderby' => 'date',
+        'order' => 'ASC',
+    );
+
+    $query = new WP_Query($args);
+    $result = '<section class="owl-carousel" id="testimonial-carousel">';
+    if ($query->have_posts()) :
+        while ($query->have_posts()) :
+            $query->the_post();
+            $image = get_template_directory_uri() . '/assets/images/star.svg';
+            $result .= '
+             <div class="testimonial-wrap">
+                <img  class="mb-5"
+                     src=' . $image . ' height="25">
+                <p>' . get_the_content() . '</p>
+                <div style="font-size: 16px;" >
+                    <strong>' . get_the_title() . '</strong></div>
+            </div>
+         ';
+        endwhile;
+        wp_reset_postdata();
+
+    endif;
+    $result .= '</section>';
+    return $result;
+}
+
+add_shortcode('testimonials', 'shortcode_testimonials_post_type');
+
+
 function full_page_list_shortcode($atts = [], $content = null, $tag = '')
 {
     global $url;
-    // normalize attribute keys, lowercase
     $atts = array_change_key_case((array)$atts, CASE_LOWER);
-
-    // override default attributes with user attributes
     $args = shortcode_atts(
         array(
             'publish_status' => 'published',
@@ -452,9 +435,9 @@ function full_page_list_shortcode($atts = [], $content = null, $tag = '')
          <div class="image-and-text-block mt-3">
                 <div class="container">
                     <div class="row d-flex align-items-center sec-height">
-                        <img src='. get_the_post_thumbnail_url() .' class="img-pos">
+                        <img src=' . get_the_post_thumbnail_url() . ' class="img-pos">
                         <div class="col-md-5">
-                            <h3><a style="color: #946C73;" href="'. get_permalink() .'">' . get_the_title() . '</a></h3>
+                            <h3><a style="color: #946C73;" href="' . get_permalink() . '">' . get_the_title() . '</a></h3>
                             <p>' . get_the_content() . '</p>
                             
                         </div>
@@ -466,12 +449,10 @@ function full_page_list_shortcode($atts = [], $content = null, $tag = '')
          ';
         endwhile;
         wp_reset_postdata();
-
     endif;
     $result .= '</section>';
     return $result;
 
-    // return output
     return $result;
 }
 
@@ -485,10 +466,7 @@ add_action('init', 'full_page_list_shortcode_init');
 
 function col3_list_shortcode($atts = [], $content = null, $tag = '')
 {
-    // normalize attribute keys, lowercase
     $atts = array_change_key_case((array)$atts, CASE_LOWER);
-
-    // override default attributes with user attributes
     $args = shortcode_atts(
         array(
             'publish_status' => 'published',
@@ -509,7 +487,7 @@ function col3_list_shortcode($atts = [], $content = null, $tag = '')
             $image = get_field('image');
             $result .= '
                 <div class="col-md-6 col-lg-4">
-                    <a href="'.get_field('link').'">
+                    <a href="' . get_field('link') . '">
                         <div class="services-card-btm">
                             <img class="img-fluid" src="' . $image . '"
                                  style="height:227px; border-radius:3%; min-width: 290px"/>
@@ -525,7 +503,6 @@ function col3_list_shortcode($atts = [], $content = null, $tag = '')
     $result .= '</div>';
     return $result;
 
-    // return output
     return $result;
 }
 
@@ -540,7 +517,7 @@ add_action('init', 'col3_list_shortcode_init');
 function shortcode_select_time()
 {
     global $url;
-    $response = wp_remote_retrieve_body(wp_remote_get($url.'api/wordpress/get-timings'));
+    $response = wp_remote_retrieve_body(wp_remote_get($url . 'api/wordpress/get-timings'));
     $response = json_decode($response);
     $options = $response->data;
 
@@ -587,5 +564,3 @@ function widgets_init()
 }
 
 add_action('widgets_init', 'widgets_init');
-
-?>

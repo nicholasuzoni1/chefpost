@@ -90,7 +90,7 @@ endwhile;
                         <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Our Services Heading Section')) :
                         endif; ?>
 
-                        <div class="row" style="justify-content: space-evenly;">
+                        <div class="row homeServices" style="justify-content: center;">
                             <?php
                             $args = array('post_type' => 'services', 'orderby' => 'date', 'order' => 'ASC', 'posts_per_page' => 4, 'category_name' => 'Home page Services');
                             $loop = new WP_Query($args);
@@ -98,12 +98,12 @@ endwhile;
                                 $image = get_field('image');
                                 $link = get_field('link');
                                 ?>
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                                     <a href="<?php echo $link; ?>">
                                         <div class="services-card">
-                                            <img src="<?php the_post_thumbnail_url(array(245, 178)); ?>"
-                                                 style="height: 178px; border-radius: 3%; max-width: 245px;">
-                                            <div class="pt-2">
+                                            <img src="<?php the_post_thumbnail_url(); ?>"
+                                                 style="height: 178px; border-radius: 3%; max-width: 100%;">
+                                            <div class="pt-2 text-center">
                                                 <h5><?php echo get_the_title() ?></h5>
                                                 <span><?php echo get_the_content() ?></span>
                                             </div>
@@ -209,52 +209,7 @@ endwhile;
                     <!-- <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br> tempor incididunt ut.</p> -->
                 </div>
                 <div class="col-md-12">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <?php
-                            $c = 0;
-                            $class = '';
-                            $args = array('post_type' => 'Testimonials', 'orderby' => 'date', 'order' => 'ASC');
-                            $loop = new WP_Query($args);
-                            while ($loop->have_posts()) : $loop->the_post();
-                                $c++;
-                                if ($c == 1) $class .= ' active';
-                                else $class = '';
-                                ?>
-                                <div class="carousel-item <?php echo $class; ?>">
-                                    <div class="mt-5 mb-5">
-                                        <div class="row">
-                                            <div class="offset-md-1 col-md-10">
-                                                <div class="testimonial-wrap">
-                                                    <img class="mb-4"
-                                                         src="<?php echo get_template_directory_uri() . '/assets/images/ic_esclamation.png' ?>">
-                                                    <h6><?php echo get_the_content() ?></h6>
-                                                    <div class="line mt-5">
-                                                        <strong><?php echo get_the_title() ?></strong></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php
-                                wp_reset_query();
-                            endwhile;
-                            ?>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                           data-slide="prev">
-                            <span style="transform: rotate(180deg);" class="carousel-control-prev-icon"
-                                  aria-hidden="true"><img
-                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_next.png' ?>"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                           data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"><img
-                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_next.png' ?>"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
+                <?php echo do_shortcode("[testimonials]"); ?>
                 </div>
             </div>
         </div>
