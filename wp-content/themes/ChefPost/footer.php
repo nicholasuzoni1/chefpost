@@ -193,7 +193,8 @@
 
     $('.datepicker').datepicker({
         format: 'mm/dd/yyyy',
-        startDate: 'today'
+        startDate: 'today',
+        autoclose:true
     });
 
     function userLogout() {
