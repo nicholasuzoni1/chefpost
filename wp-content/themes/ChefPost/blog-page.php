@@ -22,6 +22,7 @@ get_header(); ?>
                 <div class="carousel-inner img-size">
                     <div class="carousel-item active">
                         <img src="<?php echo the_post_thumbnail_url(); ?>" alt="">
+                        <div class="layer"></div>
                         <div class="main-pos">
                             <div class="container">
                                 <div class="row justify-content-center">
