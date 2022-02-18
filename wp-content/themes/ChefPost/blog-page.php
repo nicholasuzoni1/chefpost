@@ -78,11 +78,8 @@ get_header(); ?>
                                                  style="height:227px; border-radius:3%; min-width: 290px">
                                         </a>
                                         <h5><?php echo the_title();?><small><span class="px-2">|</span><?php the_time('F jS, Y'); ?></small></h5>
-<!--                                        <p class="mb-1">--><?php //echo get_the_content(); ?><!--</p>-->
                                         <p class="mb-1"><?php echo wp_trim_words( get_the_content(), 15, '...' );?></p>
-<!--                                        <p class="meta">Posted by --><?php //the_author_posts_link(); ?><!--<span-->
-<!--                                                    class="px-1">on</span>--><?php //the_time('F jS, Y'); ?>
-                                    </div>
+                            </div>
                                 </div>
                             <?php endwhile; ?>
                         </div>

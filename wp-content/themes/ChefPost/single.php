@@ -26,7 +26,6 @@ global $url; ?>
                             containerEl: '#fd-form-5fc7d7b8c792d45aa601ef32'
                         });
                     </script>
-                    <!-- CLient Code -->
                 </div>
             </div>
         </div>
@@ -37,37 +36,5 @@ global $url; ?>
     function capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
-
-    // let name = $(".title").html()
-    // name = name.replace(/\s/g, '-');
-    //
-    // (async () => {
-    //     const rawResponse = await fetch(base_url + `api/wordpress/services/${name}`, {
-    //         method: 'GET'
-    //     });
-    //     const content = await rawResponse.json();
-    //     if (content.success == true) {
-    //         for (i = 0; i < content.data.length; i++) {
-    //             $("#services").append(`
-    //                 <div class="col-lg-3">
-    //                 <div class="meal-block" style="position: relative;">
-    //                     <div class="meal-image">
-    //                         <a href="${base_url}chef/chef-${content.data[i]['user'].first_name}/${capitalizeFirstLetter(name.toLowerCase())}/${content.data[i]['slug']}" style="color: black">
-    //                             <img class="img-fluid" style="border-radius: 3%" src="${base_url}${content.data[i]['image_url']}">
-    //                         </a>
-    //                     </div>
-    //                     <div class="mt-2">
-    //                         <h6>
-    //                             <a href="http://localhost:8000/chef/chef-Gina/Cook-with-my-ingredients/homemade-breakfast" style="color: black">${content.data[i]['title']}</a>
-    //                             <strong class="float-right">$${content.data[i]['price']}</strong>
-    //                         </h6>
-    //                         <p>${content.data[i]['description']}</p>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //             `)
-    //         }
-    //     }
-    // })();
 </script>
 
