@@ -27,7 +27,7 @@ get_header(); ?>
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col-md-8">
-                                        <h2 class="text-center"><?php echo get_the_title() ?></h2>
+                                        <h1 class="text-center"><?php echo get_the_title() ?></h1>
                                     </div>
                                 </div>
                             </div>

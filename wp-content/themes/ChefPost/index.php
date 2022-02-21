@@ -18,7 +18,7 @@ while ($loop->have_posts()) : $loop->the_post();
                         <div class="container">
                             <div class="row">
                                 <div class="offset-md-2 col-md-8">
-                                    <h2 class="text-center"><?php echo get_the_title() ?></h2>
+                                    <h1 class="text-center"><?php echo get_the_title() ?></h1>
                                     <p><?php echo get_the_content() ?></p>
                                 </div>
                                 <div class="col-md-12 mt-4">

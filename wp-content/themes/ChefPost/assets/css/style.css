@@ -610,7 +610,8 @@ header .btn-transparent {
   background-size: cover;
   background-attachment: fixed;
 }*/
-.bannar h2 {
+
+.bannar h1, .bannar h2{
     color: #FFFFFF;
     font-size: 56px;
     font-weight: bold;
