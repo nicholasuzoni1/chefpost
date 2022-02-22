@@ -37,8 +37,12 @@
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gilroy-Heavy.ttf' ?>" as="font"/>
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/CaslonGraphiqueEF.ttf' ?>" as="font"/>
     <?php wp_head(); ?>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-184607912-1"></script>
+
     <!-- CLient Code -->
     <script>
+      window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'UA-184607912-1');
         (function (w, d, t, s, n) {
             w.FlodeskObject = n;
             var fn = function () {
