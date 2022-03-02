@@ -87,12 +87,12 @@
             <ul class="navbar-nav ml-auto d-flex align-items-center">
                 <ul class="navbar-nav ml-auto align-items-center" id="guest">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link">
                             <button class="hover-ripple theme-button with-background open_login_popup">LOGIN</button>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link">
                             <button class="hover-ripple theme-button bordered open_signup_popup">SIGN UP</button>
                         </a>
                     </li>
