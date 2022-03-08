@@ -267,7 +267,7 @@
             var countries_html = '';
             var countries = content.countries;
             for (var i = 0; i < countries.length; i++) {
-                countries_html += `<option value="${countries[i].phone_code}">+${countries[i].phone_code}</option>`;
+                countries_html += `<option value="${countries[i].phone_code}" ${countries[i].phone_code == '1' ? 'selected' : ''}>+${countries[i].phone_code}</option>`;
             }
             $('#phone_code').append(countries_html);
         }
