@@ -2719,7 +2719,11 @@ a.add-new {
     right: 0px;
     position: absolute;
 }
-
+@media (max-width: 767px) {
+    .input-btn .search-button {
+        position: relative;
+    }
+}
 .cardFixed {
     position: fixed;
     top: 100px;
