@@ -521,8 +521,8 @@ function shortcode_select_time()
     $response = json_decode($response);
     $options = $response->data;
 
-    $result = '<select style="appearance: none;" class="time-select border-0" name="time" id="inputTime" placeholder="Select Time">
-                    <option value="">Select Time</option>';
+    $result = '<select style="appearance: none;" class="form-control time-select border-0" name="time" id="inputTime" required>
+                    <option value="" disabled selected>Select Time</option>';
     foreach ($options as $key => $value) {
         $result .= '<option value="' . $key . '">' . $value . '</option>';
     }

@@ -634,7 +634,7 @@ header .btn-transparent {
 
 .select-address input {
     border: none;
-    padding: 11px 6px 6px 6px;
+    padding: 6px;
     width: 100%;
     outline: none;
     color: #2D2A26;
@@ -649,7 +649,7 @@ header .btn-transparent {
 }
 
 .select-time {
-    bottom: 2px !important;
+    /*bottom: 2px !important;*/
 }
 
 .bannar input::placeholder {
@@ -2651,11 +2651,24 @@ a.add-new {
 .time-select {
     background: transparent;
     width: 120px;
+    /*color: #2D2A26;*/
+    font-size: 15px;
+    font-weight: 600;
+}
+.time-select:required:invalid {
+    color: #2D2A26;
+    opacity: 0.5;
+}
+.time-select option[value=""][disabled] {
+    display: none;
 }
 
-.time-select:focus {
+.time-select option {
+    color: #2D2A26;
     outline: 0;
+    /*opacity: 1;*/
 }
+
 
 .header-about-us {
     position: relative;
