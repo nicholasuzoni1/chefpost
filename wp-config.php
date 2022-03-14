@@ -23,9 +23,13 @@ define('WP_CACHE', true);
 
 //Local DB
 
-define('DB_NAME', 'chef_post');
+//define('DB_NAME', 'chef_post');
+//define('DB_USER', 'root');
+//define('DB_PASSWORD', '');
+
+define('DB_NAME', 'chefpost_wp2');
 define('DB_USER', 'root');
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'Chefpost@2022');
 
 //live DB
 
