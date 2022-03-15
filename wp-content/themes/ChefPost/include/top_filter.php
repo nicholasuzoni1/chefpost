@@ -54,16 +54,14 @@
                            value="<?php $_GET['longitude'] != '' ? $_GET['longitude'] : '' ?>">
                     <input type="hidden" name="place_id" id="location_id" placeholder="Location Ids"
                            value="<?php $_GET['place_id'] != '' ? $_GET['place_id'] : '' ?>">
-
-
-                    <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_location.png' ?>">
+                    <img width="22"  src="<?php echo get_template_directory_uri() . '/assets/images/ic_location.png' ?>">
                 </div>
             </div>
             <div class="col-lg-2 pl-lg-0 border-0 brdrr-1">
                 <div class="select-address">
                     <input type="input" autocomplete="off" id="inputDate" class="datepicker" name="date"
                            placeholder="Select Date" value="<?php $_GET['date'] != '' ? $_GET['date'] : '' ?>">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_date.png' ?>">
+                    <img width="22" height="22"  src="<?php echo get_template_directory_uri() . '/assets/images/ic_date.png' ?>">
                 </div>
             </div>
 
@@ -71,8 +69,7 @@
             <div class="col-lg-2  brdrr-1">
                 <div class="select-address" style="padding-left: 6px;">
                     <?php echo do_shortcode("[show-time]"); ?>
-                    <img class="select-time"
-                         src="<?php echo get_template_directory_uri() . '/assets/images/ic_time.png' ?>">
+                    <img width="22" height="22" class="select-time" src="<?php echo get_template_directory_uri() . '/assets/images/ic_time.png' ?>">
                 </div>
             </div>
             <div class="col-lg-4">
