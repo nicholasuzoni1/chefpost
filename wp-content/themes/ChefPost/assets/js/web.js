@@ -80,47 +80,47 @@ checkSuccess = function (response) {
 
 
 //validate login form
-$("#signup-form").validate({
-    rules: {
-        email: {
-            required: true,
-            email: true
-        },
-        phone: {
-            required: true
-        },
-        password: {
-            required: true
-        },
-        password_confirmation: {
-            required: true,
-            equalTo: "#password-field"
-        },
-        firstname: {
-            required: true
-        },
-        lastname: {
-            required: true
-        },
-        city: {
-            required: true
-        },
-        postal: {
-            required: true
-        },
-        address: {
-            required: true
-        }
-    },
-    messages: {
-        password_confirmation: {
-            equalTo: 'Passwords are not same'
-        },
-    },
-    submitHandler: function () {
-        $("#signup-form").submit();
-    }
-});
+// $("#user-signup-form").validate({
+//     rules: {
+//         email: {
+//             required: true,
+//             email: true
+//         },
+//         phone: {
+//             required: true
+//         },
+//         password: {
+//             required: true
+//         },
+//         password_confirmation: {
+//             required: true,
+//             equalTo: "#password-field"
+//         },
+//         firstname: {
+//             required: true
+//         },
+//         lastname: {
+//             required: true
+//         },
+//         city: {
+//             required: true
+//         },
+//         postal: {
+//             required: true
+//         },
+//         address: {
+//             required: true
+//         }
+//     },
+//     messages: {
+//         password_confirmation: {
+//             equalTo: 'Passwords are not same'
+//         },
+//     },
+//     // submitHandler: function () {
+//     //     $("#signup-form").submit();
+//     // }
+// });
 
 //validate Signup form
 $("#user-signup-form").validate({
@@ -138,7 +138,7 @@ $("#user-signup-form").validate({
             required: true,
             email: true,
             remote: {
-                url: '/user/email/check',
+                url: base_url + 'api/wordpress/user/email/check',
                 type: "POST",
                 cache: false,
                 dataType: "json",
@@ -151,14 +151,15 @@ $("#user-signup-form").validate({
                     }
                 },
                 dataFilter: function (response) {
+                    console.log({response});
                     return checkSuccess(response);
                 }
             }
         },
         phone: {
             required: true,
-            // minlength : 6,
-            // maxlength : 15,
+            minlength : 6,
+            maxlength : 15,
             remote: {
                 url: '/user/phone/check',
                 type: "POST",
@@ -202,13 +203,13 @@ $("#user-signup-form").validate({
 });
 
 
-//validate Signup form
+//validate Login form
 $("#user-login-form").validate({
     rules: {
         phone_email: {
             required: true,
             remote: {
-                url: '/user/email/check/exist',
+                url: base_url + 'api/wordpress/user/email/check/exist',
                 type: "POST",
                 cache: false,
                 dataType: "json",
@@ -230,7 +231,7 @@ $("#user-login-form").validate({
             minlength: 6,
             maxlength: 15,
             remote: {
-                url: '/user/password/check',
+                url: base_url+'/user/password/check',
                 type: "POST",
                 cache: false,
                 dataType: "json",

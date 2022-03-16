@@ -400,17 +400,38 @@
     fbq('track', 'PageView');
 
     $(document).on('click', '#user-login-form', function (e) {
+        e.preventDefault();
         var formdata = new FormData();
         formdata.append("phone_email", $("#user_phone_email_login").val().trim());
         formdata.append("password", $("#user_password").val().trim());
+        console.log({formdata1:$("#user_phone_email_login").val().trim()})
+        if(!$("#user_phone_email_login").val().trim()){
+            console.log('Error');
+            let newlabel = document.getElementById("user_phone_email_login_error");
+            newlabel.innerHTML="Please Enter the Email.";
+            if(!$("#user_password").val().trim()){
+            console.log('Error');
+            let newlabel1 = document.getElementById("user_password_error");
+            newlabel1.innerHTML="Please Enter the Password";
+            }
+            return false
+        }
+        if(!$("#user_password").val().trim()){
+            console.log('Error');
+            let newlabel1 = document.getElementById("user_password_error");
+            newlabel1.innerHTML="Please Enter the Password";
+            return false
+        }
+        console.log({formdata});
         (async () => {
             const rawResponse = await fetch('<?php echo $url?>api/wordpress/user_login', {
                 method: 'POST',
                 body: formdata
             });
             const content = await rawResponse.json();
+            console.log(content);
             if (content.success) {
-                console.log(content)
+                console.log("ABC")
                 $('#myModal').modal('hide');
                 $("#user_phone_email_login").val('')
                 $("#user_password").val('')
@@ -430,10 +451,35 @@
         var formdata = new FormData();
         formdata.append("first_name", $("#first_name").val().trim());
         formdata.append("last_name", $("#last_name").val().trim());
-        formdata.append("email", $("#user_email_address").val().trim());
+        formdata.append("email", $("#email").val().trim());
         formdata.append("phone_code", $("#phone_code").val().trim());
         formdata.append("phone", $("#user_phone_number").val().trim());
         formdata.append("password", $("#register_password").val().trim());
+            console.log(1122)
+            let value= $("#user_email_address_error_signup").val().trim();
+            let response= await fetch(base_url + 'api/wordpress/user/email/check',{
+                method: 'POST',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                body: JSON.stringify(value)
+            }).then(response=>response.json()).then(data => {
+                let newlabel = document.getElementById("user_email_address_error_signup");
+                if(!data.success){
+                    console.log(data.msg)
+                    console.log({innerHtml1:newlabel.innerHTML})
+                    newlabel.innerHTML = data.msg;
+                    console.log({innerHtml2:newlabel.innerHTML},newlabel.innerHTML)
+                    return false;
+                }
+                if(data.success ==1){
+                    let newlabel2 = document.getElementById("user_email_address_error_signup");
+                    newlabel2.innerHTML="";
+                }
+            });
+        
         (async () => {
             const rawResponse = await fetch('<?php echo $url?>api/wordpress/user_signup', {
                 method: 'POST',

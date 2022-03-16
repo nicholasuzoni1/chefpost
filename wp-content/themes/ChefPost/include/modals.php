@@ -92,6 +92,9 @@
         background-position-x: 43px;
         width: 205px;
     }
+    #user_email_address_error_signup{
+        display: block !important;
+    }
 </style>
 <div class="modal fade login" id="myModal">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -124,13 +127,15 @@
 
                             <div class="tab-content">
                                 <div class="tab-pane active" id="loginTab">
+                                <form class="mt-4 pt-4" name="user-login-form1" id="user-login-form1">
                                     <label>
                                         <p class="label-txt">Email</p>
-                                        <input type="text" name="phone_email" id="user_phone_email_login"
+                                        <input type="text" name="phone_email" id="user_phone_email_login" onfocusout="onFocusChangeHandlerLogin(this)"
                                                class="input" placeholder="xyz@mail.com">
                                         <div class="line-box">
                                             <div class="line"></div>
                                         </div>
+                                        <label for="user_phone_email_login" id="user_phone_email_login_error" class="error"></label>
                                     </label>
                                     <label>
                                         <p class="label-txt">Password</p>
@@ -139,6 +144,7 @@
                                         <div class="line-box">
                                             <div class="line"></div>
                                         </div>
+                                        <label for="user_password" id="user_password_error" class="error"></label>
                                     </label>
                                     <div class="row mb-4">
                                         <div class="col-md-6 text-left">
@@ -177,72 +183,79 @@
                                             </a>
                                         </div>
                                     </div>
+                                    </form>
                                 </div>
                                 <div class="tab-pane fade" id="registerTab">
+                                    <form id="user-signup-form" name="user-signup-form" >
 
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-6">
-                                            <label>
-                                                <p class="label-txt">First Name</p>
-                                                <input type="text" class="input" name="first_name" id="first_name">
-                                                <div class="line-box">
-                                                    <div class="line"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                        <div class="col-md-6 col-lg-6">
-                                            <label>
-                                                <p class="label-txt">Last Name</p>
-                                                <input type="text" class="input" name="last_name" id="last_name">
-                                                <div class="line-box">
-                                                    <div class="line"></div>
-                                                </div>
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <label class="mt-3">
-                                        <p class="label-txt">Email Address</p>
-                                        <input type="email" class="input" placeholder="xyz@mail.com" name="email"
-                                               id="user_email_address">
-                                        <div class="line-box">
-                                            <div class="line"></div>
-                                        </div>
-                                    </label>
-                                    <label>
-                                        <p class="label-txt">Phone Number</p>
-                                        <select class="wd-30 number-box-in" name="phone_code" id="phone_code">
-                                            <!--                                            --><?php //echo do_shortcode("[show-countries-codes]"); ?>
-                                        </select>
-                                        <div class="wd-70">
-                                            <input type="tel" class="input" name="phone" id="user_phone_number"
-                                                   placeholder="(123) 456 - 7890">
-                                            <div class="line-box">
-                                                <div class="line "></div>
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-6">
+                                                <label>
+                                                    <p class="label-txt">First Name</p>
+                                                    <input type="text" class="input" name="first_name" id="first_name">
+                                                    <div class="line-box">
+                                                        <div class="line"></div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-6 col-lg-6">
+                                                <label>
+                                                    <p class="label-txt">Last Name</p>
+                                                    <input type="text" class="input" name="last_name" id="last_name">
+                                                    <div class="line-box">
+                                                        <div class="line"></div>
+                                                    </div>
+                                                </label>
                                             </div>
                                         </div>
-                                    </label>
-                                    <label>
-                                        <p class="label-txt">Password</p>
-                                        <input type="password" class="input" placeholder="******" name="password"
-                                               id="register_password">
-                                        <div class="line-box">
-                                            <div class="line"></div>
+    
+                                        <label class="mt-3" id="parentDiv_email" >
+                                            <p class="label-txt">Email Address</p>
+                                            <input type="email" class="input" placeholder="xyz@mail.com" name="email" onblur="validationFocusHandlerEmail(this)"
+                                                   id="user_email_address">
+                                            <div class="line-box">
+                                                <div class="line"></div>
+                                            </div>
+                                            <label style="display: block !important;" for="email" id="user_email_address_error_signup" class="error"></label>
+
+                                        </label>
+                                        <label>
+                                            <p class="label-txt">Phone Number</p>
+                                            <select class="wd-30 number-box-in" name="phone_code" id="phone_code">
+                                                //echo do_shortcode("[show-countries-codes]"); ?>
+                                            </select>
+                                            <div class="wd-70">
+                                                <input type="tel" class="input" name="phone" id="user_phone_number"
+                                                placeholder="(123) 456 - 7890">
+                                                    <!-- onfocusout="validationFocusHandlerPhone(this)" -->
+                                                <div class="line-box">
+                                                    <div class="line "></div>
+                                                </div>
+                                            </div>
+                                            <label for="user_phone_number" id="user_phone_number_error" class="error"></label>
+                                        </label>
+                                        <label>
+                                            <p class="label-txt">Password</p>
+                                            <input type="password" class="input" placeholder="******" name="password"
+                                                   id="register_password">
+                                            <div class="line-box">
+                                                <div class="line"></div>
+                                            </div>
+                                        </label>
+                                        <div class="checkbox-block">
+                                            <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox"
+                                                   value="1" name="condition_check" checked
+                                                   onchange="terms_policy(this)">
+                                            <label for="styled-checkbox-1" style="margin: 15px 0px 12px 0;"> <span>By signing up you agree to the <a
+                                                            href="<?php echo esc_url(home_url('/terms-of-service')); ?>"
+                                                            target="_blank">Terms of use</a> & <a
+                                                            href="<?php echo esc_url(home_url('/privacy-policy')); ?>"
+                                                            target="_blank">Privacy Policy</a></span></label>
                                         </div>
-                                    </label>
-                                    <div class="checkbox-block">
-                                        <input class="styled-checkbox" id="styled-checkbox-1" type="checkbox"
-                                               value="1" name="condition_check" checked
-                                               onchange="terms_policy(this)">
-                                        <label for="styled-checkbox-1" style="margin: 15px 0px 12px 0;"> <span>By signing up you agree to the <a
-                                                        href="<?php echo esc_url(home_url('/terms-of-service')); ?>"
-                                                        target="_blank">Terms of use</a> & <a
-                                                        href="<?php echo esc_url(home_url('/privacy-policy')); ?>"
-                                                        target="_blank">Privacy Policy</a></span></label>
-                                    </div>
-                                    <button class="w-100 theme-button with-background mb-2 hover-ripple"
-                                            type="submit" id="signup_button">SIGN UP
-                                    </button>
+                                        <button class="w-100 theme-button with-background mb-2 hover-ripple"
+                                                type="submit" id="signup_button">SIGN UP
+                                        </button>
+                                    </form>
                                     <small class="d-block mb-2 text-center">Or</small>
                                     <div class="form-row">
                                         <div class="col-lg-12 mb-3">
@@ -490,4 +503,78 @@
             }
         })();
     }
+    var validationFocusHandlerEmail = async(obj)=>{
+        console.log("ABC");
+        var value={email:obj.value};
+        if(obj.value){
+            let response= await fetch(base_url + 'api/wordpress/user/email/check',{
+                method: 'POST',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                body: JSON.stringify(value)
+            }).then(response=>response.json()).then(data => {
+                let newlabel = document.getElementById("user_email_address_error_signup");
+                // newlabel.innerHTML="";
+                if(!data.success){
+                    // let newlabel = document.getElementById("user_email_address_error_signup");
+                    newlabel.innerHTML = data.msg;
+                    return false;
+                }
+                if(data.success ==1){
+                    let newlabel2 = document.getElementById("user_email_address_error_signup");
+                    newlabel2.innerHTML="";
+                }
+            });
+        }
+        
+            // let content = await response.json();
+
+}
+var validationFocusHandlerPhone =async(obj)=>{
+    let value={phone:obj.value};
+        let response= await fetch(base_url + 'api/wordpress/user/phone/check',{
+                method: 'POST',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                body: JSON.stringify(value)
+            }).then(response=>response.json()).then(data => {
+                if(!data.success){
+                    let newlabel = document.getElementById("user_phone_number_error");
+                    newlabel.innerHTML="";
+                    newlabel.innerHTML = data.msg;
+                }
+                if(data.success){
+                    let newlabel = document.getElementById("user_phone_number_error");
+                    newlabel.innerHTML="";
+                }
+            });
+}
+var onFocusChangeHandlerLogin =async(obj)=>{
+    let value={phone_email:obj.value};
+        let response= await fetch(base_url + 'api/wordpress/user/email/check/exist',{
+                method: 'POST',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                body: JSON.stringify(value)
+            }).then(response=>response.json()).then(data => {
+                if(!data.success){
+                    let newlabel = document.getElementById("user_phone_email_login_error");
+                    newlabel.innerHTML="";
+                    newlabel.innerHTML = data.msg;
+                }
+                if(data.success){
+                    let newlabel = document.getElementById("user_phone_email_login_error");
+                    newlabel.innerHTML="";
+                }
+            });
+}
 </script>
