@@ -565,10 +565,12 @@ function widgets_init()
 
 add_action('widgets_init', 'widgets_init');
 
-function remove_post_type_page_from_search() {
-    global $wp_post_types;
-    $wp_post_types['featuredchefs']->exclude_from_search = true;
-    $wp_post_types['howitworks']->exclude_from_search = true;
+function wpmu_inject_custom_metadata() {
+    global $post;
+    if ( is_singular( 'featuredchefs' ) || is_singular( 'howitworks' ) ) {
+        ?>
+        <meta name="robots" content="noindex, nofollow" />
+        <?php
+    }
 }
-
-add_action('init', 'remove_post_type_page_from_search');
+add_action( 'wp_head', 'wpmu_inject_custom_metadata' );
