@@ -1,0 +1,20 @@
+User-agent: *
+
+Disallow: https://chefpost.com/services/events-2
+Disallow: https://chefpost.com/services/events
+Disallow: https://chefpost.com/Cuisines/italian
+Disallow: https://chefpost.com/new-page
+Disallow: https://chefpost.com/banners/book-relax-enjoy
+Disallow: https://chefpost.com/Featured Chefs/chef-mike
+Disallow: https://chefpost.com/privacy-policy-2
+Disallow: https://chefpost.com/Featured Chefs/chef-afiya
+Disallow: https://chefpost.com/Featured Chefs/chef-bacari
+Disallow: https://chefpost.com/How It Works/find-a-chef
+Disallow: https://chefpost.com/Our Story/our-story
+Disallow: https://chefpost.com/faqs/at-what-time-should-i-book-my-chef-for-an-event-or-service-2
+Disallow: https://chefpost.com/faqs/how-do-i-reschedule-my-booking
+Disallow: https://chefpost.com/How It Works/book-the-chef-and-service-you-need
+Disallow: https://chefpost.com/Testimonials/pepe
+Disallow: https://chefpost.com/Testimonials/lisa
+Disallow: https://chefpost.com/Testimonials/amanda
+Disallow: https://chefpost.com/How It Works/personalized-experiences
