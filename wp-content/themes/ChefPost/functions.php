@@ -561,6 +561,13 @@ function widgets_init()
         'before_widget' => '<div class="section-heading">',
         'after_widget' => '</div>',
     ));
+
+    register_sidebar(array(
+        'name' => esc_html__('Testimonials Heading Section', 'ChefPost'),
+        'id' => 'header-contact',
+        'before_widget' => '<div class="section-heading">',
+        'after_widget' => '</div>',
+    ));
 }
 
 add_action('widgets_init', 'widgets_init');
