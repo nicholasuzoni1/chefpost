@@ -567,7 +567,7 @@ add_action('widgets_init', 'widgets_init');
 
 function wpmu_inject_custom_metadata() {
     global $post;
-    if ( is_singular( 'featuredchefs' ) || is_singular( 'howitworks' ) ) {
+    if ( is_singular( 'featuredchefs' ) || is_singular( 'howitworks' ) ||  is_singular( 'ourstory' ) || is_singular( 'testimonials' ) || is_singular( 'joinus' )) {
         ?>
         <meta name="robots" content="noindex, nofollow" />
         <?php
