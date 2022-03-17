@@ -447,7 +447,7 @@
         })();
     })
 
-    $(document).on('click', '#signup_button', function (e) {
+    $(document).on('click', '#signup_button', async function (e) {
         var formdata = new FormData();
         formdata.append("first_name", $("#first_name").val().trim());
         formdata.append("last_name", $("#last_name").val().trim());

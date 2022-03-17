@@ -564,7 +564,7 @@ function widgets_init()
 
     register_sidebar(array(
         'name' => esc_html__('Testimonials Heading Section', 'ChefPost'),
-        'id' => 'header-contact',
+        'id' => 'testimonial-contact',
         'before_widget' => '<div class="section-heading">',
         'after_widget' => '</div>',
     ));
