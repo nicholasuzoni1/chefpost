@@ -437,7 +437,7 @@ function full_page_list_shortcode($atts = [], $content = null, $tag = '')
                     <div class="row d-flex align-items-center sec-height">
                         <img src=' . get_the_post_thumbnail_url() . ' class="img-pos">
                         <div class="col-md-5">
-                            <h3><a style="color: #946C73;" href="' . get_permalink() . '">' . get_the_title() . '</a></h3>
+                            <h3><span style="color: #946C73;">' . get_the_title() . '</span></h3>
                             <p>' . get_the_content() . '</p>
                             
                         </div>
@@ -557,6 +557,13 @@ function widgets_init()
 
     register_sidebar(array(
         'name' => esc_html__('Header Contact Info', 'ChefPost'),
+        'id' => 'header-contact',
+        'before_widget' => '<div class="section-heading">',
+        'after_widget' => '</div>',
+    ));
+
+    register_sidebar(array(
+        'name' => esc_html__('Testimonials Heading Section', 'ChefPost'),
         'id' => 'header-contact',
         'before_widget' => '<div class="section-heading">',
         'after_widget' => '</div>',
