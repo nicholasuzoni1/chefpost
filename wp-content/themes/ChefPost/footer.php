@@ -451,13 +451,13 @@
         var formdata = new FormData();
         formdata.append("first_name", $("#first_name").val().trim());
         formdata.append("last_name", $("#last_name").val().trim());
-        formdata.append("email", $("#email").val().trim());
+        $("#user_email_address").val() && formdata.append("email", $("#user_email_address").val().trim());
         formdata.append("phone_code", $("#phone_code").val().trim());
         formdata.append("phone", $("#user_phone_number").val().trim());
         formdata.append("password", $("#register_password").val().trim());
-            console.log(1122)
-            let value= $("#user_email_address_error_signup").val().trim();
-            let response= await fetch(base_url + 'api/wordpress/user/email/check',{
+            let value= {email:$("#user_email_address").val().trim()};
+            try {
+                let response= await fetch(base_url + 'api/wordpress/user/email/check',{
                 method: 'POST',
                 cache: 'no-cache',
                 headers: {
@@ -468,17 +468,18 @@
             }).then(response=>response.json()).then(data => {
                 let newlabel = document.getElementById("user_email_address_error_signup");
                 if(!data.success){
-                    console.log(data.msg)
-                    console.log({innerHtml1:newlabel.innerHTML})
                     newlabel.innerHTML = data.msg;
-                    console.log({innerHtml2:newlabel.innerHTML},newlabel.innerHTML)
                     return false;
                 }
                 if(data.success ==1){
-                    let newlabel2 = document.getElementById("user_email_address_error_signup");
-                    newlabel2.innerHTML="";
+                    newlabel.innerHTML="";
                 }
             });
+            } catch (error) {
+                console.log({error})
+                return false;
+            }
+            
         
         (async () => {
             const rawResponse = await fetch('<?php echo $url?>api/wordpress/user_signup', {
@@ -486,7 +487,6 @@
                 body: formdata
             });
             const content = await rawResponse.json();
-            console.log(content)
             if (content.success) {
                 $('#myModal').modal('hide');
                 $("#first_name").val('')

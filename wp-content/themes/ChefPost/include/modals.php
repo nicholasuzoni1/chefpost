@@ -504,7 +504,6 @@
         })();
     }
     var validationFocusHandlerEmail = async(obj)=>{
-        console.log("ABC");
         var value={email:obj.value};
         if(obj.value){
             let response= await fetch(base_url + 'api/wordpress/user/email/check',{
