@@ -437,7 +437,7 @@ function full_page_list_shortcode($atts = [], $content = null, $tag = '')
                     <div class="row d-flex align-items-center sec-height">
                         <img src=' . get_the_post_thumbnail_url() . ' class="img-pos">
                         <div class="col-md-5">
-                            <h3><a style="color: #946C73;" href="' . get_permalink() . '">' . get_the_title() . '</a></h3>
+                            <h3><span style="color: #946C73;">' . get_the_title() . '</span></h3>
                             <p>' . get_the_content() . '</p>
                             
                         </div>
@@ -561,6 +561,23 @@ function widgets_init()
         'before_widget' => '<div class="section-heading">',
         'after_widget' => '</div>',
     ));
+
+    register_sidebar(array(
+        'name' => esc_html__('Testimonials Heading Section', 'ChefPost'),
+        'id' => 'testimonial-contact',
+        'before_widget' => '<div class="section-heading">',
+        'after_widget' => '</div>',
+    ));
 }
 
 add_action('widgets_init', 'widgets_init');
+
+function wpmu_inject_custom_metadata() {
+    global $post;
+    if ( is_singular( 'featuredchefs' ) || is_singular( 'howitworks' ) ||  is_singular( 'ourstory' ) || is_singular( 'testimonials' ) || is_singular( 'joinus' )) {
+        ?>
+        <meta name="robots" content="noindex, nofollow" />
+        <?php
+    }
+}
+add_action( 'wp_head', 'wpmu_inject_custom_metadata' );
