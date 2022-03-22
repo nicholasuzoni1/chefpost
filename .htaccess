@@ -3,7 +3,7 @@
 # dynamically generated, and should only be modified via WordPress filters.
 # Any changes to the directives between these markers will be overwritten.
 
-Redirect 301 /filter?category_id=4 https://booking.chefpost.com/filter?category_id=4
+Redirect 301 https://chefpost.com/filter?category_id=4 https://booking.chefpost.com/filter?category_id=4
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
