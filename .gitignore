@@ -26,8 +26,6 @@ wp-config.php
 /wp-content/uploads
 # Log files
 *.log
-# htaccess
-/.htaccess
 # All plugins
 #
 # Note: If you wish to whitelist plugins,
