@@ -22,6 +22,9 @@ define('WP_CACHE', true);
 // ** MySQL settings - You can get this info from your web host ** //
 
 //Local DB
+// define('DB_NAME', 'chef_post');
+// define('DB_USER', 'root');
+// define('DB_PASSWORD', '');
 define('DB_NAME', 'chefpost_wp2');
 define('DB_USER', 'root');
 define('DB_PASSWORD', 'Chefpost@2022');

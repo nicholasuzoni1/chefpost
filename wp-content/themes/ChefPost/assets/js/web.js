@@ -161,7 +161,7 @@ $("#user-signup-form").validate({
             minlength : 6,
             maxlength : 15,
             remote: {
-                url: '/user/phone/check',
+                url: base_url + 'api/wordpress/user/phone/check',
                 type: "POST",
                 cache: false,
                 dataType: "json",
@@ -192,8 +192,8 @@ $("#user-signup-form").validate({
         },
         phone: {
             remote: 'This phone number is already registered with us',
-            // minlength : 'Please enter a valid phone number.',
-            // maxlength : 'Please enter a valid phone number.'
+            minlength : 'Please enter a valid phone number.',
+            maxlength : 'Phone number should be of max. 15 characters.'
         },
         password: {
             minlength: 'Password should be of min. 6 characters',
