@@ -33,11 +33,3 @@ Disallow: /How It Works/find-a-chef
 Disallow: /Testimonials/paula
 Disallow: /Featured Chefs/chef-bacari
 Disallow: /Testimonials/orli
-Disallow: /Testimonials
-Disallow: /services
-Disallow: /Cuisines
-Disallow: /Featured Chefs
-Disallow: /Join us
-Disallow: /Our Story
-Disallow: /banners
-Disallow: /How It Works
