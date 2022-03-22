@@ -3,9 +3,11 @@
 # dynamically generated, and should only be modified via WordPress filters.
 # Any changes to the directives between these markers will be overwritten.
 <IfModule mod_rewrite.c>
-    Redirect /filter?category_id=4 https://booking.chefpost.com/filter?category_id=4
-
     RewriteEngine On
+
+    RewriteCond %{HTTP_HOST} ^chefpost.com/filter?category_id=4
+    RewriteRule (.*) https://booking.chefpost.com/filter?category_id=4/$1 [R=301,L]
+
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
     RewriteBase /
     RewriteRule ^index\.php$ - [L]
