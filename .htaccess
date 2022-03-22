@@ -4,10 +4,7 @@
 # Any changes to the directives between these markers will be overwritten.
 <IfModule mod_rewrite.c>
     RewriteEngine On
-
-    RewriteCond %{HTTP_HOST} ^chefpost.com/filter?category_id=4
-    RewriteRule (.*) https://booking.chefpost.com/filter?category_id=4/$1 [R=301,L]
-
+    RewriteRule ^/?chefpost.com/filter?category_id=4/(.*)$ /booking.chefpost.com/filter?category_id=4/$1 [L,R=301]
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
     RewriteBase /
     RewriteRule ^index\.php$ - [L]
