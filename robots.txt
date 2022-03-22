@@ -1,0 +1,43 @@
+User-agent: *
+
+Disallow: /services/events-2
+Disallow: /services/events
+Disallow: /Cuisines/italian
+Disallow: /new-page
+Disallow: /banners/book-relax-enjoy
+Disallow: /Featured Chefs/chef-mike
+Disallow: /privacy-policy-2
+Disallow: /Featured Chefs/chef-afiya
+Disallow: /Featured Chefs/chef-bacari
+Disallow: /How It Works/find-a-chef
+Disallow: /Our Story/our-story
+Disallow: /faqs/at-what-time-should-i-book-my-chef-for-an-event-or-service-2
+Disallow: /faqs/how-do-i-reschedule-my-booking
+Disallow: /How It Works/book-the-chef-and-service-you-need
+Disallow: /Testimonials/pepe
+Disallow: /Testimonials/lisa
+Disallow: /Testimonials/amanda
+Disallow: /How It Works/personalized-experiences
+Disallow: /faqs/how-do-i-book-a-service
+Disallow: /faqs/what-are-the-prices-for-a-chefs-services
+Disallow: /Featured Chefs/chef-david
+Disallow: /How It Works/personalized-experiences
+Disallow: /Our Story/our-story
+Disallow: /Featured Chefs/chef-afiya
+Disallow: /How It Works/book-the-chef-and-service-you-need
+Disallow: /Join us/join-us-today
+Disallow: /How It Works/relax-and-enjoy
+Disallow: /Featured Chefs/chef-mike
+Disallow: /Testimonials/erika
+Disallow: /How It Works/find-a-chef
+Disallow: /Testimonials/paula
+Disallow: /Featured Chefs/chef-bacari
+Disallow: /Testimonials/orli
+Disallow: /Testimonials
+Disallow: /services
+Disallow: /Cuisines
+Disallow: /Featured Chefs
+Disallow: /Join us
+Disallow: /Our Story
+Disallow: /banners
+Disallow: /How It Works
