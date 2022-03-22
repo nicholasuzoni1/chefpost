@@ -18,3 +18,5 @@ Disallow: /Testimonials/pepe
 Disallow: /Testimonials/lisa
 Disallow: /Testimonials/amanda
 Disallow: /How It Works/personalized-experiences
+Disallow: /faqs/how-do-i-book-a-service
+Disallow: /faqs/what-are-the-prices-for-a-chefs-services
