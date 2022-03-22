@@ -20,3 +20,16 @@ Disallow: /Testimonials/amanda
 Disallow: /How It Works/personalized-experiences
 Disallow: /faqs/how-do-i-book-a-service
 Disallow: /faqs/what-are-the-prices-for-a-chefs-services
+Disallow: /Featured Chefs/chef-david
+Disallow: /How It Works/personalized-experiences
+Disallow: /Our Story/our-story
+Disallow: /Featured Chefs/chef-afiya
+Disallow: /How It Works/book-the-chef-and-service-you-need
+Disallow: /Join us/join-us-today
+Disallow: /How It Works/relax-and-enjoy
+Disallow: /Featured Chefs/chef-mike
+Disallow: /Testimonials/erika
+Disallow: /How It Works/find-a-chef
+Disallow: /Testimonials/paula
+Disallow: /Featured Chefs/chef-bacari
+Disallow: /Testimonials/orli
