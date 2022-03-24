@@ -8,34 +8,15 @@ $loop = new WP_Query($args);
 while ($loop->have_posts()) : $loop->the_post();
     $image = get_field('image');
     ?>
-    <section class="bannar">
-        <div id="crousel-demo" class="carousel slide" data-ride="carousel">
-            <!-- The slideshow -->
-            <div class="carousel-inner img-size">
-                <div class="carousel-item active">
-                    <img src="<?php echo $image; ?>" alt="">
-                    <div class="main-pos">
-                        <div class="container">
-                            <div class="row">
-                                <div class="offset-md-2 col-md-8">
-                                    <h1 class="text-center"><?php echo get_the_title() ?></h1>
-                                    <p><?php echo get_the_content() ?></p>
-                                </div>
-                                <div class="col-md-12 mt-4">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <section class="bannar" style="background: url('<?php echo $image; ?>') no-repeat center">
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-2 col-md-8">
+                    <h1 class="text-center"><?php echo get_the_title() ?></h1>
+                    <p><?php echo get_the_content() ?></p>
                 </div>
-            </div>
-        </div>
-        <div class="main-pos">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 mt-5" style="margin: 120px 0;"></div>
-                    <div class="col-md-12 mt-4">
-                        <?php include get_template_directory() . '/include/top_filter.php'; ?>
-                    </div>
+                <div class="col-md-12 mt-4">
+                    <?php include get_template_directory() . '/include/top_filter.php'; ?>
                 </div>
             </div>
         </div>

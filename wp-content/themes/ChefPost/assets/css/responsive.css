@@ -230,3 +230,41 @@ Organization: Code Brew Labs
     }
 
 }
+
+/*new layout css*/
+@media (max-width: 991px){
+    .container {
+        max-width: 100%;
+    }
+    header .navbar {
+        background: #fff;
+        padding: 0.9rem 1rem;
+    }
+    .navbar-light .navbar-toggler-icon {
+        background: url("../images/bar.svg") no-repeat center;
+        background-size: contain;
+
+    }
+    .navbar-toggler {
+        border: none;
+        border-radius: 0;
+        background: #fff;
+        padding: 0.25rem 0;
+    }
+    header nav.navbar.shrink {
+        padding: 0.6rem 1rem;
+    }
+    .bannar p {
+        font-family: "Gelion";
+        font-size: 16px;
+        line-height: 21px;
+    }
+}
+@media (max-width: 767px){
+    .bannar h1{
+        font-size: 38px;
+        font-weight: 600;
+        line-height: 46px;
+    }
+
+}
