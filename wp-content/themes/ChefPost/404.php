@@ -19,7 +19,7 @@ get_header();
 
                     <div class="page-content">
                         <p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'ChefPost' ); ?></p>
-                        <?php get_search_form(); ?>
+                        <a href="<?php echo home_url( '/' ) ?>" class="hover-ripple theme-button with-background open_login_popup">Go to Homepage</a>
                     </div><!-- .page-content -->
                 </div><!-- .error-404 -->
             </div>
