@@ -7,10 +7,6 @@
     RewriteEngine On
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
     RewriteBase /
-
-    RewriteCond %{HTTP_HOST} ^/filter?category_id=4 [NC]
-    RewriteRule ^(.)$ https://booking.chefpost.com/filter?category_id=4 [L,R=301]
-
     RewriteRule ^index\.php$ - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
