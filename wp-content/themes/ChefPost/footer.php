@@ -4,7 +4,9 @@
 <footer>
     <div class="container">
         <div class="row">
-            <div class="col-md-3 col-6">
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3 ">
                 <h5>About Us</h5>
                 <?php
                 wp_nav_menu(array(
@@ -20,7 +22,7 @@
                 <!--                   <li class="d-block"><a href="{{route('press')}}">Press</a></li> -->
                 <!--                </ul>-->
             </div>
-            <div class="col-md-3 col-6">
+            <div class="col-6 col-md-3 ">
                 <h5>Support</h5>
                 <?php
                 wp_nav_menu(array(
@@ -39,7 +41,7 @@
                     <!--                    <li class="d-block"><a href="{{route('privacy_policy')}}">Privacy Policy</a></li>-->
                 </ul>
             </div>
-            <div class="col-md-3 col-12 small-text-center mg-mb">
+            <div class="col-12 col-md-3  small-text-center mg-mb">
                 <h5>Social Connect</h5>
                 <ul class="list-inline mb-4">
                     <li class="mr-4"><a href="https://www.instagram.com/chefpost/" target="_blank"><img

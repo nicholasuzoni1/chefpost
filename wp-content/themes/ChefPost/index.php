@@ -9,6 +9,7 @@ while ($loop->have_posts()) : $loop->the_post();
     $image = get_field('image');
     ?>
     <section class="bannar" style="background: url('<?php echo $image; ?>') no-repeat center">
+        <div class="layer"></div>
         <div class="container">
             <div class="row">
                 <div class="offset-md-2 col-md-8">
@@ -63,7 +64,7 @@ endwhile;
 
     <!-- Our Services Section-->
 
-    <section class="bannar-bottom bg-white">
+    <section class="bannar-bottom bg-white services-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -79,12 +80,12 @@ endwhile;
                                 $image = get_field('image');
                                 $link = get_field('link');
                                 ?>
-                                <div class="col-md-4">
+                                <div class="col-6 col-sm-6 col-md-4">
                                     <a href="<?php echo $link; ?>">
                                         <div class="services-card">
                                             <img src="<?php the_post_thumbnail_url(); ?>"
                                                  style="height: 178px; border-radius: 3%; max-width: 100%;">
-                                            <div class="pt-2 text-center">
+                                            <div class="pt-2 text-left text-md-center">
                                                 <h5><?php echo get_the_title() ?></h5>
                                                 <span><?php echo get_the_content() ?></span>
                                             </div>
@@ -105,7 +106,7 @@ endwhile;
 
     <!-- Featured Chefs Section-->
 
-    <section class="meet-our-chef">
+    <section class="common-section meet-our-chef">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12">
