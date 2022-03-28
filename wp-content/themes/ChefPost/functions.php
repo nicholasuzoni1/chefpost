@@ -156,15 +156,22 @@ function shortcode_getChefs()
     $response = wp_remote_retrieve_body(wp_remote_get($url . 'api/wordpress/get-all-chefs'));
     $response = json_decode($response, true);
     $options = $response['data'];
-    $result = '<div id="owl-example-second" class="owl-carousel">';
+
+    $result = '<div id="owl-example-second" class="owl-carousel chef-carousel">';
     foreach ($options as $key => $chef) {
-        $result .= '<a href="' . $url . 'chef/chef-' . $chef['first_name'] . '">
-            <div class="col-md-12">
-                <div class="chef-image">
-                    <img class="img-fluid" src="' . $chef['profile_pic'] . '" alt="' . $chef['first_name'] . ' ' . $chef['last_name'] . '">
+//        echo print_r($chef);
+        $result .= '<a class="chefCarouselCard" href="' . $url . 'chef/chef-' . $chef['first_name'] . '">
+                <div class="chef-cover" style="background:#D6D6D6 url(' . $chef['banner_img'] . ') no-repeat center"></div>
+                <div class="chef-image" style="background:#fff url(' . $chef['profile_pic'] . ') no-repeat center">
                 </div>
                 <h4 class="text-center">' . 'Chef ' . $chef['first_name'] . '</h4>
-            </div>
+             <div class="content">
+             <div class="mb-4">
+             <span class="badge"><i class="fa fa-star mr-2"></i>4.5</span>
+             <span class="">(32)</span>
+             </div>
+             Italian , Vegeterian , Latin , Buffet, Healthy
+             </div>
         </a>';
     }
     $result .= '</div>';
@@ -344,7 +351,7 @@ function shortcode_how_it_works_post_type()
     );
     $query = new WP_Query($args);
 
-    $result = '<section class="how-it-works pt-0">';
+    $result = '<div class="pt-0">';
     if ($query->have_posts()) :
         while ($query->have_posts()) :
             $query->the_post();
@@ -368,7 +375,7 @@ function shortcode_how_it_works_post_type()
         wp_reset_postdata();
 
     endif;
-    $result .= '</section>';
+    $result .= '</div>';
     return $result;
 }
 
@@ -385,16 +392,17 @@ function shortcode_testimonials_post_type()
     );
 
     $query = new WP_Query($args);
-    $result = '<section class="owl-carousel" id="testimonial-carousel">';
+    $result = '<section class="owl-carousel owl-theme" id="testimonial-carousel">';
     if ($query->have_posts()) :
         while ($query->have_posts()) :
             $query->the_post();
             $image = get_template_directory_uri() . '/assets/images/star.svg';
             $result .= '
              <div class="testimonial-wrap">
-                <img  class="mb-5"
+                <img  class="mb-5 rating"
                      src=' . $image . ' height="25">
-                <p>' . get_the_content() . '</p>
+                <div class="content">' . get_the_content() . '</div>
+                <hr class="d-block d-lg-none">
                 <div style="font-size: 16px;" >
                     <strong>' . get_the_title() . '</strong></div>
             </div>
@@ -427,7 +435,7 @@ function full_page_list_shortcode($atts = [], $content = null, $tag = '')
 
     $query = new WP_Query($args);
 
-    $result = '<section class="how-it-works pt-3">';
+    $result = '<div class="pt-3">';
     if ($query->have_posts()) :
         while ($query->have_posts()) :
             $query->the_post();
@@ -435,9 +443,9 @@ function full_page_list_shortcode($atts = [], $content = null, $tag = '')
          <div class="image-and-text-block mt-3">
                 <div class="container">
                     <div class="row d-flex align-items-center sec-height">
-                        <img src=' . get_the_post_thumbnail_url() . ' class="img-pos">
+                        <img alt="image" src=' . get_the_post_thumbnail_url() . ' class="img-pos">
                         <div class="col-md-5">
-                            <h3><span style="color: #946C73;">' . get_the_title() . '</span></h3>
+                            <h3>' . get_the_title() . '</span></h3>
                             <p>' . get_the_content() . '</p>
                             
                         </div>
@@ -450,7 +458,7 @@ function full_page_list_shortcode($atts = [], $content = null, $tag = '')
         endwhile;
         wp_reset_postdata();
     endif;
-    $result .= '</section>';
+    $result .= '</div>';
     return $result;
 
     return $result;

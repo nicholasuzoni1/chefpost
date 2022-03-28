@@ -61,8 +61,8 @@ Organization: Code Brew Labs
     }
 
     .testimonial-wrap {
-        margin: 0px;
-        padding: 30px;
+        /*margin: 0px;*/
+        /*padding: 30px;*/
     }
 
     .bannar .input-btn input {
@@ -75,16 +75,6 @@ Organization: Code Brew Labs
 
     .right {
         position: relative;
-    }
-
-    .image-and-text-block h3 {
-        margin-top: 28px;
-        text-align: center;
-    }
-
-    .image-and-text-block p {
-        text-align: center;
-        font-size: 14px;
     }
 
     .bannar .theme-button.with-background {
@@ -108,7 +98,7 @@ Organization: Code Brew Labs
     }
 
     .testimonial-wrap .line strong {
-        left: 31%;
+        /*left: 31%;*/
     }
 
     .mg-mb {
@@ -328,6 +318,7 @@ Organization: Code Brew Labs
     }
 
 }
+
 /*
 Project Name: Chefville
 CSS Author: Navneet
@@ -390,10 +381,6 @@ Organization: Code Brew Labs
         background-size: 100%;
     }
 
-    .testimonial-wrap {
-        margin: 0px;
-        padding: 30px;
-    }
 
     .bannar .input-btn input {
         /*width:67%;*/
@@ -437,9 +424,6 @@ Organization: Code Brew Labs
         /*margin-top:5px;*/
     }
 
-    .testimonial-wrap .line strong {
-        left: 31%;
-    }
 
     .mg-mb {
         margin: 40px 0 20px 0;
@@ -529,7 +513,7 @@ Organization: Code Brew Labs
         font-style: normal;
         font-weight: 300;
         font-size: 14px;
-        line-height:17px;
+        line-height: 17px;
         letter-spacing: 0.05em;
         color: #98989A;
         opacity: 1;
@@ -568,28 +552,48 @@ Organization: Code Brew Labs
     .container {
         max-width: 100%;
     }
+
     .navbar-nav .menu-item {
         display: block;
         width: 100%;
         padding: 8px 10px;
     }
-    .navbar-nav .menu-item:not(:last-child){
+
+    .navbar-nav .menu-item:not(:last-child) {
         border-bottom: 1px solid #ddd;
     }
+
     .navbar-nav .dropdown-menu {
-         background: #ffffff;
+        background: #ffffff;
     }
+
     .navbar-nav .dropdown-menu .menu-item {
         padding: 8px 10px;
     }
-    .section-heading h3 {
+
+    .section-heading h3,
+    .join-us-today h3, .minies-cusion-diet h3 {
         text-transform: uppercase;
         font-size: 28px;
         line-height: 36px;
         letter-spacing: 0.02em;
         color: #272523;
     }
-    .common-section{
+
+    .join-us-today h3 {
+        color: #ffffff;
+    }
+
+    .join-us-today p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: #FAEFDF;
+    }
+
+    .common-section {
         padding: 30px 0;
     }
 
@@ -667,7 +671,6 @@ Organization: Code Brew Labs
     }
 
 
-
     .services-section {
         margin-top: 0;
         padding: 25px 0;
@@ -686,6 +689,240 @@ Organization: Code Brew Labs
     .services-section .services-block .col-6 {
         padding: 0 7px;
     }
+
+    .join-us-today button {
+        color: #fff;
+        background: #272523;
+        border: 1px solid #FFFFFF;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 50px;
+        padding: 14px 30px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: 0.05em;
+    }
+
+    footer {
+        background: #FFFFFF;
+    }
+
+    footer .container {
+
+    }
+
+    .mobile-social-footer {
+        background: #CB998D;
+        margin-top: -30px;
+        margin-bottom: 30px;
+        padding: 12px 10px;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 0.04em;
+        color: #FAEFDF;
+        font-weight: 400;
+    }
+
+    .mobile-social-footer .fa {
+        color: #FAEFDF;
+    }
+
+    footer .store-links img {
+        width: 98px;
+        height: 28px;
+        margin-bottom: 8px;
+    }
+
+    footer .logo {
+        width: 101.77px;
+        height: 78px;
+    }
+
+    .copyright {
+        padding: 10px 6px;
+    }
+
+    .copyright p {
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.04em;
+    }
+
+    .testimonial-wrap {
+        margin: 0;
+        padding: 30px 30px 30px 40px;
+        background: #FAEFDF;
+        border-radius: 4px;
+        text-align: left;
+    }
+
+    .testimonials .content {
+        opacity: 1;
+        font-family: 'Gelion';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.04em;
+        color: #272523;
+    }
+
+    .testimonials .content:before {
+        font-family: 'FontAwesome';
+        content: "\f10d";
+        position: absolute;
+        top: -10px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: #CB998D;
+        left: -30px;
+    }
+
+    .testimonial-wrap img.rating {
+        display: none;
+    }
+
+    .testimonial-wrap hr {
+        width: 42px;
+        margin: 20px auto;
+        border-top: 3px solid #CB998D;
+        border-radius: 3px;
+    }
+
+    #testimonial-carousel .owl-dots {
+        display: block;
+    }
+
+    .chefCarouselCard {
+        display: block;
+        position: relative;
+        background: #FFFFFF;
+        box-shadow: 0 17px 44px rgb(0 0 0 / 15%);
+        border-radius: 2px;
+    }
+
+    .chefCarouselCard .chef-cover {
+        display: block;
+        height: 100px;
+        background-size: cover !important;
+    }
+
+    .chefCarouselCard .chef-image {
+        height: 78px;
+        width: 78px;
+        border: 2px solid #FAEFDF;
+        margin: -40px auto 20px auto;
+    }
+
+    .meet-our-chef h4 {
+        margin-bottom: 0;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 26px;
+        letter-spacing: 0.03em;
+        color: #272523;
+    }
+
+    .chefCarouselCard .content
+    {
+        display: block;
+        padding: 15px 15px 30px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: rgba(152, 152, 154, 0.8);
+    }
+
+    .chefCarouselCard .badge {
+        border-radius: 2px;
+        color: #FFFFFF;
+        background: #CB998D;
+        min-width: 65px;
+        font-weight: 500;
+        font-size: 16px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+    }
+
+    .owl-carousel.chef-carousel .owl-stage-outer,
+    .owl-carousel.cuisines-carousel .owl-stage-outer
+    {
+        /*height: 400px;*/
+        overflow: visible;
+    }
+
+    .owl-carousel.chef-carousel .owl-item, .owl-carousel.cuisines-carousel .owl-item{
+        width: 240px !important;
+    }
+
+    .owl-carousel.chef-carousel .owl-nav,
+    .owl-carousel.cuisines-carousel .owl-nav
+    {
+        display: none;
+    }
+
+    .cuisines-carousel .services-card {
+        background: #FFFFFF;
+        box-shadow: 0 4px 40px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+    }
+
+    .cuisines-carousel .services-card .cover-bg {
+        background-size: cover !important;
+        height: 155px;
+        border-radius: 4px;
+    }
+   .cuisines-carousel .content{
+        padding: 15px;
+    }
+   .cuisines-carousel .content h5{
+       font-style: normal;
+       font-weight: 500;
+       font-size: 18px;
+       line-height: 22px;
+       letter-spacing: 0.05em;
+       color: #272523;
+    }
+    .cuisines-carousel .content p{
+        font-weight: 400;
+        font-size: 14px;
+        line-height:  17px;
+        letter-spacing: 0.05em;
+        color: #98989A;
+        opacity: 1;
+    }
+
+    .how-it-works.for-mobile {
+        background: #FAEFDF;
+    }
+
+    .how-it-works.for-mobile .image-and-text-block h3 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.01em;
+        color: #272523;
+        text-transform: capitalize;
+    }
+
+    .how-it-works.for-mobile .image-and-text-block p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        letter-spacing: 0.05em;
+        color: #98989A;
+        opacity: 1;
+    }
+
 
 }
 

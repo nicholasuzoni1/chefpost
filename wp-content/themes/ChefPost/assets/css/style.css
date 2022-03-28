@@ -345,13 +345,13 @@ button:focus {
     box-shadow: 0px 4px 20px rgb(0 0 0 / 15%);
     /*height: 64px;*/
 }
-.theme-search-button.md{
-    padding: 13px 30px;
+.theme-search-button.md, .theme-button.md{
+    padding: 14px 30px;
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
 }
-.theme-search-button.round{
+.theme-search-button.round, .theme-button.round{
     border-radius: 50px;
 }
 
@@ -380,7 +380,7 @@ button:focus {
 
 header button {
     font-family: 'Gilroy' !important;
-    font-weight: bold !important;
+    font-weight: 600 !important;
 }
 
 /*Homepage Css*/
@@ -631,7 +631,7 @@ header .btn-transparent {
 .bannar h1, .bannar h2{
     color: #FFFFFF;
     font-size: 56px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
@@ -709,7 +709,7 @@ header .btn-transparent {
 .services-block h3 {
     color: #2D2A26;
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     margin-bottom: 5px;
 }
@@ -764,7 +764,7 @@ header .btn-transparent {
 .section-heading h3 {
     color: #2D2A26;
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
@@ -836,7 +836,7 @@ header .btn-transparent {
 .our-story h3 {
     color: #2D2A26;
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
@@ -856,7 +856,7 @@ header .btn-transparent {
 .minies-cusion-diet h3 {
     color: #2D2A26;
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     margin-bottom: 30px;
 }
@@ -879,7 +879,7 @@ header .btn-transparent {
 {
     color: #2D2A26;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     margin-top: 10px;
     margin-bottom: 4px;
@@ -888,7 +888,7 @@ header .btn-transparent {
 .services-card-btm a {
     color: #946C73;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
@@ -902,7 +902,7 @@ header .btn-transparent {
 .meet-our-chef h3 {
     color: #2D2A26;
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     line-height: 48px;
 }
@@ -925,6 +925,7 @@ header .btn-transparent {
     border-radius: 50%;
     margin: 20px auto;
     overflow: hidden;
+    background-size: cover !important;
 }
 
 .chef-image img {
@@ -969,6 +970,9 @@ header .btn-transparent {
     margin-bottom: 0px;
 }
 
+.chefCarouselCard .content, .chefCarouselCard  .chef-cover{
+    display: none;
+}
 .testimonials {
     padding: 80px 0;
 }
@@ -995,18 +999,19 @@ header .btn-transparent {
 .testimonials h3 {
     color: #2D2A26;
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     line-height: 48px;
 }
 
-.testimonials p {
+.testimonials .content {
     opacity: 0.7;
     color: #2D2A26;
     font-family: "Atlas Grotesk";
     font-size: 15px;
     font-weight: 300;
     letter-spacing: 0;
+    position: relative;
 }
 
 .testimonial-wrap .line strong {
@@ -1017,10 +1022,16 @@ header .btn-transparent {
     padding: 5px;
     color: #2D2A26;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
-
+#testimonial-carousel .owl-dots{
+display: none;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #AA182C;
+    width: 30px;
+}
 .join-us-today {
     padding: 80px 0;
     background-repeat: no-repeat;
@@ -1043,14 +1054,14 @@ header .btn-transparent {
     color: #FFFFFF;
     font-family: Gelion;
     font-size: 48px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
 .subscribe h3 {
     color: #2D2A26;
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     line-height: 48px;
 }
@@ -1058,7 +1069,7 @@ header .btn-transparent {
 .join-us-today button {
     color: #AA182C;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     padding: 15px 60px;
     border-radius: 8px;
@@ -1159,7 +1170,7 @@ footer a {
     opacity: 0.7;
     color: #2D2A26;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
@@ -1252,6 +1263,9 @@ footer a {
     background-color: #AA182C;
     text-align: center;
     padding: 4px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .copyright p {
@@ -1268,7 +1282,7 @@ footer a {
 .forgot-pswd-deading {
     color: #41403E;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     position: relative;
 }
@@ -1329,7 +1343,7 @@ footer a {
 .back-btn {
     color: #2D2A26;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
@@ -1400,7 +1414,7 @@ footer a {
     opacity: 0.7;
     color: #2D2A26;
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
@@ -1508,7 +1522,7 @@ footer a {
 .food-wrap strong {
     color: #2D2A26;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     display: block;
     line-height: 12px;
@@ -1605,7 +1619,7 @@ footer a {
     color: #212121;
     font-size: 16px;
     letter-spacing: 0;
-    font-weight: bold;
+    font-weight: 600;
     border-left: 4px solid #AA182C;
 }
 
@@ -1664,13 +1678,13 @@ footer a {
 }
 
 .fw-bold {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .change-password h4 {
     color: #2D2A26;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     line-height: 29px;
 }
@@ -1827,7 +1841,7 @@ a.add-new {
 .profile-wrap h4 {
     color: #2D2A26;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
@@ -1883,7 +1897,7 @@ a.add-new {
     color: #FFFFFF;
     font-family: Gelion;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
@@ -1932,7 +1946,7 @@ a.add-new {
     color: #AA182C;
     font-family: 'Gilroy' !important;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
@@ -2163,7 +2177,7 @@ a.add-new {
 .promo-input input::placeholder {
     color: #AA182C !important;
     font-size: 13px !important;
-    font-weight: bold !important;
+    font-weight: 600 !important;
     letter-spacing: 0 !important;
     opacity: 1 !important;
 }
@@ -2171,7 +2185,7 @@ a.add-new {
 .checkout-block h6 {
     color: #2D2A26;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
@@ -2189,7 +2203,7 @@ a.add-new {
     color: #2D2A26;
     font-family: Gelion;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
     padding: 20px 15px;
 }
@@ -2626,7 +2640,7 @@ a.add-new {
     border: 1px solid #DDDDDD;
     cursor: pointer;
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 600;
     border-radius: 3px;
 }
 
@@ -2642,7 +2656,7 @@ a.add-new {
     height: 40px;
     line-height: 34px;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
     border: transparent;
 }
 
@@ -2655,7 +2669,7 @@ a.add-new {
     border-radius: 3px;
     cursor: pointer;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .time-picker.open {
@@ -2675,7 +2689,7 @@ a.add-new {
 
 .view-all {
     border-radius: 6px !important;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 13px !important;
     color: #AA182C;
 }
@@ -2865,7 +2879,7 @@ a.add-new {
 .menu-single-page-block strong {
     /*color: #AA182C;*/
     /*font-size: 12px;*/
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0;
 }
 
