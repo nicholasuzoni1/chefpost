@@ -57,7 +57,7 @@
                     <img width="22"  src="<?php echo get_template_directory_uri() . '/assets/images/ic_location.png' ?>">
                 </div>
             </div>
-            <div class="col-lg-2 pl-lg-0 border-0 brdrr-1">
+            <div class="col-lg-3 pl-lg-0 border-0 brdrr-1">
                 <div class="select-address">
                     <input type="input" autocomplete="off" id="inputDate" class="datepicker" name="date"
                            placeholder="Select Date" value="<?php $_GET['date'] != '' ? $_GET['date'] : '' ?>">
@@ -66,13 +66,13 @@
             </div>
 
 
-            <div class="col-lg-2  brdrr-1">
+            <div class="col-lg-2  brdrr-1 d-none">
                 <div class="select-address" style="padding-left: 6px;">
                     <?php echo do_shortcode("[show-time]"); ?>
                     <img width="22" height="22" class="select-time" src="<?php echo get_template_directory_uri() . '/assets/images/ic_time.png' ?>">
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 <div class="input-btn d-flex">
                     <div class="outer-main">
                         <input type="" id="search_input" name="search" placeholder="Types of service, cuisines, chefs…"
