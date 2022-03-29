@@ -37,7 +37,7 @@
 </style>
 
 <form action="<?php echo $url . 'filter' ?>">
-    <div class="bg-white  pt-2 pb-2 pl-3 pr-3 rounded">
+    <div class="bg-white pt-2 pb-2 pl-3 pr-3 rounded mobile-search-area">
         <div class="row align-items-center">
             <div class="col-lg-4">
                 <div class="select-address brdrr-1">
@@ -57,7 +57,7 @@
                     <img width="22"  src="<?php echo get_template_directory_uri() . '/assets/images/ic_location.png' ?>">
                 </div>
             </div>
-            <div class="col-lg-2 pl-lg-0 border-0 brdrr-1">
+            <div class="col-lg-3 pl-lg-0 border-0 brdrr-1">
                 <div class="select-address">
                     <input type="input" autocomplete="off" id="inputDate" class="datepicker" name="date"
                            placeholder="Select Date" value="<?php $_GET['date'] != '' ? $_GET['date'] : '' ?>">
@@ -66,13 +66,13 @@
             </div>
 
 
-            <div class="col-lg-2  brdrr-1">
+            <div class="col-lg-2  brdrr-1 d-none">
                 <div class="select-address" style="padding-left: 6px;">
                     <?php echo do_shortcode("[show-time]"); ?>
                     <img width="22" height="22" class="select-time" src="<?php echo get_template_directory_uri() . '/assets/images/ic_time.png' ?>">
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 <div class="input-btn d-flex">
                     <div class="outer-main">
                         <input type="" id="search_input" name="search" placeholder="Types of service, cuisines, chefs…"
@@ -84,16 +84,30 @@
                             </div>
                         </div>
                     </div>
-                    <button class="theme-search-button with-background float-right hover-ripple search-button">Find A
+                    <!--for desktop-->
+                    <button class="theme-search-button with-background float-right hover-ripple search-button d-none d-lg-block">Find A
                         Chef
                     </button>
                 </div>
+            </div>
+            <!--for mobile-->
+            <div class="col-12 d-flex d-lg-none justify-content-center">
+                <button class="theme-search-button with-background hover-ripple search-button md round">Find A
+                    Chef
+                </button>
+            </div>
+        </div>
+        <div class="or-section d-block d-lg-none">
+            <div class="or py-4" style="font-weight: 600">OR</div>
+            <div class="search-item">
+                <img alt="search-icon" src="<?php echo get_template_directory_uri() .'/assets/images/searchIcon.png'?>">
+                Search by <a class="text-uppercase" href="#"><u>Meal Prep</u></a>
+            </div>
+            <div class="search-item">
+                <img alt="search-icon" src="<?php echo get_template_directory_uri() .'/assets/images/searchIcon.png'?>">
+                Search by <a class="text-uppercase" href="#"><u>Special Occasion</u></a>
             </div>
         </div>
     </div>
 </form>
 
-<script type="text/javascript">
-
-
-</script>

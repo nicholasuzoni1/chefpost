@@ -5,98 +5,94 @@ Author Designation: Web Designer
 Framework Used: Bootstrap
 Organization: Code Brew Labs
 */
-@media (max-width:576px) {
+@media (max-width: 576px) {
     .services-card-btm img {
-        width:100%;
+        width: 100%;
     }
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
     .terms_page ul {
-        padding-left:15px;
+        padding-left: 15px;
     }
 
     .facebook-btn {
-        margin-bottom:30px;
+        margin-bottom: 30px;
     }
 
     .bannar {
-        padding:0vh 0 !important;
+        /*padding: 0vh 0 !important;*/
     }
 
     .select-address.brdrr-1 {
-        border:none;
+        border: none;
     }
 
     .main-pos {
-        position:absolute;
-        top:30%;
-        left:50%;
-        transform:translate(-50%, -50%);
-        width:100%;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
     }
 
     .main-pos .col-md-12.mt-5 {
-        margin:160px 0 150px 0 !important;
+        margin: 160px 0 150px 0 !important;
     }
 
     .bannar h1, .bannar h2 {
-        color:#FFFFFF;
-        font-size:36px;
-        font-weight:bold;
-        letter-spacing:0;
+        color: #FFFFFF;
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 0;
     }
 
     .select-address img {
-        bottom:8px !important;
+        /*bottom:8px !important;*/
     }
 
     .bannar .col-md-2.pl-0 {
-        padding-left:15px !important;
+        padding-left: 15px !important;
     }
 
     .image-and-text-block {
-        padding:0px 0 10px 0;
-        background-size:100%;
+        padding: 0px 0 10px 0;
+        background-size: 100%;
     }
 
-    .testimonial-wrap {
-        margin:0px;
-        padding:30px;
-    }
 
     .bannar .input-btn input {
-        width:67%;
+        /*width:67%;*/
     }
 
     .sec-height {
-        height:auto;
+        height: auto;
     }
 
     .right {
-        position:relative;
+        position: relative;
     }
 
     .image-and-text-block h3 {
-        margin-top:28px;
-        text-align:center;
+        margin-top: 28px;
+        text-align: center;
     }
 
     .image-and-text-block p {
-        text-align:center;
-        font-size:14px;
+        text-align: center;
+        font-size: 14px;
     }
 
     .bannar .theme-button.with-background {
-        padding:5px 18px !important;
+        padding: 5px 18px !important;
     }
 
     .theme-button.with-background.apply_btn {
-        padding:9px 16px !important;
+        padding: 9px 16px !important;
     }
 
     .small-text-center {
-        text-align:center;
+        text-align: center;
     }
 
     /* .bannar .col-md-4, .bannar .col-md-2 {
@@ -104,57 +100,54 @@ Organization: Code Brew Labs
         border-right: none;
     } */
     .bannar .input-btn {
-        margin-top:5px;
+        /*margin-top:5px;*/
     }
 
-    .testimonial-wrap .line strong {
-        left:31%;
-    }
 
     .mg-mb {
-        margin:40px 0 20px 0;
+        margin: 40px 0 20px 0;
     }
 
     .time-select {
-        background:transparent;
-        width:120px;
-        padding:5px 0px 10px 0;
+        /*background:transparent;*/
+        /*width:120px;*/
+        /*padding:5px 0px 10px 0;*/
     }
 
     header .navbar-brand img {
-        height:30px;
-        transition:all .3s ease-in-out 0s;
+        height: 30px;
+        transition: all .3s ease-in-out 0s;
     }
 
     header .shrink .navbar-brand img {
-        height:26px;
+        height: 26px;
     }
 
     .img-pos {
-        position:relative;
-        right:0px;
-        height:auto;
-        width:100%;
-        object-fit:cover;
-        top:0px;
+        position: relative;
+        right: 0px;
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+        top: 0px;
     }
 
     .input-btn.d-flex .theme-button.with-background {
-        background-color:#AA182C;
-        color:#FFFFFF;
-        position:absolute;
-        right:0px;
-        top:2px;
+        background-color: #AA182C;
+        color: #FFFFFF;
+        position: absolute;
+        right: 0px;
+        top: 2px;
     }
 
     .input-btn.d-flex {
-        position:relative;
-        width:100%;
-        display:inline-block !important;
+        position: relative;
+        width: 100%;
+        display: inline-block !important;
     }
 
     .header-setting {
-        margin-top:60px;
+        margin-top: 60px;
     }
 
     /* .header-image {
@@ -162,71 +155,524 @@ Organization: Code Brew Labs
         object-fit: cover;
     } */
     .story-about-brand {
-        padding:40px 0;
+        padding: 40px 0;
     }
 
     .story-about-brand h4 {
-        color:#2D2A26;
-        font-size:28px;
-        margin-bottom:10px;
+        color: #2D2A26;
+        font-size: 28px;
+        margin-bottom: 10px;
     }
 
     .story-about-brand p {
-        font-size:14px;
-        width:100%;
+        font-size: 14px;
+        width: 100%;
     }
 
     .story-about-brand .pt-4.pl-4.pr-4 {
-        padding-left:0px !important;
-        padding-right:0px !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
     }
 
     iframe {
-        width:100%;
-        max-width:100%;
+        width: 100%;
+        max-width: 100%;
     }
 
     .messagesent-box input {
-        border:none;
-        width:80%;
-        padding:8px;
-        outline:none;
+        border: none;
+        width: 80%;
+        padding: 8px;
+        outline: none;
     }
 
-    .bannar-bottom .services-card span {
-        opacity:0.7;
-        color:#2D2A26;
-        font-size:15px;
-        letter-spacing:0;
-        line-height:14px;
-        display:block;
-        font-family:'Atlas Grotesk' !important;
-        margin-bottom:20px;
-    }
 
-    .bannar-bottom h5 {
-        color:#2D2A26;
-        font-size:18px;
-        font-weight:900;
-        letter-spacing:0;
-        margin-top:4px;
-        margin-bottom:5px;
-    }
+
 
     .services-card img {
-        max-width:100% !important;
+        max-width: 100% !important;
     }
 
     .acc-settings {
-        margin-bottom:40px;
+        margin-bottom: 40px;
     }
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
     .navbar-expand-lg .navbar-nav .nav-link,
     .navbar-expand-lg .navbar-nav .menu-item a {
-        padding-right:1rem;
-        padding-left:1rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+
+}
+
+/*new layout css*/
+@media (max-width: 991px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .navbar-nav .menu-item {
+        display: block;
+        width: 100%;
+        padding: 8px 10px;
+    }
+
+    .navbar-nav .menu-item:not(:last-child) {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .navbar-nav .dropdown-menu {
+        background: #ffffff;
+    }
+
+    .navbar-nav .dropdown-menu .menu-item {
+        padding: 8px 10px;
+    }
+
+    .section-heading h3,
+    .join-us-today h3, .minies-cusion-diet h3 {
+        text-transform: uppercase;
+        font-size: 28px;
+        line-height: 36px;
+        letter-spacing: 0.02em;
+        color: #272523;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .join-us-today h3 {
+        color: #ffffff;
+    }
+
+    .join-us-today p {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: #FAEFDF;
+        font-family: 'Gelion';
+    }
+
+    .common-section {
+        padding: 30px 0;
+    }
+
+    header .navbar {
+        background: #fff;
+        padding: 0.9rem 1rem;
+    }
+
+    .navbar-light .navbar-toggler-icon {
+        background: url("../images/bar.svg") no-repeat center;
+        background-size: contain;
+
+    }
+
+    .navbar-toggler {
+        border: none;
+        border-radius: 0;
+        background: #fff;
+        padding: 0.25rem 0;
+    }
+
+    header nav.navbar.shrink {
+        padding: 0.6rem 1rem;
+    }
+
+    .bannar p {
+        font-family: "Gelion";
+        font-size: 16px;
+        line-height: 21px;
+        color: rgba(255, 255, 255, 0.74);
+    }
+
+    .bannar {
+        padding: 140px 0 30px;
+        min-height: 650px;
+    }
+
+
+    .mobile-search-area {
+        background: transparent !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .select-address {
+        background: #fff;
+        border-radius: 2px;
+        margin-bottom: 12px;
+        padding: 6px 16px;
+        height: 50px;
+    }
+
+    .select-address input, .select-address select,
+    .select-address .form-control
+    {
+        padding: 0 0 0 35px;
+        width: 100% !important;
+        height: 100%;
+        font-family: "Atlas Grotesk";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .select-address .time-select {
+        padding-left: 45px;
+    }
+
+    .select-address img {
+        position: absolute;
+        right: auto;
+        bottom: 14px;
+        left: 16px;
+    }
+
+    .bannar .input-btn input {
+        width: 100%;
+        border-radius: 2px;
+        margin-bottom: 12px;
+        padding: 6px 16px;
+        height: 50px;
+        font-family: "Atlas Grotesk";
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .bannar input::placeholder {
+        color: rgba(152, 152, 154, 0.8); !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        letter-spacing: 0 !important;
+    }
+
+    .services-section {
+        margin-top: 0;
+        padding: 25px 0;
+    }
+
+    .services-section .services-block {
+        background: #FFFFFF;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .services-section .services-block .row {
+        margin: 0 -7px;
+    }
+
+    .services-section .services-block .col-6 {
+        padding: 0 7px;
+    }
+    .services-block p,
+    .how-it-works p,
+    .section-heading p
+    {
+        font-family: 'Gelion';
+        font-style: normal;
+        font-weight: 300;
+        line-height: 24px;
+        opacity: 1 !important;
+        font-size: 16px;
+    }
+    .bannar-bottom h5 {
+        margin-top: 4px;
+        margin-bottom: 5px;
+        line-height: 22px;
+        font-family: 'Atlas Grotesk';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: 0.01em;
+        color: #272523;
+    }
+    .bannar-bottom .services-card span {
+        display: block;
+        margin-bottom: 0;
+        font-family: 'Gelion' !important;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.05em;
+        color: #98989A;
+        opacity: 1;
+    }
+
+    .join-us-today button
+    {
+        color: #fff;
+        background: #272523;
+        border: 1px solid #FFFFFF;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 50px;
+        padding: 14px 27px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: 0.05em;
+        font-family: 'Atlas Grotesk' !important;
+    }
+    .theme-search-button{
+        font-family: 'Atlas Grotesk' !important;
+    }
+
+    footer {
+        background: #FFFFFF;
+    }
+
+    footer .container {
+
+    }
+    footer h5{
+        font-weight: 500;
+    }
+
+    .mobile-social-footer {
+        background: #CB998D;
+        margin-top: -30px;
+        margin-bottom: 30px;
+        padding: 12px 10px;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 0.04em;
+        color: #FAEFDF;
+        font-weight: 400;
+    }
+
+    .mobile-social-footer .fa {
+        color: #FAEFDF;
+    }
+
+    footer .store-links img {
+        width: 98px;
+        height: 28px;
+        margin-bottom: 8px;
+    }
+
+    footer .logo {
+        width: 101.77px;
+        height: 78px;
+    }
+
+    .copyright {
+        padding: 10px 6px;
+    }
+
+    .copyright p {
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.04em;
+    }
+
+    .testimonial-wrap {
+        margin: 0;
+        padding: 30px 30px 30px 40px;
+        background: #FAEFDF;
+        border-radius: 4px;
+        text-align: left;
+    }
+
+    .testimonials .content {
+        opacity: 1;
+        font-family: 'Gelion';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.04em;
+        color: #272523;
+    }
+
+    .testimonials .content:before {
+        font-family: 'FontAwesome';
+        content: "\f10d";
+        position: absolute;
+        top: -10px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: #CB998D;
+        left: -30px;
+    }
+
+    .testimonial-wrap img.rating {
+        display: none;
+    }
+
+    .testimonial-wrap hr {
+        width: 42px;
+        margin: 20px auto;
+        border-top: 3px solid #CB998D;
+        border-radius: 3px;
+    }
+    .testimonial-wrap .name{
+        font-family: 'Atlas Grotesk';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.04em;
+        color: #272523;
+    }
+
+    #testimonial-carousel .owl-dots {
+        display: block;
+    }
+
+    .chefCarouselCard {
+        display: block;
+        position: relative;
+        background: #FFFFFF;
+        box-shadow: 0 17px 44px rgb(0 0 0 / 15%);
+        border-radius: 2px;
+    }
+
+    .chefCarouselCard .chef-cover {
+        display: block;
+        height: 100px;
+        background-size: cover !important;
+    }
+
+    .chefCarouselCard .chef-image {
+        height: 78px;
+        width: 78px;
+        border: 2px solid #FAEFDF;
+        margin: -40px auto 20px auto;
+    }
+
+    .meet-our-chef h4 {
+        margin-bottom: 0;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 26px;
+        letter-spacing: 0.03em;
+        font-family: 'Atlas Grotesk' !important;
+
+}
+
+    .chefCarouselCard .content,
+    .chefCarouselCard .content p
+    {
+        display: block;
+        padding: 15px 15px 30px;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 150%;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: rgba(152, 152, 154, 0.8);
+    }
+
+    .chefCarouselCard .badge {
+        border-radius: 2px;
+        color: #FFFFFF;
+        background: #CB998D;
+        min-width: 65px;
+        font-weight: 500;
+        font-size: 16px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+    }
+    .chefCarouselCard .count{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: #98989A;
+    }
+
+    .owl-carousel.chef-carousel .owl-stage-outer,
+    .owl-carousel.cuisines-carousel .owl-stage-outer
+    {
+        /*height: 400px;*/
+        overflow: visible;
+    }
+
+    .owl-carousel.chef-carousel .owl-item, .owl-carousel.cuisines-carousel .owl-item{
+        width: 240px !important;
+    }
+
+    .owl-carousel.chef-carousel .owl-nav,
+    .owl-carousel.cuisines-carousel .owl-nav
+    {
+        display: none;
+    }
+
+    .cuisines-carousel .services-card {
+        background: #FFFFFF;
+        box-shadow: 0 4px 40px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+    }
+
+    .cuisines-carousel .services-card .cover-bg {
+        background-size: cover !important;
+        height: 155px;
+        border-radius: 4px;
+    }
+   .cuisines-carousel .content{
+        padding: 15px;
+    }
+   .cuisines-carousel .content h5{
+       font-style: normal;
+       font-weight: 500;
+       font-size: 18px;
+       line-height: 22px;
+       letter-spacing: 0.05em;
+       color: #272523;
+       font-family: 'Atlas Grotesk' !important;
+    }
+    .cuisines-carousel .content p{
+        font-size: 14px;
+        line-height:  17px;
+        letter-spacing: 0.05em;
+        color: #98989A;
+        opacity: 1;
+        font-family: "Gelion";
+    }
+
+    .how-it-works.for-mobile {
+        background: #FAEFDF;
+    }
+
+    .how-it-works.for-mobile .image-and-text-block h3 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.01em;
+        color: #272523;
+        text-transform: capitalize;
+        font-family: 'Atlas Grotesk' !important;
+    }
+
+    .how-it-works.for-mobile .image-and-text-block p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        letter-spacing: 0.05em;
+        color: #98989A;
+        opacity: 1;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    .bannar h1 {
+        font-size: 38px;
+        font-weight: 600;
+        line-height: 46px;
     }
 
 }

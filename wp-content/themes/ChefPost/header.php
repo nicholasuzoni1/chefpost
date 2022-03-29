@@ -9,22 +9,22 @@
     <meta name="p:domain_verify" content="13ab91ff2a46bad48366c3895d96ca44"/>
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri() . '/assets/images/ic_cart.png' ?>">
     <?php
-        $sep = ' | ';
-        $name = get_bloginfo( 'name' );
-        if( is_home() || is_front_page() )
-            $title = $name . $sep . get_bloginfo( 'description' );
-        if( is_single() || is_page() )
-            $title = wp_title( $sep, false, 'right' ) . $name;
-        if( is_category() )
-            $title = single_cat_title( '', false ) . $sep . $name;
-        if( is_day() )
-            $title = 'Post for the day ' . get_the_date( 'j F, Y' ). $sep . $name;
-        if( is_month() )
-            $title = 'Post for the month ' . get_the_date( 'F, Y' ). $sep . $name;
-        if( is_year() )
-            $title = 'Post for the year ' . get_the_date( 'Y' ). $sep . $name;
+    $sep = ' | ';
+    $name = get_bloginfo('name');
+    if (is_home() || is_front_page())
+        $title = $name . $sep . get_bloginfo('description');
+    if (is_single() || is_page())
+        $title = wp_title($sep, false, 'right') . $name;
+    if (is_category())
+        $title = single_cat_title('', false) . $sep . $name;
+    if (is_day())
+        $title = 'Post for the day ' . get_the_date('j F, Y') . $sep . $name;
+    if (is_month())
+        $title = 'Post for the month ' . get_the_date('F, Y') . $sep . $name;
+    if (is_year())
+        $title = 'Post for the year ' . get_the_date('Y') . $sep . $name;
     ?>
-    <title><?php echo $title;?></title>
+    <title><?php echo $title; ?></title>
 
     <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet preload" type="text/css" media="all"/>
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gelion-Regular.ttf' ?>" as="font"/>
@@ -41,8 +41,14 @@
 
     <!-- CLient Code -->
     <script>
-      window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
-      gtag('config', 'UA-184607912-1');
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-184607912-1');
         (function (w, d, t, s, n) {
             w.FlodeskObject = n;
             var fn = function () {
@@ -84,36 +90,38 @@
 
             ));
             ?>
-            <ul class="navbar-nav ml-auto d-flex align-items-center">
-                <ul class="navbar-nav ml-auto align-items-center" id="guest">
-                    <li class="nav-item">
-                        <a class="nav-link">
-                            <button class="hover-ripple theme-button with-background open_login_popup">LOGIN</button>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">
-                            <button class="hover-ripple theme-button bordered open_signup_popup">SIGN UP</button>
-                        </a>
-                    </li>
-                </ul>
+            <ul class="navbar-nav ml-auto align-items-center" style="flex-direction: row;" id="guest">
+                <li class="nav-item mr-3 mr-lg-0">
+                    <a class="nav-link">
+                        <button class="hover-ripple theme-button with-background open_login_popup">LOGIN</button>
+                    </a>
+                </li>
+                <li class="nav-item mr-3 mr-lg-0">
+                    <a class="nav-link">
+                        <button class="hover-ripple theme-button bordered open_signup_popup">SIGN UP</button>
+                    </a>
+                </li>
+            </ul>
 
-                <ul class="navbar-nav ml-auto align-items-center" id="user">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $url . "get-cart" ?>">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_cart.png' ?>">
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo $url . "edit-profile" ?>">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_profile.png' ?>">
-                        </a>
-                    </li>
-                </ul>
+            <ul class="navbar-nav ml-auto align-items-center" style="flex-direction: row;" id="user">
+                <li class="nav-item mr-3 mr-lg-0">
+                    <a class="nav-link" href="<?php echo $url . "get-cart" ?>">
+                        <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_cart.png' ?>">
+                    </a>
+                </li>
+                <li class="nav-item mr-3 mr-lg-0">
+                    <a class="nav-link" href="<?php echo $url . "edit-profile" ?>">
+                        <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_profile.png' ?>">
+                    </a>
+                </li>
+            </ul>
+            <div class="d-none d-lg-block">
                 <?php
                 if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Header Contact Info')) :
                 endif; ?>
-            </ul>
+            </div>
+
+
         </div>
     </nav>
     <input type="hidden" value="<?php echo $_SERVER['REMOTE_ADDR'] ?>" id="ip">

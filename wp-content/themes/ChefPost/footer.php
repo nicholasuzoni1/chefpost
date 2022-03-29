@@ -2,9 +2,29 @@
 <?php include get_template_directory() . '/include/modals.php'; ?>
 
 <footer>
-    <div class="container">
+    <!-- for moblie-->
+    <div class="d-block d-lg-none mobile-social-footer">
+        <div class="row no-gutters align-items-center">
+            <div class="col-6 text-center">
+                Follow us on:
+            </div>
+            <div class="col-6">
+                <ul class="list-inline socials mb-0">
+                    <li class="mr-3"><a href="https://www.instagram.com/chefpost/" target="_blank"><i class="fa fa-instagram fa-lg"></i></a>
+                    </li>
+                    <li class="mr-3"><a href="https://www.facebook.com/chefpost-102917058142370" target="_blank"><i class="fa fa-facebook-square fa-lg"></i></a>
+                    </li>
+                    <li class="mr-3"><a href="https://www.pinterest.com/Chefpostpins/" target="_blank"><i class="fa fa-pinterest-square fa-lg"></i></a>
+                    </li>
+                    <li class="mr-3"><a href="https://www.youtube.com/channel/UCT5OHOUo0ScfQO3F8ck9-Pg" target="_blank"><i class="fa fa-youtube-square fa-lg"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container px-4 px-sm-5 px-lg-0">
         <div class="row">
-            <div class="col-md-3 col-6">
+            <div class="col-6 col-lg-3 mb-5 mb-lg-0">
                 <h5>About Us</h5>
                 <?php
                 wp_nav_menu(array(
@@ -20,7 +40,7 @@
                 <!--                   <li class="d-block"><a href="{{route('press')}}">Press</a></li> -->
                 <!--                </ul>-->
             </div>
-            <div class="col-md-3 col-6">
+            <div class="col-6 col-lg-3 mb-5 mb-lg-0 ">
                 <h5>Support</h5>
                 <?php
                 wp_nav_menu(array(
@@ -39,23 +59,28 @@
                     <!--                    <li class="d-block"><a href="{{route('privacy_policy')}}">Privacy Policy</a></li>-->
                 </ul>
             </div>
-            <div class="col-md-3 col-12 small-text-center mg-mb">
-                <h5>Social Connect</h5>
-                <ul class="list-inline mb-4">
-                    <li class="mr-4"><a href="https://www.instagram.com/chefpost/" target="_blank"><img
-                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_insta.png' ?>"></a>
-                    </li>
-                    <li class="mr-4"><a href="https://www.facebook.com/chefpost-102917058142370" target="_blank"><img
-                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_fb.png' ?>"></a>
-                    </li>
-                    <li class="mr-4"><a href="https://www.pinterest.com/Chefpostpins/" target="_blank"><img
-                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_pinterest.svg' ?>"></a>
-                    </li>
-                    <li class="mr-4"><a href="https://www.youtube.com/channel/UCT5OHOUo0ScfQO3F8ck9-Pg" target="_blank"><img
-                                    src="<?php echo get_template_directory_uri() . '/assets/images/ic_youtube.png' ?>"></a>
-                    </li>
-                </ul>
-                                <ul class="list-inline mb-0">
+            <div class="col-7 col-sm-6 col-lg-3 order-2 order-lg-0">
+                 <!-- for desktop-->
+                <div class="d-none d-lg-block">
+                    <h5>Social Connect</h5>
+                    <ul class="list-inline mb-4">
+                        <li class="mr-4"><a href="https://www.instagram.com/chefpost/" target="_blank"><img
+                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_insta.png' ?>"></a>
+                        </li>
+                        <li class="mr-4"><a href="https://www.facebook.com/chefpost-102917058142370" target="_blank"><img
+                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_fb.png' ?>"></a>
+                        </li>
+                        <li class="mr-4"><a href="https://www.pinterest.com/Chefpostpins/" target="_blank"><img
+                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_pinterest.svg' ?>"></a>
+                        </li>
+                        <li class="mr-4"><a href="https://www.youtube.com/channel/UCT5OHOUo0ScfQO3F8ck9-Pg" target="_blank"><img
+                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_youtube.png' ?>"></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- end for desktop-->
+
+                                <ul class="list-inline store-links mb-0">
                                     <li class="mr-2"><a href="https://apps.apple.com/us/app/chefpost/id1561131582" target="_blank"><img
                                                     style="border-radius: 5px;" width="110"
                                                     src="
@@ -66,9 +91,9 @@
                 <?php echo get_template_directory_uri() . '/assets/images/GooglePlay.png'?>"></a></li>
                                 </ul>
             </div>
-            <div class="col-md-3 small-text-center">
+            <div class="col-5  col-lg-3">
                 <a class="" href="<?php echo esc_url(home_url('/')); ?>">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_logo_footer.png' ?>">
+                    <img class="logo" alt="footer-logo" src="<?php echo get_template_directory_uri() . '/assets/images/ic_logo_footer.png' ?>">
                 </a>
             </div>
         </div>
@@ -224,9 +249,9 @@
             });
     }
 
-    jQuery("#owl-example-second").owlCarousel({
+    jQuery("#owl-example-second, #owl-cuisines").owlCarousel({
         loop: true,
-        margin: 0,
+        margin: 10,
         responsiveClass: true,
         // autoHeight: true,
         autoplayTimeout: 7000,
@@ -236,13 +261,19 @@
         responsiveClass: true,
         responsive: {
             0: {
-                items: 1,
-                nav: true
+                items: 1.5,
+                nav: true,
+                autoWidth: true,
+                loop:false,
+                center: true
             },
 
             600: {
-                items: 2,
-                nav: true
+                items: 1.5,
+                nav: true,
+                autoWidth: true,
+                loop:false,
+                center: true
             },
 
             1024: {
