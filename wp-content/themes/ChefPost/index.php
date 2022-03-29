@@ -103,6 +103,21 @@ endwhile;
     </div>
 </section>
 
+<!--for mobile -->
+
+<!--How its work Section-->
+<section class="common-section how-it-works for-mobile d-block d-lg-none">
+    <div class="container p-0">
+        <div class="row">
+            <div class="col-md-12">
+                <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('How It Works Heading Section')) :
+                endif; ?>
+            </div>
+        </div>
+    </div>
+    <?php echo do_shortcode("[full-page-list post_type='How It Works'  posts_per_page=4]"); ?>
+</section>
+
 
 <!-- Featured Chefs Section-->
 
@@ -114,8 +129,10 @@ endwhile;
     </div>
 </section>
 
+<!--for desktop -->
+
 <!--How its work Section-->
-<section class="common-section how-it-works for-mobile">
+<section class="common-section how-it-works  d-none d-lg-block">
     <div class="container p-0">
         <div class="row">
             <div class="col-md-12">

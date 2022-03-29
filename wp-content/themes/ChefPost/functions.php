@@ -168,7 +168,7 @@ function shortcode_getChefs()
              <div class="content">
              <div class="mb-4">
              <span class="badge"><i class="fa fa-star mr-2"></i>4.5</span>
-             <span class="">(32)</span>
+             <span class="font-AG count">(32)</span>
              </div>
              Italian , Vegeterian , Latin , Buffet, Healthy
              </div>
@@ -403,7 +403,7 @@ function shortcode_testimonials_post_type()
                      src=' . $image . ' height="25">
                 <div class="content">' . get_the_content() . '</div>
                 <hr class="d-block d-lg-none">
-                <div style="font-size: 16px;" >
+                <div class="font-AG name" style="font-size: 16px;" >
                     <strong>' . get_the_title() . '</strong></div>
             </div>
          ';
