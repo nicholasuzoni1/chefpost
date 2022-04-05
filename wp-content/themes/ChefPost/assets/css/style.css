@@ -2712,6 +2712,7 @@ a.add-new {
     /*color: #2D2A26;*/
     font-size: 15px;
     font-weight: 600;
+    color: #98989ACC;
 }
 .time-select:required:invalid {
     color: #2D2A26;
