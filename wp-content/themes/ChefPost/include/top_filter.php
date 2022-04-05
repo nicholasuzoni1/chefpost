@@ -75,7 +75,7 @@
             <div class="col-lg-5">
                 <div class="input-btn d-flex">
                     <div class="outer-main">
-                        <select name="search">
+                        <select name="search" class="form-control time-select border-0">
                             <option value="Meal Prep">Meal Prep</option>
                             <option value="Events">Special Occasion</option>
                         </select>
