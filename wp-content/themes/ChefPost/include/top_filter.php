@@ -39,7 +39,7 @@
 <form action="<?php echo $url . 'filter' ?>">
     <div class="bg-white pt-2 pb-2 pl-3 pr-3 rounded mobile-search-area">
         <div class="row align-items-center">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="select-address brdrr-1">
                     <input id="autocomplete" type="text" onFocus="initializeAutocomplete()" class="form-control "
                            name="address" placeholder="Select City or Zipcode"
@@ -57,7 +57,7 @@
                     <img width="22"  src="<?php echo get_template_directory_uri() . '/assets/images/carbon_location.png' ?>">
                 </div>
             </div>
-            <div class="col-lg-3 pl-lg-0 border-0 brdrr-1">
+            <div class="col-lg-3 brdrr-1">
                 <div class="select-address">
                     <input type="input" autocomplete="off" id="inputDate" class="datepicker" name="date" placeholder="Select Date" value="<?php $_GET['date'] != '' ? $_GET['date'] : '' ?>">
                     <img width="22" height="22"  src="<?php echo get_template_directory_uri() . '/assets/images/uiw_date.png' ?>">
@@ -65,7 +65,7 @@
             </div>
 
 
-            <div class="col-lg-2  brdrr-1">
+            <div class="col-lg-3 brdrr-1">
                 <div class="select-address" style="padding-left: 6px;">
                     <select name="search" class="form-control time-select border-0">
                         <option value="">Services & cuisines</option>
@@ -75,12 +75,8 @@
                     <img width="22" height="22" class="select-time" src="<?php echo get_template_directory_uri() . '/assets/images/Food.png' ?>">
                 </div>
             </div>
-            <div class="col-lg-5">
-                <div class="input-btn d-flex">
-                    <button class="theme-search-button with-background float-right hover-ripple search-button d-none d-lg-block">Find A
-                        Chef
-                    </button>
-                </div>
+            <div class="col-lg-3">
+                <button class="theme-search-button with-background float-right hover-ripple search-button d-none d-lg-block">Find A Chef</button>
             </div>
             <!--for mobile-->
             <div class="col-12 d-flex d-lg-none justify-content-center mt-4">
