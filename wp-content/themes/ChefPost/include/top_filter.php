@@ -75,10 +75,11 @@
             <div class="col-lg-5">
                 <div class="input-btn d-flex">
                     <div class="outer-main">
-                        <select name="search" class="form-control time-select border-0">
+                        <select name="search" class="form-control time-select border-0 search-header-category">
                             <option value="Meal Prep">Meal Prep</option>
                             <option value="Events">Special Occasion</option>
                         </select>
+                        <img width="22" height="22" class="select-time" src="<?php echo get_template_directory_uri() . '/assets/images/ic_time.png' ?>">
                         <!-- <div class="dropdown">
                             <div id="myDIV">
                                 <div id="relatedSearchProduct" class="dropdown-content" style="display: none"></div>
