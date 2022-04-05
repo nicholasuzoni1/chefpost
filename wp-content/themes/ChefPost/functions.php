@@ -172,10 +172,10 @@ function shortcode_getChefs()
                 <h4 class="text-center">' . 'Chef ' . $chef['first_name'] . '</h4>
              <div class="content">
              <div class="mb-4">
-             <span class="badge"><i class="fa fa-star mr-2"></i>4.5</span>
-             <span class="font-AG count">(32)</span>
+             <span class="badge"><i class="fa fa-star mr-2"></i>' . $chef['rating'] . '</span>
+             <span class="font-AG count">(' . $chef['reviews'] . ')</span>
              </div>
-             Italian , Vegeterian , Latin , Buffet, Healthy
+             ' . $chef['categories'] . '
              </div>
         </a>';
     }
