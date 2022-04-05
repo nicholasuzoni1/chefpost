@@ -340,7 +340,7 @@
                     <div class="col-md-6 p-0 d-none d-sm-block">
                         <div class="figBlock">
                             <img class="img-fluid rounded-image full-width"
-                                 src="{{asset('frontend/images/popup-image.png')}}" alt="img"/>
+                                 src="<?php echo get_template_directory_uri() . '/assets/images/popup-image.png' ?>" alt="img"/>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -415,7 +415,7 @@
                     <div class="col-md-6 p-0 d-none d-sm-block">
                         <div class="figBlock">
                             <img class="img-fluid rounded-image full-width"
-                                 src="{{asset('frontend/images/popup-image.png')}}" alt="img"/>
+                                 src="<?php echo get_template_directory_uri() . '/assets/images/popup-image.png' ?>" alt="img"/>
                         </div>
                     </div>
                     <div class="col-md-6">
