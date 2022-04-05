@@ -157,7 +157,9 @@ function shortcode_getChefs()
     $response = json_decode($response, true);
     $options = $response['data'];
 
+    echo "<pre>";
     print_r($options);
+    echo "</pre>";
     die();
 
     $result = '<div id="owl-example-second" class="owl-carousel chef-carousel">';
