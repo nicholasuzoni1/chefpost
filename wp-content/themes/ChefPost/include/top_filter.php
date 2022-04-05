@@ -42,7 +42,7 @@
             <div class="col-lg-4">
                 <div class="select-address brdrr-1">
                     <input id="autocomplete" type="text" onFocus="initializeAutocomplete()" class="form-control "
-                           name="address" placeholder="City or Zip Code"
+                           name="address" placeholder="Select City or Zipcode"
                            value="<?php $_GET['address'] != '' ? $_GET['address'] : '' ?>"
                            style="width: 90%" required>
 
@@ -54,14 +54,13 @@
                            value="<?php $_GET['longitude'] != '' ? $_GET['longitude'] : '' ?>">
                     <input type="hidden" name="place_id" id="location_id" placeholder="Location Ids"
                            value="<?php $_GET['place_id'] != '' ? $_GET['place_id'] : '' ?>">
-                    <img width="22"  src="<?php echo get_template_directory_uri() . '/assets/images/ic_location.png' ?>">
+                    <img width="22"  src="<?php echo get_template_directory_uri() . '/assets/images/carbon_location.png' ?>">
                 </div>
             </div>
             <div class="col-lg-3 pl-lg-0 border-0 brdrr-1">
                 <div class="select-address">
-                    <input type="input" autocomplete="off" id="inputDate" class="datepicker" name="date"
-                           placeholder="Select Date" value="<?php $_GET['date'] != '' ? $_GET['date'] : '' ?>">
-                    <img width="22" height="22"  src="<?php echo get_template_directory_uri() . '/assets/images/ic_date.png' ?>">
+                    <input type="input" autocomplete="off" id="inputDate" class="datepicker" name="date" placeholder="Select Date" value="<?php $_GET['date'] != '' ? $_GET['date'] : '' ?>">
+                    <img width="22" height="22"  src="<?php echo get_template_directory_uri() . '/assets/images/uiw_date.png' ?>">
                 </div>
             </div>
 
@@ -74,12 +73,13 @@
             </div>
             <div class="col-lg-5">
                 <div class="input-btn d-flex">
-                    <div class="outer-main">
-                        <select name="search" class="form-control time-select border-0 search-header-category">
+                    <div class="outer-main search-header-category">
+                        <select name="search" class="form-control time-select border-0">
+                            <option value="">Services & cuisines</option>
                             <option value="Meal Prep">Meal Prep</option>
                             <option value="Events">Special Occasion</option>
                         </select>
-                        <img width="22" height="22" class="select-time" src="<?php echo get_template_directory_uri() . '/assets/images/ic_time.png' ?>">
+                        <img width="22" height="22" class="select-time" src="<?php echo get_template_directory_uri() . '/assets/images/Food.png' ?>">
                         <!-- <div class="dropdown">
                             <div id="myDIV">
                                 <div id="relatedSearchProduct" class="dropdown-content" style="display: none"></div>

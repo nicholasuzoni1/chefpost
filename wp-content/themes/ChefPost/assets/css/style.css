@@ -3294,7 +3294,7 @@ fieldset {
     padding-left:  5px;
 }
 
-.search-header-category {
+.search-header-category select{
     background: #fff;
     border-radius: unset;
     height: 50px;
@@ -3305,4 +3305,10 @@ fieldset {
     font-size: 16px;
     line-height: 19px;
     color: #98989ACC;
+}
+
+.search-header-category img{
+    position: absolute;
+    top: 15px;
+    left: 15px;
 }
