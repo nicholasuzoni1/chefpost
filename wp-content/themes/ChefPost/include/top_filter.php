@@ -93,7 +93,7 @@
                 </div>
             </div>
             <!--for mobile-->
-            <div class="col-12 d-flex d-lg-none justify-content-center">
+            <div class="col-12 d-flex d-lg-none justify-content-center mt-4">
                 <button class="theme-search-button with-background hover-ripple search-button md round">Find A Chef</button>
             </div>
         </div>
