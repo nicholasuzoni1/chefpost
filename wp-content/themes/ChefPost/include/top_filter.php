@@ -68,7 +68,7 @@
             <div class="col-lg-3 brdrr-1">
                 <div class="select-address" style="padding-left: 6px;">
                     <select name="search" class="form-control time-select border-0">
-                        <option value="">Services & cuisines</option>
+                        <option value="">Services</option>
                         <option value="Meal Prep">Meal Prep</option>
                         <option value="Events">Special Occasion</option>
                     </select>
