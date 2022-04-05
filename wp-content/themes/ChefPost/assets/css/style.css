@@ -2708,7 +2708,7 @@ a.add-new {
 
 .time-select {
     background: transparent;
-    width: 120px;
+    width: 100%;
     /*color: #2D2A26;*/
     font-size: 15px;
     font-weight: 600;
