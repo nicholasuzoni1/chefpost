@@ -30,7 +30,7 @@
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gelion-Regular.ttf' ?>" as="font"/>
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gelion-Medium.ttf' ?>" as="font"/>
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gelion-Bold.ttf' ?>" as="font"/>
-    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/AtlasGrotesk-Light.ttf' ?>" as="font"/>
+    <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/AtlasGrotesk-Light.otf' ?>" as="font"/>
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gilroy-Regular.ttf' ?>" as="font"/>
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gilroy-Medium.ttf' ?>" as="font"/>
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gilroy-Bold.ttf' ?>" as="font"/>
