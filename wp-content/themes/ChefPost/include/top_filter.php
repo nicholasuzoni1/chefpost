@@ -75,14 +75,15 @@
             <div class="col-lg-5">
                 <div class="input-btn d-flex">
                     <div class="outer-main">
-                        <input type="" id="search_input" name="search" placeholder="Types of service, cuisines, chefs…"
-                               value="<?php $_GET['search'] != '' ? $_GET['search'] : '' ?>" style="font-size: 18px;"
-                               autocomplete="off">
-                        <div class="dropdown">
+                        <select name="search">
+                            <option value="Meal Prep">Meal Prep</option>
+                            <option value="Events">Special Occasion</option>
+                        </select>
+                        <!-- <div class="dropdown">
                             <div id="myDIV">
                                 <div id="relatedSearchProduct" class="dropdown-content" style="display: none"></div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <!--for desktop-->
                     <button class="theme-search-button with-background float-right hover-ripple search-button d-none d-lg-block">Find A
@@ -92,12 +93,10 @@
             </div>
             <!--for mobile-->
             <div class="col-12 d-flex d-lg-none justify-content-center">
-                <button class="theme-search-button with-background hover-ripple search-button md round">Find A
-                    Chef
-                </button>
+                <button class="theme-search-button with-background hover-ripple search-button md round">Find A Chef</button>
             </div>
         </div>
-        <div class="or-section d-block d-lg-none">
+        <!-- <div class="or-section d-block d-lg-none">
             <div class="or py-4" style="font-weight: 600">OR</div>
             <div class="search-item">
                 <img alt="search-icon" src="<?php echo get_template_directory_uri() .'/assets/images/searchIcon.png'?>">
@@ -107,7 +106,7 @@
                 <img alt="search-icon" src="<?php echo get_template_directory_uri() .'/assets/images/searchIcon.png'?>">
                 Search by <a class="text-uppercase" href="#"><u>Special Occasion</u></a>
             </div>
-        </div>
+        </div> -->
     </div>
 </form>
 
