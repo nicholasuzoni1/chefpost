@@ -65,28 +65,18 @@
             </div>
 
 
-            <div class="col-lg-2  brdrr-1 d-none">
+            <div class="col-lg-2  brdrr-1">
                 <div class="select-address" style="padding-left: 6px;">
-                    <?php echo do_shortcode("[show-time]"); ?>
-                    <img width="22" height="22" class="select-time" src="<?php echo get_template_directory_uri() . '/assets/images/ic_time.png' ?>">
+                    <select name="search" class="form-control time-select border-0">
+                        <option value="">Services & cuisines</option>
+                        <option value="Meal Prep">Meal Prep</option>
+                        <option value="Events">Special Occasion</option>
+                    </select>
+                    <img width="22" height="22" class="select-time" src="<?php echo get_template_directory_uri() . '/assets/images/Food.png' ?>">
                 </div>
             </div>
             <div class="col-lg-5">
                 <div class="input-btn d-flex">
-                    <div class="outer-main search-header-category">
-                        <select name="search" class="form-control time-select border-0">
-                            <option value="">Services & cuisines</option>
-                            <option value="Meal Prep">Meal Prep</option>
-                            <option value="Events">Special Occasion</option>
-                        </select>
-                        <img width="22" height="22" class="select-time" src="<?php echo get_template_directory_uri() . '/assets/images/Food.png' ?>">
-                        <!-- <div class="dropdown">
-                            <div id="myDIV">
-                                <div id="relatedSearchProduct" class="dropdown-content" style="display: none"></div>
-                            </div>
-                        </div> -->
-                    </div>
-                    <!--for desktop-->
                     <button class="theme-search-button with-background float-right hover-ripple search-button d-none d-lg-block">Find A
                         Chef
                     </button>
