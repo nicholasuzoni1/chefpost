@@ -180,11 +180,11 @@ endwhile;
 <section class="minies-cusion-diet">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-12">
+            <div class="col-12 col-lg-8">
                 <h3>Menus, cuisines or diets…</h3>
             </div>
-            <div class="col-4 text-right d-none d-lg-flex">
-                <a class="theme-button bordered float-right hover-ripple view-all" href="<?php echo $url . 'cuisines' ?>">View
+            <div class="col-12 col-lg-4 text-right mb-3 mb-lg-0">
+                <a class="theme-button bordered hover-ripple view-all" href="<?php echo $url . 'cuisines' ?>">View
                     all</a>
             </div>
         </div>
@@ -201,13 +201,13 @@ endwhile;
                 while ($loop->have_posts()) : $loop->the_post();
                     $image = get_field('image');
                     ?>
-                    <div class="services-card">
+                    <a href="<?php echo get_field('link') ?>" class="services-card">
                         <div class="cover-bg" style="background:#D6D6D6 url(<?php echo $image ?>) no-repeat center"></div>
                         <div class="content">
                             <h5><?php echo get_the_title() ?></h5>
                             <p class="mb-1"><?php echo get_the_content() ?></p>
                         </div>
-                    </div>
+                    </a>
                     <?php
                     wp_reset_query();
                 endwhile;

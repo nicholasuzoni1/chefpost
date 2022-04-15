@@ -613,6 +613,7 @@ Organization: Code Brew Labs
         background: #FFFFFF;
         box-shadow: 0 4px 40px rgba(0, 0, 0, 0.15);
         border-radius: 4px;
+        display: block;
     }
 
     .cuisines-carousel .services-card .cover-bg {
