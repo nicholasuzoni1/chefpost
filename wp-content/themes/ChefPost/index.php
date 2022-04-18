@@ -180,11 +180,11 @@ endwhile;
 <section class="minies-cusion-diet">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-12 col-lg-8">
+            <div class="col-lg-8 col-12">
                 <h3>Menus, cuisines or diets…</h3>
             </div>
-            <div class="col-12 col-lg-4 text-right mb-3 mb-lg-0">
-                <a class="theme-button bordered hover-ripple view-all" href="<?php echo $url . 'cuisines' ?>">View
+            <div class="col-lg-4 col-12 text-right d-flex justify-content-end mb-4">
+                <a class="theme-button bordered float-right hover-ripple view-all" href="<?php echo $url . 'cuisines' ?>">View
                     all</a>
             </div>
         </div>
