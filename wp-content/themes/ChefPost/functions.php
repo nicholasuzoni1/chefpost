@@ -153,9 +153,13 @@ add_action('init', 'create_how_it_work_post_type');
 function shortcode_getChefs()
 {
     global $url;
+
     $response = wp_remote_retrieve_body(wp_remote_get($url . 'api/wordpress/get-all-chefs'));
+   /* print_r($response);
+    exit();*/
     $response = json_decode($response, true);
     $options = $response['data'];
+
 
     $result = '<div id="owl-example-second" class="owl-carousel chef-carousel">';
     foreach ($options as $key => $chef) {
