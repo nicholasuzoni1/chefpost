@@ -22,13 +22,13 @@ define('WP_CACHE', true);
 // ** MySQL settings - You can get this info from your web host ** //
 
 //Local DB
-define('DB_NAME', 'chef_post');
-define('DB_USER', 'root');
-define('DB_PASSWORD', '');
+// define('DB_NAME', 'chef_post');
+// define('DB_USER', 'root');
+// define('DB_PASSWORD', '');
 
-//define('DB_NAME', 'chefpost_db_wp_2022');
-//define('DB_USER', 'root');
-//define('DB_PASSWORD', 'Chefpost@2022');
+define('DB_NAME', 'chefpost_db_wp_2022');
+define('DB_USER', 'root');
+define('DB_PASSWORD', 'Chefpost@2022');
 
 // define( 'DB_NAME', 'chefpost_6996' );
 // define( 'DB_USER', 'root' );
