@@ -90,6 +90,11 @@
 
             ));
             ?>
+            <div class="d-block d-lg-none">
+                <?php
+                if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('Header Contact Info')) :
+                endif; ?>
+            </div>
             <ul class="navbar-nav ml-auto align-items-center" style="flex-direction: row;" id="guest">
                 <li class="nav-item mr-3 mr-lg-0">
                     <a class="nav-link">
