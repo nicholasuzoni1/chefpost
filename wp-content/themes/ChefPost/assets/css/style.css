@@ -3314,3 +3314,8 @@ fieldset {
     top: 15px;
     left: 15px;
 }
+
+.navbar-expand-lg .navbar-nav .nav-link, .navbar-expand-lg .navbar-nav .menu-item a{
+    padding-right: 0.7rem !important;
+    padding-left: 0.7rem !important;
+}
