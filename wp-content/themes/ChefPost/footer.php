@@ -64,17 +64,17 @@
                 <div class="d-none d-lg-block">
                     <h5>Social Connect</h5>
                     <ul class="list-inline mb-4">
-                        <li class="mr-4"><a href="https://www.instagram.com/chefpost/" target="_blank"><img
-                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_insta.png' ?>"></a>
+                        <li class="mr-4">
+                            <a href="https://www.instagram.com/chefpost/" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/images/ic_insta.png' ?>"></a>
                         </li>
-                        <li class="mr-4"><a href="https://www.facebook.com/chefpost-102917058142370" target="_blank"><img
-                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_fb.png' ?>"></a>
+                        <li class="mr-4">
+                            <a href="https://www.facebook.com/chefpost-102917058142370" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/images/ic_fb.png' ?>"></a>
                         </li>
-                        <li class="mr-4"><a href="https://www.pinterest.com/Chefpostpins/" target="_blank"><img
-                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_pinterest.svg' ?>"></a>
+                        <li class="mr-4">
+                            <a href="https://www.pinterest.com/Chefpostpins/" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/images/ic_pinterest.svg' ?>"></a>
                         </li>
-                        <li class="mr-4"><a href="https://www.youtube.com/channel/UCT5OHOUo0ScfQO3F8ck9-Pg" target="_blank"><img
-                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_youtube.png' ?>"></a>
+                        <li class="mr-4">
+                            <a href="https://www.youtube.com/channel/UCT5OHOUo0ScfQO3F8ck9-Pg" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/images/ic_youtube.png' ?>"></a>
                         </li>
                     </ul>
                 </div>
