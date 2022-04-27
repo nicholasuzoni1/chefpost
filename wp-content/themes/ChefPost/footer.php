@@ -64,7 +64,6 @@
                 <div class="d-none d-lg-block">
                     <h5>Social Connect</h5>
                     <ul class="list-inline mb-4">
-<<<<<<< Updated upstream
                         <li class="mr-4">
                             <a href="https://www.instagram.com/chefpost/" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/images/ic_insta.png' ?>"></a>
                         </li>
@@ -76,34 +75,19 @@
                         </li>
                         <li class="mr-4">
                             <a href="https://www.youtube.com/channel/UCT5OHOUo0ScfQO3F8ck9-Pg" target="_blank"><img src="<?php echo get_template_directory_uri() . '/assets/images/ic_youtube.png' ?>"></a>
-=======
-                        <li class="mr-4"><a href="https://www.instagram.com/chefpost/" target="_blank"><img alt="Instagram"
-                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_insta.png' ?>"></a>
-                        </li>
-                        <li class="mr-4"><a href="https://www.facebook.com/chefpost-102917058142370" target="_blank"><img alt="Facebook"
-                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_fb.png' ?>"></a>
-                        </li>
-                        <li class="mr-4"><a href="https://www.pinterest.com/Chefpostpins/" target="_blank"><img alt="Pinterest"
-                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_pinterest.svg' ?>"></a>
-                        </li>
-                        <li class="mr-4"><a href="https://www.youtube.com/channel/UCT5OHOUo0ScfQO3F8ck9-Pg" target="_blank"><img alt="Youtube"
-                                        src="<?php echo get_template_directory_uri() . '/assets/images/ic_youtube.png' ?>"></a>
->>>>>>> Stashed changes
                         </li>
                     </ul>
                 </div>
                 <!-- end for desktop-->
 
-                                <ul class="list-inline store-links mb-0">
-                                    <li class="mr-2"><a href="https://apps.apple.com/us/app/chefpost/id1561131582" target="_blank"><img alt="App Store"
-                                                    style="border-radius: 5px;" width="110"
-                                                    src="
-                <?php echo get_template_directory_uri() . '/assets/images/AppStore.png'?>"></a></li>
-                                    <li class="mr-2"><a href="https://play.google.com/store/apps/details?id=com.chefpostuser"
-                                                        target="_blank"><img alt="Google Play" width="110" style="border-radius: 5px;"
-                                                                             src="
-                <?php echo get_template_directory_uri() . '/assets/images/GooglePlay.png'?>"></a></li>
-                                </ul>
+                    <ul class="list-inline store-links mb-0">
+                        <li class="mr-2">
+                            <a href="https://apps.apple.com/us/app/chefpost/id1561131582" target="_blank"><img alt="App Store" style="border-radius: 5px;" width="110" src="<?php echo get_template_directory_uri() . '/assets/images/AppStore.png'?>"></a>
+                        </li>
+                        <li class="mr-2">
+                            <a href="https://play.google.com/store/apps/details?id=com.chefpostuser" target="_blank"><img alt="Google Play" width="110" style="border-radius: 5px;" src="<?php echo get_template_directory_uri() . '/assets/images/GooglePlay.png'?>"></a>
+                        </li>
+                    </ul>
             </div>
             <div class="col-5  col-lg-3">
                 <a class="" href="<?php echo esc_url(home_url('/')); ?>">
