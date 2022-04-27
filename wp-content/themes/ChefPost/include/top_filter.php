@@ -41,26 +41,18 @@
         <div class="row align-items-center">
             <div class="col-lg-3">
                 <div class="select-address brdrr-1">
-                    <input id="autocomplete" type="text" onFocus="initializeAutocomplete()" class="form-control "
-                           name="address" placeholder="Select City or Zipcode"
-                           value="<?php $_GET['address'] != '' ? $_GET['address'] : '' ?>"
-                           style="width: 90%" required>
-
-                    <input type="hidden" name="city" id="city" placeholder="City"
-                           value="<?php $_GET['city'] != '' ? $_GET['city'] : '' ?>">
-                    <input type="hidden" name="latitude" id="latitude" placeholder="Latitude"
-                           value="<?php $_GET['latitude'] != '' ? $_GET['latitude'] : '' ?>">
-                    <input type="hidden" name="longitude" id="longitude" placeholder="Longitude"
-                           value="<?php $_GET['longitude'] != '' ? $_GET['longitude'] : '' ?>">
-                    <input type="hidden" name="place_id" id="location_id" placeholder="Location Ids"
-                           value="<?php $_GET['place_id'] != '' ? $_GET['place_id'] : '' ?>">
-                    <img style="top:14px" width="22" alt="Location" src="https://chefpost.com/wp-content/themes/ChefPost/assets/images/carbon_location.png">
+                    <input id="autocomplete" type="text" onFocus="initializeAutocomplete()" class="form-control " name="address" placeholder="Select City or Zipcode" value="<?php $_GET['address'] != '' ? $_GET['address'] : '' ?>" style="width: 90%" required>
+                    <input type="hidden" name="city" id="city" placeholder="City" value="<?php $_GET['city'] != '' ? $_GET['city'] : '' ?>">
+                    <input type="hidden" name="latitude" id="latitude" placeholder="Latitude" value="<?php $_GET['latitude'] != '' ? $_GET['latitude'] : '' ?>">
+                    <input type="hidden" name="longitude" id="longitude" placeholder="Longitude" value="<?php $_GET['longitude'] != '' ? $_GET['longitude'] : '' ?>">
+                    <input type="hidden" name="place_id" id="location_id" placeholder="Location Ids" value="<?php $_GET['place_id'] != '' ? $_GET['place_id'] : '' ?>">
+                    <img style="top:14px" width="22" alt="Location" src="https://chefpost.com/wp-content/themes/ChefPost/assets/images/carbon_location.png">
                 </div>
             </div>
             <div class="col-lg-3 brdrr-1">
                 <div class="select-address">
                     <input type="input" autocomplete="off" id="inputDate" class="datepicker" name="date" placeholder="Select Date" value="<?php $_GET['date'] != '' ? $_GET['date'] : '' ?>">
-                    <img style="top:14px;" width="22" height="22" alt="Calendar" src="https://chefpost.com/wp-content/themes/ChefPost/assets/images/uiw_date.png">
+                    <img style="top:14px;" width="22" height="22" alt="Calendar" src="https://chefpost.com/wp-content/themes/ChefPost/assets/images/uiw_date.png">
                 </div>
             </div>
 
@@ -72,7 +64,7 @@
                         <option value="Meal Prep">Meal Prep</option>
                         <option value="Events">Special Occasion</option>
                     </select>
-                    <img style="top:14px" width="22" height="22" alt="Food" class="select-time" src="https://chefpost.com/wp-content/themes/ChefPost/assets/images/Food.png">
+                    <img style="top:14px" width="22" height="22" alt="Food" class="select-time" src="https://chefpost.com/wp-content/themes/ChefPost/assets/images/Food.png">
                 </div>
             </div>
             <div class="col-lg-3">
