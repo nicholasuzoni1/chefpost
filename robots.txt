@@ -33,3 +33,5 @@ Disallow: /How It Works/find-a-chef
 Disallow: /Testimonials/paula
 Disallow: /Featured Chefs/chef-bacari
 Disallow: /Testimonials/orli
+
+Sitemap: https://chefpost.com/sitemap.xml

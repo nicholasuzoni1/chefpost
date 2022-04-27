@@ -21,7 +21,7 @@ get_header(); ?>
                 <!-- The slideshow -->
                 <div class="carousel-inner img-size">
                     <div class="carousel-item active">
-                        <img src="<?php echo the_post_thumbnail_url(); ?>" alt="">
+                        <img src="<?php echo the_post_thumbnail_url(); ?>" alt="Blog Banner">
                         <div class="layer"></div>
                         <div class="main-pos">
                             <div class="container">
@@ -74,7 +74,7 @@ get_header(); ?>
                                 <div class="col-md-6 col-lg-4">
                                     <div class="services-card-btm">
                                         <a href="<?php the_permalink(); ?>" target="_blank">
-                                            <img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>"
+                                            <img alt="services" class="img-fluid" src="<?php the_post_thumbnail_url(); ?>"
                                                  style="height:227px; border-radius:3%; min-width: 290px">
                                         </a>
                                         <h5><?php echo the_title();?><small><span class="px-2">|</span><?php the_time('F jS, Y'); ?></small></h5>
@@ -112,7 +112,7 @@ get_header(); ?>
                     <div class="row align-items-start">
                         <div class="col-lg-4 mb-3">
                             <a href="<?php the_permalink(); ?>" target="_blank">
-                                <img class="img-fluid" src="<?php the_post_thumbnail_url(); ?>"
+                                <img alt="services cards" class="img-fluid" src="<?php the_post_thumbnail_url(); ?>"
                                      style="border-radius:3%; height:227px; min-width: 290px">
                             </a>
 
