@@ -403,7 +403,7 @@ function shortcode_testimonials_post_type()
             $image = get_template_directory_uri() . '/assets/images/star.svg';
             $result .= '
              <div class="testimonial-wrap">
-                <img  class="mb-5 rating"
+                <img alt="5 star" class="mb-5 rating"
                      src=' . $image . ' height="25">
                 <div class="content">' . get_the_content() . '</div>
                 <hr class="d-block d-lg-none">
@@ -501,7 +501,7 @@ function col3_list_shortcode($atts = [], $content = null, $tag = '')
                 <div class="col-md-6 col-lg-4">
                     <a href="' . get_field('link') . '">
                         <div class="services-card-btm">
-                            <img class="img-fluid" src="' . $image . '"
+                            <img alt="menus" class="img-fluid" src="' . $image . '"
                                  style="height:227px; border-radius:3%; min-width: 290px"/>
                             <h5>' . get_the_title() . '</h5>
                             <p class="mb-1">' . get_the_content() . '</p>

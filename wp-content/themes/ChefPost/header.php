@@ -1,9 +1,9 @@
 <?php global $url; ?>
 <!doctype html>
+<html lang="en">
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Book a personal chef for weekday meals, meals preps or events anytime. Available in South Florida. Book, Relax and Enjoy the Chefpost Experience">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <meta name="p:domain_verify" content="13ab91ff2a46bad48366c3895d96ca44"/>
@@ -14,9 +14,9 @@
     if (is_home() || is_front_page())
         $title = $name . $sep . get_bloginfo('description');
     if (is_single() || is_page())
-        $title = wp_title($sep, false, 'right') . $name;
+        $title = wp_title($sep, false, 'right') ;
     if (is_category())
-        $title = single_cat_title('', false) . $sep . $name;
+        $title = single_cat_title('', false) . $sep ;
     if (is_day())
         $title = 'Post for the day ' . get_the_date('j F, Y') . $sep . $name;
     if (is_month())
@@ -73,7 +73,7 @@
 <header class="fixed-top header">
     <nav class="navbar navbar-expand-lg navbar-light container">
         <a class="navbar-brand mr-5 pr-5" href="<?php echo esc_url(home_url('/')); ?>">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_logo_header.png' ?>"></a>
+            <img alt="ChefPost Logo" src="<?php echo get_template_directory_uri() . '/assets/images/ic_logo_header.png' ?>"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -111,12 +111,12 @@
             <ul class="navbar-nav ml-auto align-items-center" style="flex-direction: row;" id="user">
                 <li class="nav-item mr-3 mr-lg-0">
                     <a class="nav-link" href="<?php echo $url . "get-cart" ?>">
-                        <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_cart.png' ?>">
+                        <img alt="Cart" src="<?php echo get_template_directory_uri() . '/assets/images/ic_cart.png' ?>">
                     </a>
                 </li>
                 <li class="nav-item mr-3 mr-lg-0">
                     <a class="nav-link" href="<?php echo $url . "edit-profile" ?>">
-                        <img src="<?php echo get_template_directory_uri() . '/assets/images/ic_profile.png' ?>">
+                        <img alt="Profile" src="<?php echo get_template_directory_uri() . '/assets/images/ic_profile.png' ?>">
                     </a>
                 </li>
             </ul>

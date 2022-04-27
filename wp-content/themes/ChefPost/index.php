@@ -83,7 +83,7 @@ endwhile;
                             <div class="col-6 col-sm-6 col-md-4">
                                 <a href="<?php echo $link; ?>">
                                     <div class="services-card">
-                                        <img src="<?php the_post_thumbnail_url(); ?>"
+                                        <img alt="services card" src="<?php the_post_thumbnail_url(); ?>"
                                              style="height: 178px; border-radius: 3%; max-width: 100%;">
                                         <div class="pt-2 text-left text-md-center">
                                             <h5><?php echo get_the_title() ?></h5>

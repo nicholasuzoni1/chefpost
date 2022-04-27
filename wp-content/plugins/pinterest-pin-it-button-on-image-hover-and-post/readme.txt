@@ -3,16 +3,18 @@ Contributors: weblizar
 Donate link: https://www.weblizar.com/
 Contributors: weblizar
 Donate link: https://www.weblizar.com/
-Tags: pinterest, pin images, pin photo, pin it button, pin plugin
-Requires at least: 3.8
-Tested up to: 5.8
-Stable tag: 3.1
+Tags: pinterest, pin images, pin photo, pin it button
+Requires at least: 5.5
+Tested up to: 5.9.2
+Stable tag: 3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Pin Your WordPress Blog Posts Pages Images With Pinterest Plugin
+Pin Your Images With weblizar pin it button on image hover and post.
 
 == Description ==
+
+This plugin is using the pinterest javascript library to pin your images on your website and user is required to login to pinterest for the image to be pinned into your pinterest account.
 
 Weblizar Pin it button on image hover plugin provides facility to pins your blog posts, pages and images into your Pinterest account boards. Simply install then activate the plugin and start pinning.You can show or hide pin it button in post/page. You can enable or disable pin it button on image hover through plugin settings tab.
 
@@ -22,9 +24,7 @@ Weblizar Pin it button on image hover plugin provides facility to pins your blog
 * Show Pinterest Pin It Button In Post
 * Show Pinterest Pin It Button In Page
 * Pinterest Pin It Button Settings
-* Customizable Button Color On Hover
 * Customizable Button Size On Hover
-* Enable / Disable Pin button On Mobile & Portable Devices
 * Multilingual - Translatable in Any Language
 
 ### Weblizar - Pinterest Feed Pro Features
@@ -85,9 +85,9 @@ Starter version no upgrade is required.
 
 == Features ==
 
-* Enable/Disbale Pinterest Pin It Button On Image Hover
-* Enable/Disbale Pinterest Pin It Button In Post
-* Enable/Disbale Pinterest Pin It Button In Page
+* Enable/Disable Pinterest Pin It Button On Image Hover
+* Enable/Disable Pinterest Pin It Button In Post
+* Enable/Disable Pinterest Pin It Button In Page
 * Pinterest Pin It Button Settings
 
 = Docs & Support =
@@ -104,11 +104,27 @@ Please contribute to translate our plugin.  Contact at lizarweb (at) gmail (dot)
 
 == Frequently Asked Questions ==
 
-Please use WordPress [support forum](http://wordpress.org/support/plugin/pinterest-pin-it-button-on-image-hover-and-post) to ask any query regarding any issue. Always share your site public URL to resolve your issues as sson as possible.
+Please use WordPress [support forum](http://wordpress.org/support/plugin/pinterest-pin-it-button-on-image-hover-and-post) to ask any query regarding any issue. Always share your site public URL to resolve your issues as soon as possible.
 
 == Changelog ==
 
 For more information, see [Weblizar](https://wwww.weblizar.com/).
+
+= Version 3.4 =[01-04-2022]
+- Tested up to WordPress 5.9.2
+- Minor changes.
+- removed extra files and directory
+
+= Version 3.2 =[22-02-2022]
+ -  readme.txt updated.
+ -  User permissions check.
+
+= Version 3.2 =[18-02-2022]
+ -  Bootstrap library updated.
+ -  font-awesome library removed.
+ -  minor code fixes.
+ -  extra unused files removed.
+
 
 = Version 3.1 =[21-12-2021]
  -  Updated   :  Product page
@@ -119,13 +135,13 @@ For more information, see [Weblizar](https://wwww.weblizar.com/).
  -  Bug Fixed : After page add not reload in Exclude Page , Exclude Image setting
 
 = Version 2.8.2 =[23-07-2021]
- -  Tested Upto WordPress 5.8
+ -  Tested Up to WordPress 5.8
 
 = Version 2.8.1 =[20-03-2021]
- -  Tested Upto WordPress 5.7
+ -  Tested Up to WordPress 5.7
 
 = Version 2.8.0 =[10-12-2020]
- -  Tested Upto WordPress 5.6
+ -  Tested Up to WordPress 5.6
  -  Improved Code Readability.
 
 = Version 2.7.9 =[18-11-2020]
@@ -160,7 +176,7 @@ For more information, see [Weblizar](https://wwww.weblizar.com/).
 
 = Version 2.7.1 =
 	- Version Update & Compatible with WordPress 5.2.2
-	- backend lauoyt updated
+	- backend layout updated
 	- Some minor changes in Recommendation panel
 
 = Version 2.7.0 =
@@ -181,7 +197,7 @@ For more information, see [Weblizar](https://wwww.weblizar.com/).
 	- Update back-end panel css issue fixed.
 
 = Version 2.6.5 =
-	- Update setting of pinit button for mobile device
+	- Update setting of pin it button for mobile device
 	- Update product page
 	- Readme file update
 
@@ -271,10 +287,10 @@ For more information, see [Weblizar](https://wwww.weblizar.com/).
 * Bug: Invalid url fixed
 
 = Version 1.5 25-June-2015 =
-* New: Reverting Autoptimize plugin compatibilities
+* New: Reverting Autotomize plugin compatibilities
 
 = Version 1.4.1 19-June-2015 =
-* New: Compatible with Autoptimize plugin
+* New: Compatible with Autotomize plugin
 
 = Version 1.4 18-June-2015 =
 * Bug Fix: Undefined $post variable notice error fixed

@@ -1,37 +1,37 @@
 <?php
-defined('ABSPATH') or die();
-wp_register_script('weblizar-for-exclude-page', '', array(), false, true);
-wp_enqueue_script('weblizar-for-exclude-page');
+defined( 'ABSPATH' ) or die();
+wp_register_script( 'weblizar-for-exclude-page', '', array(), false, true );
+wp_enqueue_script( 'weblizar-for-exclude-page' );
 ?>
 <hr>
 <div>
-	<h3><?php esc_html_e('To Exclude the page(s) from Pin Button On Image Hover. Please add page(s) name below:', WEBLIZAR_PINIT_TD); ?>
+	<h3><?php esc_html_e( 'To Exclude the page(s) from Pin Button On Image Hover. Please add page(s) name below:', WEBLIZAR_PINIT_TD ); ?>
 	</h3>
 	<br>
 	<div class="row">
 		<div class="col-md-6">
-			<input id="no-pin-image-page" name="no-pin-image-page" type="text" value="" placeholder="<?php esc_attr_e('Enter Page Name', WEBLIZAR_PINIT_TD); ?>" class="form-control">			
+			<input id="no-pin-image-page" name="no-pin-image-page" type="text" value="" placeholder="<?php esc_attr_e( 'Enter Page Name', WEBLIZAR_PINIT_TD ); ?>" class="form-control">			
 		</div>
 		<div class="col-md-2">
-			<?php wp_nonce_field('pinit_exclude_page_nonce_action', 'pinit_exclude_page_nonce_field'); ?>
+			<?php wp_nonce_field( 'pinit_exclude_page_nonce_action', 'pinit_exclude_page_nonce_field' ); ?>
 			<button id="add-pin-page-name" name="add-pin-page-name" class="btn btn-danger" type="button"
-			onclick="return SaveNoPinPage(this.value);"><strong><i class="fas fa-plus"></i>&nbsp;&nbsp;<?php esc_html_e('Add', WEBLIZAR_PINIT_TD); ?></strong></button>
+			onclick="return SaveNoPinPage(this.value);"><strong><?php esc_html_e( 'Add', WEBLIZAR_PINIT_TD ); ?></strong></button>
 		</div>
 	</div>
 	
 	
-	<i id="loading-2" name="loading-2" style="display: none;" class="fas fa-cog fa-spin fa-2x"></i>
+	<p id="loading-2" name="loading-2" style="display: none;" ><?php esc_html_e( 'Saving', WEBLIZAR_PINIT_TD ); ?></p>
 	
 </div>
 <?php
 $all_excluded_pages = null;
-$all_excluded_pages = get_option('excluded_pint_it_pages');
+$all_excluded_pages = get_option( 'excluded_pint_it_pages' );
 ?>
 <table class="table mt-5">
 	<thead class="thead-dark">
 		<tr>
 			<th scope="col">#</th>
-			<th scope="col"><?php esc_html_e('Page', WEBLIZAR_PINIT_TD); ?>
+			<th scope="col"><?php esc_html_e( 'Page', WEBLIZAR_PINIT_TD ); ?>
 			</th>
 			<th scope="col" class="text-center"><input type="checkbox" id="select-page-all" name="select-page-all[]"
 					value="1" /></th>
@@ -39,34 +39,34 @@ $all_excluded_pages = get_option('excluded_pint_it_pages');
 	</thead>
 	<tbody>
 		<?php
-            if (is_array($all_excluded_pages) && count($all_excluded_pages)) {
-                $count = 1;
-                foreach ($all_excluded_pages as $exclude_key => $exclude_page) {
-                    if ($exclude_page) {
-                        ?>
+		if ( is_array( $all_excluded_pages ) && count( $all_excluded_pages ) ) {
+			$count = 1;
+			foreach ( $all_excluded_pages as $exclude_key => $exclude_page ) {
+				if ( $exclude_page ) {
+					?>
 		<tr
-			id="<?php echo "page-".$exclude_key; ?>">
-			<th scope="row"><?php echo esc_html($count); ?>
+			id="<?php echo 'page-' . esc_attr($exclude_key); ?>">
+			<th scope="row"><?php echo esc_html( $count ); ?>
 			</th>
-			<td><?php echo esc_html($exclude_page); ?>
+			<td><?php echo esc_html( $exclude_page ); ?>
 			</td>
 			<th scope="col" class="text-center"><input type="checkbox" id="select-page-all" name="select-page-all[]"
-					value="<?php echo esc_attr($exclude_key); ?>" />
+					value="<?php echo esc_attr( $exclude_key ); ?>" />
 			</th>
 		</tr>
-		<?php
-                        $count++;
-                    }
-                }
-            } else {
-                echo '<tr><td colspan="3">No Page(s) Added Yet.</td></tr>';
-            }
-        ?>
+					<?php
+					$count++;
+				}
+			}
+		} else {
+			echo wp_kses_post('<tr><td colspan="3">Pages not found</td></tr>');
+		}
+		?>
 	</tbody>
 	<thead class="thead-dark">
 		<tr>
 			<th scope="col">#</th>
-			<th scope="col"><?php esc_html_e('Page', WEBLIZAR_PINIT_TD); ?>
+			<th scope="col"><?php esc_html_e( 'Page', WEBLIZAR_PINIT_TD ); ?>
 			</th>
 			<th scope="col" class="text-center"><input type="checkbox" id="select-page-all" name="select-page-all[]"
 					value="-1" /></th>
@@ -76,16 +76,16 @@ $all_excluded_pages = get_option('excluded_pint_it_pages');
 		<th>&nbsp;</th>
 		<th>&nbsp;</th>
 		<th class="text-center"><button type="button" id="delete-page-all" name="delete-page-all" title="Delte All"
-				onclick="return DeleteAll();"><i class="fas fa-trash"></i></button></th>
+				onclick="return DeleteAll();"><?php esc_html_e( 'Delete', WEBLIZAR_PINIT_TD ); ?></button></th>
 	</tr>
 </table>
 
 <?php
-    $js = '';
-    $js .= 'jQuery("#select-page-all").click(function(){
+	$js  = '';
+	$js .= 'jQuery("#select-page-all").click(function(){
 	    jQuery("input:checkbox").not(this).prop("checked", this.checked);
 	});';
-    $js .= '
+	$js .= '
 	function SaveNoPinPage() { 
 		var page_name = jQuery("#no-pin-image-page").val();
 		if( !page_name ) { 
@@ -114,8 +114,8 @@ $all_excluded_pages = get_option('excluded_pint_it_pages');
 		});
 	}
 	';
-    $js .= '';
-    $js .= 'function DeleteAll(){
+	$js .= '';
+	$js .= 'function DeleteAll(){
 		var page_ids = [];
 		jQuery(":checkbox:checked").each(function(i){
 		  page_ids[i] = jQuery(this).val();
@@ -144,4 +144,4 @@ $all_excluded_pages = get_option('excluded_pint_it_pages');
 			});
 		}
 	}';
-    wp_add_inline_script('weblizar-for-exclude-page', $js);
+	wp_add_inline_script( 'weblizar-for-exclude-page', $js );
