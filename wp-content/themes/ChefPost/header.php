@@ -26,7 +26,7 @@
     ?>
     <title><?php echo $title; ?></title>
 
-    <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet preload" type="text/css" media="all"/>
+    <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" media="all"/>
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gelion-Regular.ttf' ?>" as="font"/>
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gelion-Medium.ttf' ?>" as="font"/>
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gelion-Bold.ttf' ?>" as="font"/>
