@@ -21,9 +21,13 @@ define('FS_METHOD', 'direct');
 define('WP_CACHE', true);
 // ** MySQL settings - You can get this info from your web host ** //
 
-define( 'DB_NAME', 'chefpost_6996' );
-define( 'DB_USER', 'root' );
-define( 'DB_PASSWORD', 'Chefpost!123456' );
+// define( 'DB_NAME', 'chefpost_6996' );
+// define( 'DB_USER', 'root' );
+// define( 'DB_PASSWORD', 'Chefpost!123456' );
+
+define('DB_NAME', 'chefpost_wp2');
+define('DB_USER', 'root');
+define('DB_PASSWORD', 'Chefpost@2022');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
