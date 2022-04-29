@@ -547,35 +547,35 @@ add_shortcode('show-time', 'shortcode_select_time');
 function widgets_init()
 {
     register_sidebar(array(
-        'name' => esc_html__('Our Services Heading Section', 'ChefPost'),
+        'name' => esc_html__('Our Services Heading Section', 'Chefpost'),
         'id' => 'our-services',
-        'description' => esc_html__('Add widgets here.', 'ChefPost'),
+        'description' => esc_html__('Add widgets here.', 'Chefpost'),
         'before_widget' => '<div class="section-heading">',
         'after_widget' => '</div>',
     ));
     register_sidebar(array(
-        'name' => esc_html__('Featured Chefs Heading Section', 'ChefPost'),
+        'name' => esc_html__('Featured Chefs Heading Section', 'Chefpost'),
         'id' => 'featured-chefs',
         'before_widget' => '<div class="section-heading">',
         'after_widget' => '</div>',
     ));
 
     register_sidebar(array(
-        'name' => esc_html__('How It Works Heading Section', 'ChefPost'),
+        'name' => esc_html__('How It Works Heading Section', 'Chefpost'),
         'id' => 'how-works',
         'before_widget' => '<div class="section-heading">',
         'after_widget' => '</div>',
     ));
 
     register_sidebar(array(
-        'name' => esc_html__('Header Contact Info', 'ChefPost'),
+        'name' => esc_html__('Header Contact Info', 'Chefpost'),
         'id' => 'header-contact',
         'before_widget' => '<div class="section-heading">',
         'after_widget' => '</div>',
     ));
 
     register_sidebar(array(
-        'name' => esc_html__('Testimonials Heading Section', 'ChefPost'),
+        'name' => esc_html__('Testimonials Heading Section', 'Chefpost'),
         'id' => 'testimonial-contact',
         'before_widget' => '<div class="section-heading">',
         'after_widget' => '</div>',
