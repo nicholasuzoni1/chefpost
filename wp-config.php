@@ -25,7 +25,7 @@ define('WP_CACHE', true);
 // define( 'DB_USER', 'root' );
 // define( 'DB_PASSWORD', 'Chefpost!123456' );
 
-define('DB_NAME', 'chefpost_wp2');
+define('DB_NAME', 'chefpost_db_wp_2022');
 define('DB_USER', 'root');
 define('DB_PASSWORD', 'Chefpost@2022');
 
