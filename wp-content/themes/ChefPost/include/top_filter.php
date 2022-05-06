@@ -9,6 +9,9 @@
         .flex11{
             width: 100% !important;
         }
+        .bannar .brdrr-1 {
+            border-right: 0px solid #946C73;
+        }
     }
     .outer-main .dropdown {
         position: relative;
