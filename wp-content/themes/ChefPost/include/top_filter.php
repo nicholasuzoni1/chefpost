@@ -5,6 +5,11 @@
             flex: 1;
         }
     }
+    @media (max-width: 992px) {
+        .flex11{
+            width: 100% !important;
+        }
+    }
     .outer-main .dropdown {
         position: relative;
         display: inline-block;
@@ -24,6 +29,13 @@
         max-height: 180px;
         overflow-y: auto;
     }
+     .downCaretInput {
+    position: absolute;
+    top: 50% !important;
+    right: 3% !important;
+    transform: translate(0%, -50%);
+    left: auto !important;
+}
 
     .outer-main .dropdown-content a {
         color: black;
@@ -47,32 +59,35 @@
 
 <form action="<?php echo $url . 'filter' ?>">
     <div class="bg-white px-3 py12 rounded mobile-search-area">
-        <div class="row align-items-center">
-            <div class="flex1">
+        <div class="row align-items-center px-4 p-lg-0">
+            <div class="flex1 flex11">
                 <div class="select-address brdrr-1">
-                    <input id="autocomplete" type="text" onFocus="initializeAutocomplete()" class="form-control px-3" name="address" placeholder="Select City or Zipcode" value="<?php $_GET['address'] != '' ? $_GET['address'] : '' ?>" style="width: 90%" required>
+                    <input id="autocomplete" type="text" onFocus="initializeAutocomplete()" class="form-control px-lg-3 px-4" name="address" placeholder="Select City or Zipcode" value="<?php $_GET['address'] != '' ? $_GET['address'] : '' ?>" style="width: 90%" required>
                     <input type="hidden" name="city" id="city" placeholder="City" value="<?php $_GET['city'] != '' ? $_GET['city'] : '' ?>">
                     <input type="hidden" name="latitude" id="latitude" placeholder="Latitude" value="<?php $_GET['latitude'] != '' ? $_GET['latitude'] : '' ?>">
                     <input type="hidden" name="longitude" id="longitude" placeholder="Longitude" value="<?php $_GET['longitude'] != '' ? $_GET['longitude'] : '' ?>">
                     <input type="hidden" name="place_id" id="location_id" placeholder="Location Ids" value="<?php $_GET['place_id'] != '' ? $_GET['place_id'] : '' ?>">
+                    <img class="downCaretInput d-lg-none d-block" src="https://dev.chefpost.com/frontend/images/downCaret.png">
+                  
                     <img width="22" alt="Location" src="https://chefpost.com/wp-content/themes/ChefPost/assets/images/carbon_location.png">
                 </div>
             </div>
-            <div class="flex1 brdrr-1">
+            <div class="flex1 flex11 brdrr-1">
                 <div class="select-address">
-                    <input type="input" autocomplete="off" id="inputDate" class="datepicker px-3" name="date" placeholder="Select Date" value="<?php $_GET['date'] != '' ? $_GET['date'] : '' ?>">
-                    <img width="22" height="22" alt="Calendar" src="https://chefpost.com/wp-content/themes/ChefPost/assets/images/uiw_date.png">
+                    <input type="input" autocomplete="off" id="inputDate" class="datepicker px-lg-3 px-4" name="date" placeholder="Select Date" value="<?php $_GET['date'] != '' ? $_GET['date'] : '' ?>">
+                    <img width="20" height="20" alt="Calendar" src="https://chefpost.com/wp-content/themes/ChefPost/assets/images/uiw_date.png">
                 </div>
             </div>
 
 
-            <div class="flex1 brdrr-1">
-                <div class="select-address" style="padding-left: 6px;">
-                    <select name="search" class="form-control px-3 time-select border-0">
+            <div class="flex1 flex11 brdrr-1">
+                <div class="select-address">
+                    <select name="search" class="form-control px-lg-3 px-4 time-select border-0">
                         <option value="">Services</option>
                         <option value="Meal Prep">Meal Prep</option>
                         <option value="Events">Special Occasion</option>
                     </select>
+                    <img class="downCaretInput d-lg-none d-block" src="https://dev.chefpost.com/frontend/images/downCaret.png">
                     <img width="22" height="22" alt="Food" class="select-time" src="https://chefpost.com/wp-content/themes/ChefPost/assets/images/Food.png">
                 </div>
             </div>
@@ -80,7 +95,7 @@
                 <button class="text-nowrap theme-search-button with-background mt-0 float-right hover-ripple search-button d-none d-lg-block">Find A Chef</button>
             </div>
             <!--for mobile-->
-            <div class="col-12 d-flex d-lg-none justify-content-center mt-4">
+            <div class="col-12 d-flex d-lg-none justify-content-center mt-3">
                 <button class="theme-search-button with-background hover-ripple search-button md round">Find A Chef</button>
             </div>
         </div>

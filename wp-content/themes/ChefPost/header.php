@@ -73,7 +73,7 @@
 <header class="fixed-top header">
     <nav class="navbar navbar-expand-lg navbar-light container">
         <a class="navbar-brand mr-5 pr-5" href="<?php echo esc_url(home_url('/')); ?>">
-            <img alt="ChefPost Logo" src="<?php echo get_template_directory_uri() . '/assets/images/ic_logo_header.png' ?>"></a>
+           <img alt="ChefPost Logo" src="<?php echo get_template_directory_uri() . '/assets/images/ic_logo_header.png' ?>"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -111,12 +111,12 @@
             <ul class="navbar-nav ml-auto align-items-center" style="flex-direction: row;" id="user">
                 <li class="nav-item mr-3 mr-lg-0">
                     <a class="nav-link" href="<?php echo $url . "get-cart" ?>">
-                        <img alt="Cart" src="<?php echo get_template_directory_uri() . '/assets/images/ic_cart.png' ?>">
+                    <img alt="Cart" src="<?php echo get_template_directory_uri() . '/assets/images/ic_cart.png' ?>">
                     </a>
                 </li>
                 <li class="nav-item mr-3 mr-lg-0">
                     <a class="nav-link" href="<?php echo $url . "edit-profile" ?>">
-                        <img alt="Profile" src="<?php echo get_template_directory_uri() . '/assets/images/ic_profile.png' ?>">
+                 <img alt="Profile" src="<?php echo get_template_directory_uri() . '/assets/images/ic_profile.png' ?>">
                     </a>
                 </li>
             </ul>

@@ -326,9 +326,9 @@ Organization: Code Brew Labs
 
     .select-address img {
         position: absolute;
-        right: auto;
-        bottom: 14px;
-        left: 16px;
+        top: 50%;
+        left: 12px;
+        transform: translate(0, -50%);
     }
 
     .bannar .input-btn input {
@@ -344,7 +344,7 @@ Organization: Code Brew Labs
     }
 
     .bannar input::placeholder {
-        color: rgba(152, 152, 154, 0.8); !important;
+        color: rgba(152, 152, 154, 0.8) !important;
         font-size: 16px !important;
         font-weight: 400 !important;
         letter-spacing: 0 !important;
