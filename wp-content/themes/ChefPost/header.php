@@ -103,7 +103,7 @@
                 </li>
                 <li class="nav-item mr-3 mr-lg-0">
                     <a class="nav-link">
-                        <button class="hover-ripple theme-button bordered open_signup_popup">SIGN UP</button>
+                        <button class="hover-ripple theme-button with-background open_signup_popup">SIGN UP</button>
                     </a>
                 </li>
             </ul>
