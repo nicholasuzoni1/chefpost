@@ -19,23 +19,12 @@
  */
 define('FS_METHOD', 'direct');
 define('WP_CACHE', true);
-// ** MySQL settings - You can get this info from your web host ** //
-
-define( 'DB_NAME', 'chefpost_6996' );
-define( 'DB_USER', 'root' );
-define( 'DB_PASSWORD', 'Chefpost!123456' );
-
-// Local DB
-// define('DB_NAME', 'chef_post');
-// define('DB_USER', 'root');
-// define('DB_PASSWORD', '');
-
-// define('DB_NAME', 'chefpost_db_wp_2022');
-// define('DB_USER', 'root');
-// define('DB_PASSWORD', 'Chefpost@2022');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'database-1.cwxpa53a44bq.us-west-2.rds.amazonaws.com');
+define('DB_NAME', 'chefpost_db_wp');
+define('DB_USER', 'admin');
+define('DB_PASSWORD', '7r395UgXr8GmLkAjqce5MSBd3');
 
 /** Database charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
