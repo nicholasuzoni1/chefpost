@@ -2934,6 +2934,9 @@ a:hover {
 	color: #007bff !important;
     text-decoration: underline !important;
 }
+.post-content  h2 a {
+	color: #AA182C !important;
+}
 
 .text-editor-content ul,
 .text-editor-content ol {
