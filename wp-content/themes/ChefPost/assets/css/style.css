@@ -2917,6 +2917,7 @@ a.add-new {
     justify-content: center;
 }
 
+
 a {
     color: #444;
 }
@@ -2928,6 +2929,10 @@ a:hover {
 .text-editor-content p {
     color: #2D2A26;
     font-size: 12px;
+}
+.post-content a {
+	color: #007bff !important;
+    text-decoration: underline !important;
 }
 
 .text-editor-content ul,
