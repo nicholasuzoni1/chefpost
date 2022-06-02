@@ -642,9 +642,7 @@ Organization: Code Brew Labs
         font-family: "Gelion";
     }
 
-    .how-it-works.for-mobile {
-        /* background: #FAEFDF; */
-    }
+    
 
     .how-it-works.for-mobile .image-and-text-block h3 {
         font-weight: 500;
@@ -668,7 +666,9 @@ Organization: Code Brew Labs
 
 
 }
-
+.how-it-works {
+    background: #FAEFDF;
+}
 @media (max-width: 767px) {
     .bannar h1 {
         font-size: 38px;
