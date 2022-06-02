@@ -95,3 +95,6 @@ if (!defined('ABSPATH')) {
 require_once ABSPATH . 'wp-settings.php';
 
 define('CONCATENATE_SCRIPTS', false);
+
+// Allowed unfiltered mime types
+define( 'ALLOW_UNFILTERED_UPLOADS', true );
