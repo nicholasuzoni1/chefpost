@@ -21,10 +21,9 @@ define('FS_METHOD', 'direct');
 define('WP_CACHE', true);
 
 /** MySQL hostname */
-define('DB_HOST', 'database-1.cwxpa53a44bq.us-west-2.rds.amazonaws.com');
-define('DB_NAME', 'chefpost_db_wp');
-define('DB_USER', 'admin');
-define('DB_PASSWORD', '7r395UgXr8GmLkAjqce5MSBd3');
+define('DB_NAME', 'chefpost_db_wp_2022');
+define('DB_USER', 'root');
+define('DB_PASSWORD', 'Chefpost@2022');
 
 /** Database charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
