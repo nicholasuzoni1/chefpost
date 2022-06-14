@@ -1,7 +1,6 @@
 <?php global $url; ?>
 <!doctype html>
 <html lang="en">
-<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,7 +25,7 @@
     ?>
     <title><?php echo $title; ?></title>
 
-    <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="preload" href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" media="all"/>
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gelion-Regular.ttf' ?>" as="font"/>
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gelion-Medium.ttf' ?>" as="font"/>
     <link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/Gelion-Bold.ttf' ?>" as="font"/>
@@ -48,7 +47,10 @@
         }
 
         gtag('js', new Date());
-        gtag('config', 'UA-184607912-1');
+        // new config
+        gtag('config', 'AW-475298271');
+        // old config
+        // gtag('config', 'UA-184607912-1');
         (function (w, d, t, s, n) {
             w.FlodeskObject = n;
             var fn = function () {
