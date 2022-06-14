@@ -252,7 +252,7 @@ Organization: Code Brew Labs
         text-align: center;
         letter-spacing: 0.04em;
         color: #FAEFDF;
-        font-family: 'Gelion';
+        font-family: 'Atlas Grotesk';
     }
 
     .common-section {
@@ -282,7 +282,7 @@ Organization: Code Brew Labs
     }
 
     .bannar p {
-        font-family: "Gelion";
+        font-family: "Atlas Grotesk";
         font-size: 16px;
         line-height: 21px;
         color: rgba(255, 255, 255, 0.74);
@@ -374,7 +374,7 @@ Organization: Code Brew Labs
     {
         font-family: 'Gelion';
         font-style: normal;
-        /* font-weight: 300; */
+        font-weight: 300;
         line-height: 24px;
         opacity: 1 !important;
         font-size: 16px;
@@ -393,7 +393,7 @@ Organization: Code Brew Labs
     .bannar-bottom .services-card span {
         display: block;
         margin-bottom: 0;
-        font-family: 'Gelion' !important;
+        font-family: 'Atlas Grotesk' !important;
         font-style: normal;
         font-weight: 300;
         font-size: 14px;
@@ -481,8 +481,8 @@ Organization: Code Brew Labs
 
     .testimonials .content {
         opacity: 1;
-        font-family: 'Gelion';
-        font-weight: 400;
+        font-family: 'Atlas Grotesk';
+        font-weight: 300;
         font-size: 16px;
         line-height: 24px;
         letter-spacing: 0.04em;
@@ -642,7 +642,7 @@ Organization: Code Brew Labs
         font-family: "Gelion";
     }
 
-    
+
 
     .how-it-works.for-mobile .image-and-text-block h3 {
         font-weight: 500;
@@ -655,7 +655,7 @@ Organization: Code Brew Labs
     }
 
     .how-it-works.for-mobile .image-and-text-block p {
-        font-weight: 400;
+        font-weight: 300;
         font-size: 14px;
         line-height: 17px;
         text-align: center;
