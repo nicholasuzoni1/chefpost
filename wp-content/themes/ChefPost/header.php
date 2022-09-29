@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Need a personal chef in South Florida? Chefpost is the perfect platform to book one on-demand. From home cooked meals of the week to special occasions, we have you covered.">
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <meta name="p:domain_verify" content="13ab91ff2a46bad48366c3895d96ca44"/>
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri() . '/assets/images/ic_cart.png' ?>">
