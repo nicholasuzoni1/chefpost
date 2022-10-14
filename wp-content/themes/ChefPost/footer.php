@@ -78,16 +78,19 @@
                         </li>
                     </ul>
                 </div>
-                <!-- end for desktop-->
 
-                    <ul class="list-inline store-links mb-0">
+
+                  <!-- end for desktop-->
+                    <!-- <ul class="list-inline store-links mb-0">
                         <li class="mr-2">
                             <a href="https://apps.apple.com/us/app/chefpost/id1561131582" target="_blank"><img alt="App Store" style="border-radius: 5px;" width="110" src="<?php echo get_template_directory_uri() . '/assets/images/AppStore.png'?>"></a>
                         </li>
                         <li class="mr-2">
                             <a href="https://play.google.com/store/apps/details?id=com.chefpostuser" target="_blank"><img alt="Google Play" width="110" style="border-radius: 5px;" src="<?php echo get_template_directory_uri() . '/assets/images/GooglePlay.png'?>"></a>
                         </li>
-                    </ul>
+                    </ul> -->
+
+                    
             </div>
             <div class="col-5  col-lg-3">
                 <a class="" href="<?php echo esc_url(home_url('/')); ?>">
