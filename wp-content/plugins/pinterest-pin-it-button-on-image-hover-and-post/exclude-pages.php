@@ -34,7 +34,7 @@ $all_excluded_pages = get_option( 'excluded_pint_it_pages' );
 			<th scope="col"><?php esc_html_e( 'Page', WEBLIZAR_PINIT_TD ); ?>
 			</th>
 			<th scope="col" class="text-center"><input type="checkbox" id="select-page-all" name="select-page-all[]"
-					value="1" /></th>
+					value="<?php echo esc_attr('1');?>" /></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -69,7 +69,7 @@ $all_excluded_pages = get_option( 'excluded_pint_it_pages' );
 			<th scope="col"><?php esc_html_e( 'Page', WEBLIZAR_PINIT_TD ); ?>
 			</th>
 			<th scope="col" class="text-center"><input type="checkbox" id="select-page-all" name="select-page-all[]"
-					value="-1" /></th>
+					value="<?php echo esc_attr('-1');?>" /></th>
 		</tr>
 	</thead>
 	<tr>

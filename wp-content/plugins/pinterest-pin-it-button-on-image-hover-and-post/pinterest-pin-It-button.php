@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Weblizar Pin It Button On Image Hover And Post
- * Version: 3.4
+ * Version: 3.6
  * Description: Weblizar pin it button on image hover plugin provides facility to pins your blog posts, pages and images into your Pinterest account boards.
  * Author: Weblizar
  * Author URI: https://weblizar.com/plugins/
@@ -268,10 +268,12 @@ function exclude_image_delete() {
 		if ( current_user_can( 'manage_options' ) ) {
 			$all_exclude_images = get_option( 'exclude_pin_it_images' );
 			$img_ids            = isset( $_POST['img_ids'] ) ? sanitize_text_field( $_POST['img_ids'] ) : '';
+			if (is_array($img_ids)) {
 			foreach ( $img_ids as $id ) {
 				unset( $all_exclude_images[ $id ] );
 			}
-			update_option( 'exclude_pin_it_images', $all_exclude_images );
+		}
+			update_option( 'exclude_pin_it_images', $all_exclude_images[ $id ] );
 		}
 	} else {
 		print 'Sorry, your nonce did not verify.';
@@ -287,10 +289,12 @@ function exclude_image_page() {
 		if ( current_user_can( 'manage_options' ) ) {
 			$all_exclude_pages = get_option( 'excluded_pint_it_pages' );
 			$page_ids          = isset( $_POST['page_ids'] ) ? sanitize_text_field( $_POST['page_ids'] ) : '';
+			if (is_array($page_ids)) {
 			foreach ( $page_ids as $id ) {
 				unset( $all_exclude_pages[ $id ] );
 			}
-			update_option( 'excluded_pint_it_pages', $all_exclude_pages );
+		}
+			update_option( 'excluded_pint_it_pages', $all_exclude_pages[ $id ] );
 		}
 	} else {
 		print 'Sorry, your nonce did not verify.';

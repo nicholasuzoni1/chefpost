@@ -46,20 +46,20 @@
 						$PinItPost = 1;
 					}
 					?>
-					<input id="pinitpost" name="pinitpost" type="radio" value="1" 
+					<input id="pinitpost" name="pinitpost" type="radio" value="<?php echo esc_attr('1');?>" 
 					<?php
 					if ( $PinItPost == 1 ) {
 						echo esc_attr( 'checked=checked' );
 					}
 					?>
-																					> <?php esc_html_e( 'Yes', WEBLIZAR_PINIT_TD ); ?>
-					<input id="pinitpost" name="pinitpost" type="radio" value="0" 
+							> <?php esc_html_e( 'Yes', WEBLIZAR_PINIT_TD ); ?>
+					<input id="pinitpost" name="pinitpost" type="radio" value="<?php echo esc_attr('0');?>" 
 					<?php
 					if ( $PinItPost == 0 ) {
 						echo esc_attr( 'checked=checked' );
 					}
 					?>
-																					> <?php esc_html_e( 'No', WEBLIZAR_PINIT_TD ); ?>
+						> <?php esc_html_e( 'No', WEBLIZAR_PINIT_TD ); ?>
 				</div>
 				<hr>
 
@@ -73,20 +73,20 @@
 						$PinItPage = 1;
 					}
 					?>
-					<input id="pinitpage" name="pinitpage" type="radio" value="1" 
+					<input id="pinitpage" name="pinitpage" type="radio" value="<?php echo esc_attr('1');?>" 
 					<?php
 					if ( $PinItPage == 1 ) {
 						echo esc_attr( 'checked=checked' );
 					}
 					?>
-																					> <?php esc_html_e( 'Yes', WEBLIZAR_PINIT_TD ); ?>
-					<input id="pinitpage" name="pinitpage" type="radio" value="0" 
+							> <?php esc_html_e( 'Yes', WEBLIZAR_PINIT_TD ); ?>
+					<input id="pinitpage" name="pinitpage" type="radio" value="<?php echo esc_attr('0');?>" 
 					<?php
 					if ( $PinItPage == 0 ) {
 						echo esc_attr( 'checked=checked' );
 					}
 					?>
-																					> <?php esc_html_e( 'No', WEBLIZAR_PINIT_TD ); ?>
+							> <?php esc_html_e( 'No', WEBLIZAR_PINIT_TD ); ?>
 				</div>
 				<hr>
 
@@ -100,20 +100,20 @@
 						$PinItOnHover = 'true';
 					}
 					?>
-					<input id="pinitonhover" name="pinitonhover" type="radio" value="true" 
+					<input id="pinitonhover" name="pinitonhover" type="radio" value="<?php echo esc_attr('true');?>" 
 					<?php
 					if ( $PinItOnHover == 'true' ) {
 						echo esc_attr( 'checked=checked' );
 					}
 					?>
-																							> <?php esc_html_e( 'Yes', WEBLIZAR_PINIT_TD ); ?>
-					<input id="pinitonhover" name="pinitonhover" type="radio" value="false" 
+						> <?php esc_html_e( 'Yes', WEBLIZAR_PINIT_TD ); ?>
+					<input id="pinitonhover" name="pinitonhover" type="radio" value="<?php echo esc_attr('false');?>" 
 					<?php
 					if ( $PinItOnHover == 'false' ) {
 						echo esc_attr( 'checked=checked' );
 					}
 					?>
-																							> <?php esc_html_e( 'No', WEBLIZAR_PINIT_TD ); ?>
+						> <?php esc_html_e( 'No', WEBLIZAR_PINIT_TD ); ?>
 				</div>
 				<hr>
 
@@ -127,20 +127,20 @@
 						$PinItStatus = 1;
 					}
 					?>
-					<input id="pinitstatus" name="pinitstatus" type="radio" value="1" 
+					<input id="pinitstatus" name="pinitstatus" type="radio" value="<?php echo esc_attr('1');?>" 
 					<?php
 					if ( $PinItStatus == 1 ) {
 						echo esc_attr( 'checked=checked' );
 					}
 					?>
-																						> <?php esc_html_e( 'Yes', WEBLIZAR_PINIT_TD ); ?>
-					<input id="pinitstatus" name="pinitstatus" type="radio" value="0" 
+						> <?php esc_html_e( 'Yes', WEBLIZAR_PINIT_TD ); ?>
+					<input id="pinitstatus" name="pinitstatus" type="radio" value="<?php echo esc_attr('0');?>" 
 					<?php
 					if ( $PinItStatus == 0 ) {
 						echo esc_attr( 'checked=checked' );
 					}
 					?>
-																						> <?php esc_html_e( 'No', WEBLIZAR_PINIT_TD ); ?>
+							> <?php esc_html_e( 'No', WEBLIZAR_PINIT_TD ); ?>
 				</div>
 				<hr>
 
@@ -154,21 +154,21 @@
 					}
 					?>
 					<select id="pinitsize" name="pinitsize" class="form-control">
-						<option value="small" 
+						<option value="<?php echo esc_attr('small');?>" 
 						<?php
 						if ( $PinItSize == 'small' ) {
 							echo esc_attr( 'selected=selected' );
 						}
 						?>
-												><?php esc_html_e( 'Small', WEBLIZAR_PINIT_TD ); ?> ( For small Pinit button )
+ 							><?php esc_html_e( 'Small', WEBLIZAR_PINIT_TD ); ?> ( For small Pinit button )
 						</option>
-						<option value="large" 
+						<option value="<?php echo esc_attr('large');?>" 
 						<?php
 						if ( $PinItSize == 'large' ) {
 							echo esc_attr( 'selected=selected' );
 						}
 						?>
-												><?php esc_html_e( 'Large', WEBLIZAR_PINIT_TD ); ?> ( For large Pinit button )
+							><?php esc_html_e( 'Large', WEBLIZAR_PINIT_TD ); ?> ( For large Pinit button )
 						</option>
 						}
 					</select>

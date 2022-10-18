@@ -30,7 +30,7 @@
 				<th scope="col">#</th>
 				<th scope="col"><?php esc_html_e( 'URL', WEBLIZAR_PINIT_TD ); ?>
 				</th>
-				<th scope="col" class="text-center"><input type="checkbox" id="select-all" name="select-all[]" value="-1" /></th>
+				<th scope="col" class="text-center"><input type="checkbox" id="select-all" name="select-all[]" value="<?php echo esc_attr('-1');?>" /></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -64,7 +64,7 @@
 			<tr>
 				<th scope="col">#</th>
 				<th scope="col"></th>
-				<th scope="col" class="text-center"><input type="checkbox" id="select-all" name="select-all[]" value="-1" /></th>
+				<th scope="col" class="text-center"><input type="checkbox" id="select-all" name="select-all[]" value="<?php echo esc_attr('-1');?>" /></th>
 			</tr>
 		</thead>
 		<tr>
