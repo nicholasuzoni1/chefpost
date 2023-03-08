@@ -55,7 +55,7 @@ while ($loop->have_posts()) : $loop->the_post();
             });
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPq-XJNLX2AefMk4PVjjKHzPSLDES6VHs&libraries=places&callback=initializeAutocomplete"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3cBzlfdK8yX-rwUiixhHfbDS7ORfmX2o&libraries=places&callback=initializeAutocomplete"
             async defer></script>
     <?php
     wp_reset_query();
